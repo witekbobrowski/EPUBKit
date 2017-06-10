@@ -7,13 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		413A073B1EEC168B0089D947 /* EPUBContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A073A1EEC168B0089D947 /* EPUBContents.swift */; };
+		413A073D1EEC19C40089D947 /* EPUBItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A073C1EEC19C40089D947 /* EPUBItem.swift */; };
 		41689DDA1EE997D1004D6003 /* EPUBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 41689DD81EE997D1004D6003 /* EPUBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41FD36801EEAF80A00C34105 /* EPUBDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */; };
+		41FD36811EEAF80A00C34105 /* EPUBTableOfContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */; };
+		41FD36821EEAF80A00C34105 /* EPUBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367F1EEAF80A00C34105 /* EPUBParser.swift */; };
+		41FD36921EEB24DC00C34105 /* EPUBMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */; };
+		B8E9A399F02BA67A4041F06C /* Pods_EPUBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A733833F94FC3901BBC67090 /* Pods_EPUBKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		413A073A1EEC168B0089D947 /* EPUBContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBContents.swift; sourceTree = "<group>"; };
+		413A073C1EEC19C40089D947 /* EPUBItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBItem.swift; sourceTree = "<group>"; };
 		41689DD51EE997D1004D6003 /* EPUBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41689DD81EE997D1004D6003 /* EPUBKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPUBKit.h; sourceTree = "<group>"; };
 		41689DD91EE997D1004D6003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBDocument.swift; sourceTree = "<group>"; };
+		41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBTableOfContents.swift; sourceTree = "<group>"; };
+		41FD367F1EEAF80A00C34105 /* EPUBParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBParser.swift; sourceTree = "<group>"; };
+		41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBMetadata.swift; sourceTree = "<group>"; };
+		A733833F94FC3901BBC67090 /* Pods_EPUBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EPUBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A966D60C710203563DA76D53 /* Pods-EPUBKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EPUBKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EPUBKit/Pods-EPUBKit.debug.xcconfig"; sourceTree = "<group>"; };
+		BF46E42B7DC30D8168A048B8 /* Pods-EPUBKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EPUBKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-EPUBKit/Pods-EPUBKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8E9A399F02BA67A4041F06C /* Pods_EPUBKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +49,8 @@
 			children = (
 				41689DD71EE997D1004D6003 /* EPUBKit */,
 				41689DD61EE997D1004D6003 /* Products */,
+				7948D3251C881CB54B808900 /* Pods */,
+				BAB91426085D666715B2FBDB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,9 +66,32 @@
 			isa = PBXGroup;
 			children = (
 				41689DD81EE997D1004D6003 /* EPUBKit.h */,
+				41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */,
+				413A073C1EEC19C40089D947 /* EPUBItem.swift */,
+				413A073A1EEC168B0089D947 /* EPUBContents.swift */,
+				41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */,
+				41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */,
+				41FD367F1EEAF80A00C34105 /* EPUBParser.swift */,
 				41689DD91EE997D1004D6003 /* Info.plist */,
 			);
 			path = EPUBKit;
+			sourceTree = "<group>";
+		};
+		7948D3251C881CB54B808900 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A966D60C710203563DA76D53 /* Pods-EPUBKit.debug.xcconfig */,
+				BF46E42B7DC30D8168A048B8 /* Pods-EPUBKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BAB91426085D666715B2FBDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A733833F94FC3901BBC67090 /* Pods_EPUBKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,10 +112,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41689DDD1EE997D1004D6003 /* Build configuration list for PBXNativeTarget "EPUBKit" */;
 			buildPhases = (
+				5CB30D24972BD07767759BF7 /* [CP] Check Pods Manifest.lock */,
 				41689DD01EE997D1004D6003 /* Sources */,
 				41689DD11EE997D1004D6003 /* Frameworks */,
 				41689DD21EE997D1004D6003 /* Headers */,
 				41689DD31EE997D1004D6003 /* Resources */,
+				3A3B08C22840F94198608107 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +140,7 @@
 					41689DD41EE997D1004D6003 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = U82NM6NPZS;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -127,11 +172,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A3B08C22840F94198608107 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EPUBKit/Pods-EPUBKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CB30D24972BD07767759BF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		41689DD01EE997D1004D6003 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41FD36801EEAF80A00C34105 /* EPUBDocument.swift in Sources */,
+				41FD36811EEAF80A00C34105 /* EPUBTableOfContents.swift in Sources */,
+				413A073D1EEC19C40089D947 /* EPUBItem.swift in Sources */,
+				413A073B1EEC168B0089D947 /* EPUBContents.swift in Sources */,
+				41FD36921EEB24DC00C34105 /* EPUBMetadata.swift in Sources */,
+				41FD36821EEAF80A00C34105 /* EPUBParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +325,9 @@
 		};
 		41689DDE1EE997D1004D6003 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A966D60C710203563DA76D53 /* Pods-EPUBKit.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U82NM6NPZS;
@@ -254,13 +340,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = witek.bobrowski.EPUBKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		41689DDF1EE997D1004D6003 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF46E42B7DC30D8168A048B8 /* Pods-EPUBKit.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U82NM6NPZS;
@@ -296,6 +385,7 @@
 				41689DDF1EE997D1004D6003 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
