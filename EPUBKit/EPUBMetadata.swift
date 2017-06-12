@@ -29,8 +29,6 @@ public class EPUBMetadata {
     
 }
 
-
-
 public class EPUBCreator {
     
     var name: String?

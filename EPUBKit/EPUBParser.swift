@@ -75,7 +75,6 @@ public class EPUBParser {
         } else {
             throw EPUBParserError.noPathForTableOfContents
         }
-        
     }
     
     class private func getMetadata(from content: AEXMLElement) -> EPUBMetadata {
@@ -134,7 +133,6 @@ public class EPUBParser {
         }
     }
 
-    
     class private func getTableOfContents(from toc: AEXMLElement) -> EPUBTableOfContents {
         let item = toc["head"]["meta"].all(withAttributes: ["name":"dtb=uid"])?.first?.attributes["content"]
         let tableOfContents = EPUBTableOfContents(label: toc["docTitle"]["text"].value!, id: "0", item: item, subTable: [])

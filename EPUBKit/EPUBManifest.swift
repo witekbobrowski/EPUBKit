@@ -34,13 +34,13 @@ public class EPUBManifestItem: Hashable {
     
     var id: String
     var path: String
-    var mediaType: String
+    var mediaType: EPUBMediaTypes
     var property: String?
     
     init(id: String, path: String, mediaType: String, property: String?) {
         self.id = id
         self.path = path
-        self.mediaType = mediaType
+        self.mediaType = EPUBMediaTypes(rawValue: mediaType) ?? EPUBMediaTypes.unknown
         self.property = property
     }
     
@@ -50,4 +50,25 @@ public class EPUBManifestItem: Hashable {
     
     public var hashValue: Int { return self.id.hashValue }
 
+}
+
+public enum EPUBMediaTypes: String {
+    
+    case GIF = "image/gif"
+    case JPEG = "image/jpeg"
+    case PNG = "image/png"
+    case SVG = "image/svg+xml"
+    case XHTML = "application/xhtml+xml"
+    case RFC4329 = "application/javascript"
+    case OPF2 = "application/x-dtbncx+xml"
+    case OpenType = "application/font-sfnt"
+    case WOFF = "application/font-woff"
+    case MediaOverlays = "application/smil+xml"
+    case PLS = "application/pls+xml"
+    case MP3 = "audio/mpeg"
+    case MP4 = "audio/mp4"
+    case CSS = "text/css"
+    case WOFF2 = "font/woff2"
+    case unknown
+    
 }

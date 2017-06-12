@@ -8,7 +8,13 @@
 
 import Foundation
 
-public class EPUBDocument {
+public protocol Parsable {
+    
+    init?(fileName: String)
+    
+}
+
+public class EPUBDocument: Parsable {
     
     var directory: URL
     var metadata: EPUBMetadata
@@ -22,6 +28,19 @@ public class EPUBDocument {
         self.manifest = manifest
         self.spine = spine
         self.tableOfContents = toc
+    }
+    
+    public required init?(fileName: String) {
+        do {
+            let book = try EPUBParser.parse(fileName)
+            self.directory = book.directory
+            self.metadata = book.metadata
+            self.manifest = book.manifest
+            self.spine = book.spine
+            self.tableOfContents = book.tableOfContents
+        } catch {
+            return nil
+        }
     }
     
     public var title: String {
