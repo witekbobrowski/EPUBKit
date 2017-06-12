@@ -12,17 +12,17 @@ public class EPUBTableOfContents {
 
     var label: String
     var id: String
-    var item: EPUBItem
+    var item: String?
     var subTable: [EPUBTableOfContents]?
     
-    init(label: String, id: String, item: EPUBItem, subTable: [EPUBTableOfContents]?) {
+    init(label: String, id: String, item: String?, subTable: [EPUBTableOfContents]?) {
         self.label = label
         self.id = id
         self.item = item
         self.subTable = subTable
     }
     
-    convenience init(label: String, id: String, item: EPUBItem) {
+    convenience init(label: String, id: String, item: String?) {
         self.init(label: label, id: id, item: item, subTable: nil)
     }
     

@@ -10,13 +10,17 @@ import Foundation
 
 public class EPUBDocument {
     
+    var directory: URL
     var metadata: EPUBMetadata
-    var contents: EPUBContents
+    var manifest: EPUBManifest
+    var spine: EPUBSpine
     var tableOfContents: EPUBTableOfContents
     
-    init (metadata: EPUBMetadata, contents: EPUBContents, toc: EPUBTableOfContents) {
+    init (directory: URL, metadata: EPUBMetadata, manifest: EPUBManifest, spine: EPUBSpine, toc: EPUBTableOfContents) {
+        self.directory = directory
         self.metadata = metadata
-        self.contents = contents
+        self.manifest = manifest
+        self.spine = spine
         self.tableOfContents = toc
     }
     

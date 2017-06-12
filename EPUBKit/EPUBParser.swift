@@ -11,12 +11,11 @@ import AEXML
 import Foundation
 
 enum EPUBParserError: Error {
-    case UnZipError
-    case ContainterParseError
-    case NoPathForContent
-    case MetaDataParseError
-    case ContentsParseError
-    case TOCParseError
+    case unZipError
+    case containterParseError
+    case tableOfContentsParseError
+    case noPathForContent
+    case noPathForTableOfContents
 }
 
 
@@ -25,9 +24,18 @@ public class EPUBParser {
     class public func parse(_ fileName: String) throws -> EPUBDocument {
         do {
             let directory = try unzip(fileName)
-            let content = try getContentDirectory(from: directory)
-            return try getDocument(with: content)
-        } catch let error {
+            let contentPath = try getContentPath(from: directory)
+            let data = try Data(contentsOf: contentPath)
+            let content = try AEXMLDocument(xml: data)
+            let metadata = getMetadata(from: content.root["metadata"])
+            let manifest = getManifest(from: content.root["manifest"])
+            let spine =  getSpine(from: content.root["spine"])
+            let tocPath = try getTOCPath(for: manifest.getTOCPath(id: try spine.getTOCid()), in: directory)
+            let tocData = try Data(contentsOf: tocPath)
+            let tocContent = try AEXMLDocument(xml: tocData)
+            let toc = getTableOfContents(from: tocContent.root)
+            return EPUBDocument(directory: directory, metadata: metadata, manifest: manifest, spine: spine, toc: toc)
+        } catch {
             throw error
         }
     }
@@ -37,13 +45,14 @@ public class EPUBParser {
         do {
             let filePath = Bundle.main.url(forResource: name, withExtension: "epub")!
             let unzipDirectory = try Zip.quickUnzipFile(filePath)
+            print(unzipDirectory.absoluteString)
             return unzipDirectory
         } catch ZipError.unzipFail {
-            throw EPUBParserError.UnZipError
+            throw EPUBParserError.unZipError
         }
     }
     
-    class private func getContentDirectory(from bookDirectory: URL) throws -> URL {
+    class private func getContentPath(from bookDirectory: URL) throws -> URL {
         do {
             let path = Bundle.main.url(forResource: "container", withExtension: "xml", subdirectory: bookDirectory.absoluteString)
             let data = try Data(contentsOf: path!)
@@ -52,28 +61,24 @@ public class EPUBParser {
             if content != nil {
                 return URL(fileURLWithPath: content!)
             } else {
-                throw EPUBParserError.NoPathForContent
+                throw EPUBParserError.noPathForContent
             }
         } catch {
-            throw EPUBParserError.ContainterParseError
+            throw EPUBParserError.containterParseError
         }
     }
     
-    class private func getDocument(with path: URL) throws -> EPUBDocument {
-        do {
-            let data = try Data(contentsOf: path)
-            let content = try AEXMLDocument(xml: data)
-            let metadata = try getMetadata(from: content.root["metadata"])
-            let contents = try getContents(from: content)
-            let tableOfContents = try getTableOfContents(from: content)
-            return EPUBDocument(metadata: metadata, contents: contents, toc: tableOfContents)
-        } catch let error {
-            throw error
+    class private func getTOCPath(for path: String, in bookDirectory: URL) throws -> URL {
+        let path = Bundle.main.url(forResource: nil, withExtension: nil, subdirectory: bookDirectory.absoluteString, localization: path)
+        if path != nil {
+            return path!
+        } else {
+            throw EPUBParserError.noPathForTableOfContents
         }
         
     }
     
-    class private func getMetadata(from content: AEXMLElement) throws -> EPUBMetadata {
+    class private func getMetadata(from content: AEXMLElement) -> EPUBMetadata {
         let metadata = EPUBMetadata()
         metadata.contributor = EPUBCreator(name: content["dc:contributor"].value,
                                            role: content["dc:contributor"].attributes["opf:role"],
@@ -97,20 +102,56 @@ public class EPUBParser {
         return metadata
     }
     
-    class private func getContents(from content: AEXMLElement) throws -> EPUBContents {
-        do {
-            
-        } catch {
-            throw EPUBParserError.ContentsParseError
+    class private func getManifest(from content: AEXMLElement) -> EPUBManifest {
+        var children: [String:EPUBManifestItem] = [:]
+        for item in content["item"].all! {
+            let id = item.attributes["id"]!
+            let path = item.attributes["href"]!
+            let mediatype = item.attributes["media-type"]
+            let properties = item.attributes["properties"]
+            children[id] = EPUBManifestItem(id: id, path: path, mediaType: mediatype!, property: properties)
+        }
+        if let id = content["id"].value {
+            return EPUBManifest(id: id, children: children)
+        } else {
+            return EPUBManifest(children: children)
         }
     }
     
-    class private func getTableOfContents(from content: AEXMLElement) throws -> EPUBTableOfContents {
-        do {
-            
-        } catch {
-            throw EPUBParserError.TOCParseError
+    class private func getSpine(from content: AEXMLElement) -> EPUBSpine {
+        var children: [EPUBSpineItem] = []
+        for item in content["itemref"].all! {
+            if let linear = item["linear"].value {
+                children.append(EPUBSpineItem(id: item["id"].value, idref: item["idref"].value!, linear: linear == "yes" ? true : false))
+            } else {
+                children.append(EPUBSpineItem(id: item["id"].value, idref: item["idref"].value!))
+            }
         }
+        if let ppd = content["page-progression-direction"].value {
+            return EPUBSpine(id: content["id"].value, toc: content["toc"].value, pageProgressionDirection: ppd == "ltr" ? .leftToRight : .rightToLeft , children: children)
+        } else {
+            return EPUBSpine(id: content["id"].value, toc: content["toc"].value, children: children)
+        }
+    }
+
+    
+    class private func getTableOfContents(from toc: AEXMLElement) -> EPUBTableOfContents {
+        let item = toc["head"]["meta"].all(withAttributes: ["name":"dtb=uid"])?.first?.attributes["content"]
+        let tableOfContents = EPUBTableOfContents(label: toc["docTitle"]["text"].value!, id: "0", item: item, subTable: [])
+        
+        func evaluateChildren(from toc: AEXMLElement?) -> [EPUBTableOfContents]{
+            if let map = toc {
+                var subs: [EPUBTableOfContents] = []
+                for point in map.all! {
+                    subs.append( EPUBTableOfContents(label: point["navLabel"]["text"].value!, id: point.attributes["playOrder"]!, item: toc!.attributes["id"]!, subTable: evaluateChildren(from: map["navMap"])))
+                }
+                return subs
+            } else {
+                return []
+            }
+        }
+        tableOfContents.subTable = evaluateChildren(from: toc["navMap"])
+        return tableOfContents
     }
     
 }
