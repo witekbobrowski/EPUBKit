@@ -30,7 +30,7 @@ public class EPUBSpine {
         if toc != nil {
             return toc!
         } else {
-            throw EPUBParserError.noPathForTableOfContents
+            throw EPUBParserError.noIdForTableOfContents
         }
     }
 }

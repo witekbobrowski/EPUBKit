@@ -10,9 +10,9 @@ import Foundation
 
 public class EPUBTableOfContents {
 
-    var label: String
-    var id: String
-    var item: String?
+    var label: String   // <text>
+    var id: String  //  <navPoint id=>
+    var item: String?   //  <content src=>
     var subTable: [EPUBTableOfContents]?
     
     init(label: String, id: String, item: String?, subTable: [EPUBTableOfContents]?) {

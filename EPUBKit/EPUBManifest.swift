@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 public class EPUBManifest {
     
     var id: String?
@@ -24,8 +22,12 @@ public class EPUBManifest {
         self.init(id: nil, children: children)
     }
     
-    func getTOCPath(id: String) -> String {
-        return children[id]!.path
+    func getTOCPath(id: String) throws -> String {
+        if let toc = children[id] {
+            return toc.path
+        } else {
+            throw EPUBParserError.noPathForTableOfContents
+        }
     }
     
 }

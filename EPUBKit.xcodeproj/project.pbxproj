@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4130F6641EF2012E0073D37F /* EPUBParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4130F6631EF2012E0073D37F /* EPUBParserError.swift */; };
 		413A073D1EEC19C40089D947 /* EPUBManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A073C1EEC19C40089D947 /* EPUBManifest.swift */; };
 		413A07411EED763F0089D947 /* EPUBSpine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A07401EED763F0089D947 /* EPUBSpine.swift */; };
 		41689DDA1EE997D1004D6003 /* EPUBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 41689DD81EE997D1004D6003 /* EPUBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -14,10 +15,14 @@
 		41FD36811EEAF80A00C34105 /* EPUBTableOfContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */; };
 		41FD36821EEAF80A00C34105 /* EPUBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367F1EEAF80A00C34105 /* EPUBParser.swift */; };
 		41FD36921EEB24DC00C34105 /* EPUBMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */; };
-		B8E9A399F02BA67A4041F06C /* Pods_EPUBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A733833F94FC3901BBC67090 /* Pods_EPUBKit.framework */; };
+		DA82262ACCC85C0E1140CDF0 /* Pods_EPUBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A733833F94FC3901BBC67090 /* Pods_EPUBKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4130F63C1EEFE5300073D37F /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = "../../Library/Developer/Xcode/DerivedData/EPUBKit-alwcxcqtnsmjlhakipukyqjlsijr/Build/Products/Debug-iphonesimulator/AEXML/AEXML.framework"; sourceTree = "<group>"; };
+		4130F63D1EEFE5300073D37F /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = "../../Library/Developer/Xcode/DerivedData/EPUBKit-alwcxcqtnsmjlhakipukyqjlsijr/Build/Products/Debug-iphonesimulator/Zip/Zip.framework"; sourceTree = "<group>"; };
+		4130F6411EF070840073D37F /* Pods_EPUBKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_EPUBKit.framework; path = "../../Library/Developer/Xcode/DerivedData/EPUBKit-alwcxcqtnsmjlhakipukyqjlsijr/Build/Products/Debug-iphonesimulator/Pods_EPUBKit.framework"; sourceTree = "<group>"; };
+		4130F6631EF2012E0073D37F /* EPUBParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBParserError.swift; sourceTree = "<group>"; };
 		413A073C1EEC19C40089D947 /* EPUBManifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBManifest.swift; sourceTree = "<group>"; };
 		413A07401EED763F0089D947 /* EPUBSpine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBSpine.swift; sourceTree = "<group>"; };
 		41689DD51EE997D1004D6003 /* EPUBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8E9A399F02BA67A4041F06C /* Pods_EPUBKit.framework in Frameworks */,
+				DA82262ACCC85C0E1140CDF0 /* Pods_EPUBKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,8 +52,9 @@
 		4130F6381EEE0B070073D37F /* EPUBModel */ = {
 			isa = PBXGroup;
 			children = (
-				41FD367F1EEAF80A00C34105 /* EPUBParser.swift */,
 				41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */,
+				41FD367F1EEAF80A00C34105 /* EPUBParser.swift */,
+				4130F6631EF2012E0073D37F /* EPUBParserError.swift */,
 				41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */,
 				413A073C1EEC19C40089D947 /* EPUBManifest.swift */,
 				413A07401EED763F0089D947 /* EPUBSpine.swift */,
@@ -105,6 +111,9 @@
 		BAB91426085D666715B2FBDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4130F6411EF070840073D37F /* Pods_EPUBKit.framework */,
+				4130F63C1EEFE5300073D37F /* AEXML.framework */,
+				4130F63D1EEFE5300073D37F /* Zip.framework */,
 				A733833F94FC3901BBC67090 /* Pods_EPUBKit.framework */,
 			);
 			name = Frameworks;
@@ -228,6 +237,7 @@
 			files = (
 				413A07411EED763F0089D947 /* EPUBSpine.swift in Sources */,
 				41FD36801EEAF80A00C34105 /* EPUBDocument.swift in Sources */,
+				4130F6641EF2012E0073D37F /* EPUBParserError.swift in Sources */,
 				41FD36811EEAF80A00C34105 /* EPUBTableOfContents.swift in Sources */,
 				413A073D1EEC19C40089D947 /* EPUBManifest.swift in Sources */,
 				41FD36921EEB24DC00C34105 /* EPUBMetadata.swift in Sources */,
@@ -343,13 +353,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A966D60C710203563DA76D53 /* Pods-EPUBKit.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U82NM6NPZS;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = EPUBKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -358,6 +371,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -365,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF46E42B7DC30D8168A048B8 /* Pods-EPUBKit.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -372,6 +387,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = EPUBKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -379,6 +395,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
