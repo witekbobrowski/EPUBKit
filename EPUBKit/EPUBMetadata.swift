@@ -26,7 +26,7 @@ public class EPUBMetadata {
     var subject: String?
     var title: String?
     var type: String?
-    
+    var coverId: String?
 }
 
 public class EPUBCreator {

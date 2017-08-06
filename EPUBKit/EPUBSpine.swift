@@ -35,7 +35,7 @@ public class EPUBSpine {
     }
 }
 
-internal class EPUBSpineItem {
+class EPUBSpineItem {
     
     var id: String?
     var idref: String
@@ -53,7 +53,7 @@ internal class EPUBSpineItem {
     
 }
 
-internal enum EPUBPageProgressionDirection {
+enum EPUBPageProgressionDirection {
     case leftToRight
     case rightToLeft
 }

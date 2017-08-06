@@ -17,27 +17,25 @@ public protocol Parsable {
 public class EPUBDocument: Parsable {
     
     var directory: URL
+    var contentDirectory: URL
     var metadata: EPUBMetadata
     var manifest: EPUBManifest
     var spine: EPUBSpine
     var tableOfContents: EPUBTableOfContents
     
-    init (directory: URL, metadata: EPUBMetadata, manifest: EPUBManifest, spine: EPUBSpine, toc: EPUBTableOfContents) {
+    init (directory: URL, contentDirectory: URL, metadata: EPUBMetadata, manifest: EPUBManifest, spine: EPUBSpine, toc: EPUBTableOfContents) {
         self.directory = directory
+        self.contentDirectory = contentDirectory
         self.metadata = metadata
         self.manifest = manifest
         self.spine = spine
         self.tableOfContents = toc
     }
     
-    public required init?(fileName: String) {
+    public required convenience init?(fileName: String) {
         do {
             let book = try EPUBParser.parse(fileName)
-            self.directory = book.directory
-            self.metadata = book.metadata
-            self.manifest = book.manifest
-            self.spine = book.spine
-            self.tableOfContents = book.tableOfContents
+            self.init(directory: book.directory, contentDirectory: book.contentDirectory, metadata: book.metadata, manifest: book.manifest, spine: book.spine, toc: book.tableOfContents)
         } catch {
             return nil
         }
@@ -53,6 +51,10 @@ public class EPUBDocument: Parsable {
     
     public var publisher: String {
         return metadata.publisher ?? "Publisher unknown"
+    }
+    
+    public var cover: URL? {
+        return contentDirectory.appendingPathComponent(manifest.children[metadata.coverId ?? ""]?.path ?? "")
     }
     
 }

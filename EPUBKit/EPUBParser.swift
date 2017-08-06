@@ -16,16 +16,17 @@ public class EPUBParser {
         do {
             let directory = try unzip(fileName)
             let contentPath = try getContentPath(from: directory)
+            let contentDirectory = contentPath.deletingLastPathComponent()
             let data = try Data(contentsOf: contentPath)
             let content = try AEXMLDocument(xml: data)
             let metadata = getMetadata(from: content.root["metadata"])
             let manifest = getManifest(from: content.root["manifest"])
             let spine =  getSpine(from: content.root["spine"])
-            let tocPath = directory.appendingPathComponent("OEBPS/".appending(try manifest.getTOCPath(id: try spine.getTOCid())))
+            let tocPath = contentDirectory.appendingPathComponent(try manifest.getTOCPath(id: try spine.getTOCid()))
             let tocData = try Data(contentsOf: tocPath)
             let tocContent = try AEXMLDocument(xml: tocData)
             let toc = getTableOfContents(from: tocContent.root)
-            return EPUBDocument(directory: directory, metadata: metadata, manifest: manifest, spine: spine, toc: toc)
+            return EPUBDocument(directory: directory, contentDirectory: contentDirectory, metadata: metadata, manifest: manifest, spine: spine, toc: toc)
         } catch {
             print(error.localizedDescription)
             throw error
@@ -76,6 +77,11 @@ public class EPUBParser {
         metadata.subject = content["dc:subject"].value
         metadata.title = content["dc:title"].value
         metadata.type = content["dc:type"].value
+        for metaItem in content["meta"].all! {
+            if metaItem.attributes["name"] == "cover" {
+                metadata.coverId = metaItem.attributes["content"]
+            }
+        }
         return metadata
     }
     
@@ -119,7 +125,7 @@ public class EPUBParser {
             if let _ = map["navPoint"].all {
                 var subs: [EPUBTableOfContents] = []
                 for point in map["navPoint"].all! {
-                    subs.append(EPUBTableOfContents(label: point["navLabel"]["text"].value!, id: point.attributes["id"]!, item: point["content"].attributes["src"]!, subTable: evaluateChildren(from: point["navMap"])))
+                    subs.append(EPUBTableOfContents(label: point["navLabel"]["text"].value!, id: point.attributes["id"]!, item: point["content"].attributes["src"]!, subTable: evaluateChildren(from: point)))
                 }
                 return subs
             } else {

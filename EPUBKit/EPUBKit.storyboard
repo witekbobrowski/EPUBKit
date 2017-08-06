@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--EPUB-->
+        <scene sceneID="Pk9-7u-4hj">
+            <objects>
+                <viewController storyboardIdentifier="EPUBViewController" id="fgo-un-eog" customClass="EPUBViewController" customModule="EPUBKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fu8-nN-5xz"/>
+                        <viewControllerLayoutGuide type="bottom" id="gf6-PG-AVz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aKe-QB-9O6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4jt-mz-4su">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="MH2-OL-zvj">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gf6-PG-AVz" firstAttribute="top" secondItem="4jt-mz-4su" secondAttribute="bottom" id="2ah-Ab-V4Q"/>
+                            <constraint firstItem="4jt-mz-4su" firstAttribute="top" secondItem="Fu8-nN-5xz" secondAttribute="bottom" id="5AL-kn-zbe"/>
+                            <constraint firstItem="4jt-mz-4su" firstAttribute="leading" secondItem="aKe-QB-9O6" secondAttribute="leading" id="ngB-22-NH6"/>
+                            <constraint firstAttribute="trailing" secondItem="4jt-mz-4su" secondAttribute="trailing" id="uS4-qb-jWF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="EPUB" id="v6h-fr-LBC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="4to-J8-iL0">
+                            <connections>
+                                <segue destination="lti-1N-t7i" kind="show" id="yoS-iC-ctL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="4jt-mz-4su" id="d9G-Bz-IZv"/>
+                        <outlet property="titleLabel" destination="v6h-fr-LBC" id="84b-tz-K2j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Piw-1w-1KT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1770.4000000000001" y="-53.523238380809602"/>
+        </scene>
+        <!--Table Of Contents View Controller-->
+        <scene sceneID="j41-eI-RJI">
+            <objects>
+                <viewController id="lti-1N-t7i" customClass="EPUBTableOfContentsViewController" customModule="EPUBKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UIu-Ry-9Bz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ncn-gJ-V3X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yrz-Q4-rLE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dgj-Nk-UV1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dgj-Nk-UV1" firstAttribute="top" secondItem="Yrz-Q4-rLE" secondAttribute="top" id="7l5-CD-x7S"/>
+                            <constraint firstItem="Dgj-Nk-UV1" firstAttribute="leading" secondItem="Yrz-Q4-rLE" secondAttribute="leading" id="EJ9-cn-N1W"/>
+                            <constraint firstItem="Ncn-gJ-V3X" firstAttribute="top" secondItem="Dgj-Nk-UV1" secondAttribute="bottom" id="Iai-fC-BnB"/>
+                            <constraint firstAttribute="trailing" secondItem="Dgj-Nk-UV1" secondAttribute="trailing" id="Mdk-Y9-1LZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bff-cs-Fe1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2638" y="-54"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TQa-bO-PWB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ge0-cH-2jY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y0U-Us-iss">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fgo-un-eog" kind="relationship" relationship="rootViewController" id="z7G-EC-wWh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LLo-xW-yQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="-53"/>
+        </scene>
+    </scenes>
+</document>
