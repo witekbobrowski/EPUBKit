@@ -36,7 +36,7 @@ extension EPUBViewController {
         titleLabel.title = epubDocument.title
         dataSource = EPUBViewDataSource()
         dataSource?.delegate = self
-        dataSource?.epub = epubDocument
+        dataSource?.build(from: epubDocument)
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "EPUBViewCell", bundle: Bundle(for: classForCoder)),
@@ -59,9 +59,8 @@ extension EPUBViewController: UICollectionViewDelegate {
 
 extension EPUBViewController: EPUBViewDataSourceDelegate {
     
-    func dataSourceDidFinishRebuildingModel(_ dataSource: EPUBViewDataSource) {
+    func dataSourceDidFinishBuilding(_ dataSource: EPUBDataSource) {
         collectionView.reloadData()
     }
-    
 }
 

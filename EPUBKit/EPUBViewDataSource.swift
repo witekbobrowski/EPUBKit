@@ -8,40 +8,38 @@
 
 import UIKit
 
-struct Chapter {
-    let url: URL
-    let pages: [Page]
-}
-
-struct Page {
-    let HTMLContent: String
-    let baseURL: URL
-}
-
 class EPUBViewDataSource: NSObject {
     
-    public var epub: EPUBDocument! {
-        didSet {
-            rebuildModel()
-        }
-    }
     public weak var delegate: EPUBViewDataSourceDelegate?
     fileprivate var model: [Chapter] = []
     
+    struct Chapter {
+        let path: URL
+        let directory: URL
+        let pages: [Page]
+    }
+    
+    struct Page {
+        let HTMLContent: String
+        let baseURL: URL
+    }
+
 }
 
-//MARK: - Configuration
-extension EPUBViewDataSource {
+//MARK: - EPUBDataSource
+extension EPUBViewDataSource: EPUBDataSource {
 
-    fileprivate func rebuildModel() {
+    func build(from epubDocument: EPUBDocument) {
         var model: [Chapter] = []
-        for item in epub.spine.children {
-            if let manifestItem = epub.manifest.children[item.idref] {
-                model.append(Chapter(url: epub.contentDirectory.appendingPathComponent(manifestItem.path), pages: []))
+        for item in epubDocument.spine.children {
+            if let manifestItem = epubDocument.manifest.children[item.idref] {
+                model.append(Chapter(path: epubDocument.contentDirectory.appendingPathComponent(manifestItem.path),
+                                     directory: epubDocument.contentDirectory,
+                                     pages: []))
             }
         }
-        self.model = epub.spine.pageProgressionDirection == .leftToRight ? model : model.reversed()
-        delegate?.dataSourceDidFinishRebuildingModel(self)
+        self.model = epubDocument.spine.pageProgressionDirection == .leftToRight ? model : model.reversed()
+        delegate?.dataSourceDidFinishBuilding(self)
     }
     
 }
@@ -59,12 +57,8 @@ extension EPUBViewDataSource: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EPUBViewCell", for: indexPath) as! EPUBViewCell
-        cell.configure(with: model[indexPath.row].url, at: epub.directory)
+        cell.configure(with: model[indexPath.row].path, at: model[indexPath.row].directory)
         return cell
     }
     
-}
-
-protocol EPUBViewDataSourceDelegate: class {
-    func dataSourceDidFinishRebuildingModel(_ dataSource: EPUBViewDataSource)
 }
