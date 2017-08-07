@@ -1,5 +1,5 @@
 //
-//  EPUBItem.swift
+//  EKItem.swift
 //  EPUBKit
 //
 //  Created by Witek on 10/06/2017.
@@ -8,17 +8,17 @@
 
 import Foundation
 
-public class EPUBManifest {
+public class EKManifest {
     
     var id: String?
-    var children: [String:EPUBManifestItem]
+    var children: [String:EKManifestItem]
     
-    init(id: String?, children: [String:EPUBManifestItem]) {
+    init(id: String?, children: [String:EKManifestItem]) {
         self.id = id
         self.children = children
     }
     
-    convenience init(children: [String:EPUBManifestItem]) {
+    convenience init(children: [String:EKManifestItem]) {
         self.init(id: nil, children: children)
     }
     
@@ -26,27 +26,27 @@ public class EPUBManifest {
         if let toc = children[id] {
             return toc.path
         } else {
-            throw EPUBParserError.noPathForTableOfContents
+            throw EKParserError.noPathForTableOfContents
         }
     }
     
 }
 
-public class EPUBManifestItem: Hashable {
+public class EKManifestItem: Hashable {
     
     var id: String
     var path: String
-    var mediaType: EPUBMediaTypes
+    var mediaType: EKMediaTypes
     var property: String?
     
     init(id: String, path: String, mediaType: String, property: String?) {
         self.id = id
         self.path = path
-        self.mediaType = EPUBMediaTypes(rawValue: mediaType) ?? EPUBMediaTypes.unknown
+        self.mediaType = EKMediaTypes(rawValue: mediaType) ?? EKMediaTypes.unknown
         self.property = property
     }
     
-    static public func == (left: EPUBManifestItem, right: EPUBManifestItem) -> Bool {
+    static public func == (left: EKManifestItem, right: EKManifestItem) -> Bool {
         return left.id == right.id
     }
     
@@ -54,7 +54,7 @@ public class EPUBManifestItem: Hashable {
 
 }
 
-public enum EPUBMediaTypes: String {
+public enum EKMediaTypes: String {
     
     case GIF = "image/gif"
     case JPEG = "image/jpeg"

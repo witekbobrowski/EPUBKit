@@ -1,5 +1,5 @@
 //
-//  EPUBDataSource.swift
+//  EKDataSource.swift
 //  EPUBKit
 //
 //  Created by Witek on 07/08/2017.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol EPUBDataSource: class {
-    func build(from epubDocument: EPUBDocument)
+protocol EKDataSource: class {
+    func build(from epubDocument: EKDocument)
 }

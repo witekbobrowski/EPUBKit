@@ -1,5 +1,5 @@
 //
-//  EPUBViewCell.swift
+//  EKViewCell.swift
 //  EPUBKit
 //
 //  Created by Witek on 06/08/2017.
@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class EPUBViewCell: UICollectionViewCell {
+class EKViewCell: UICollectionViewCell {
 
     @IBOutlet weak var pageView: UIView!
     fileprivate var webView: WKWebView!
@@ -22,15 +22,17 @@ class EPUBViewCell: UICollectionViewCell {
 }
 
 
-extension EPUBViewCell {
+extension EKViewCell {
 
     func configure(with file: URL, at directory: URL) {
         webView.loadFileURL(file, allowingReadAccessTo: directory)
     }
-    
-    func configure(with page: Page) {
-        webView.loadHTMLString(page.HTMLContent, baseURL: page.baseURL)
-    }
+
+//TODO: Populating cell with page content
+//
+//    func configure(with page: Page) {
+//        webView.loadHTMLString(page.HTMLContent, baseURL: page.baseURL)
+//    }
     
     fileprivate func configure() {
         webView = WKWebView(frame: pageView.frame)

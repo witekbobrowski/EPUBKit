@@ -1,5 +1,5 @@
 //
-//  EPUBSpine.swift
+//  EKSpine.swift
 //  EPUBKit
 //
 //  Created by Witek on 11/06/2017.
@@ -8,21 +8,21 @@
 
 import Foundation
 
-public class EPUBSpine {
+public class EKSpine {
     
     var id: String?
     var toc: String?
-    var pageProgressionDirection: EPUBPageProgressionDirection
-    var children: [EPUBSpineItem]
+    var pageProgressionDirection: EKPageProgressionDirection
+    var children: [EKSpineItem]
     
-    init(id: String?, toc: String?, pageProgressionDirection: EPUBPageProgressionDirection, children: [EPUBSpineItem]) {
+    init(id: String?, toc: String?, pageProgressionDirection: EKPageProgressionDirection, children: [EKSpineItem]) {
         self.id = id
         self.toc = toc
         self.pageProgressionDirection = pageProgressionDirection
         self.children = children
     }
     
-    convenience init(id: String?, toc: String?, children: [EPUBSpineItem]) {
+    convenience init(id: String?, toc: String?, children: [EKSpineItem]) {
         self.init(id: id, toc: toc, pageProgressionDirection: .leftToRight, children: children)
     }
     
@@ -30,12 +30,12 @@ public class EPUBSpine {
         if toc != nil {
             return toc!
         } else {
-            throw EPUBParserError.noIdForTableOfContents
+            throw EKParserError.noIdForTableOfContents
         }
     }
 }
 
-class EPUBSpineItem {
+class EKSpineItem {
     
     var id: String?
     var idref: String
@@ -53,7 +53,7 @@ class EPUBSpineItem {
     
 }
 
-enum EPUBPageProgressionDirection {
+enum EKPageProgressionDirection {
     case leftToRight
     case rightToLeft
 }

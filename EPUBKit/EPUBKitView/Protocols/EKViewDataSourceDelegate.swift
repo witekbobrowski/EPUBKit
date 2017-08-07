@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol EPUBViewDataSourceDelegate: class {
-    func dataSourceDidFinishBuilding(_ dataSource: EPUBDataSource)
+protocol EKViewDataSourceDelegate: class {
+    func dataSourceDidFinishBuilding(_ dataSource: EKDataSource)
 }

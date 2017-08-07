@@ -1,6 +1,6 @@
 //
-//  EPUBDocumnet.swift
-//  Reader
+//  EKDocument.swift
+//  EPUBKit
 //
 //  Created by Witek on 09/06/2017.
 //  Copyright © 2017 Witek Bobrowski. All rights reserved.
@@ -14,16 +14,16 @@ public protocol Parsable {
     
 }
 
-public class EPUBDocument: Parsable {
+public class EKDocument: Parsable {
     
     var directory: URL
     var contentDirectory: URL
-    var metadata: EPUBMetadata
-    var manifest: EPUBManifest
-    var spine: EPUBSpine
-    var tableOfContents: EPUBTableOfContents
+    var metadata: EKMetadata
+    var manifest: EKManifest
+    var spine: EKSpine
+    var tableOfContents: EKTableOfContents
     
-    init (directory: URL, contentDirectory: URL, metadata: EPUBMetadata, manifest: EPUBManifest, spine: EPUBSpine, toc: EPUBTableOfContents) {
+    init (directory: URL, contentDirectory: URL, metadata: EKMetadata, manifest: EKManifest, spine: EKSpine, toc: EKTableOfContents) {
         self.directory = directory
         self.contentDirectory = contentDirectory
         self.metadata = metadata
@@ -34,7 +34,7 @@ public class EPUBDocument: Parsable {
     
     public required convenience init?(fileName: String) {
         do {
-            let book = try EPUBParser.parse(fileName)
+            let book = try EKParser.parse(fileName)
             self.init(directory: book.directory, contentDirectory: book.contentDirectory, metadata: book.metadata, manifest: book.manifest, spine: book.spine, toc: book.tableOfContents)
         } catch {
             return nil

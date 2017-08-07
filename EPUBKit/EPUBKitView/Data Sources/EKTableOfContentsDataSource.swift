@@ -10,7 +10,7 @@ import Foundation
 
 class EPUBTableOfContentsDataSource: NSObject {
     
-    public weak var delegate: EPUBViewDataSourceDelegate?
+    public weak var delegate: EKViewDataSourceDelegate?
     fileprivate var model: [Chapter] = []
     
     struct Chapter {
@@ -19,12 +19,12 @@ class EPUBTableOfContentsDataSource: NSObject {
     
 }
 
-extension EPUBTableOfContentsDataSource: EPUBDataSource {
+extension EPUBTableOfContentsDataSource: EKDataSource {
 
-    func build(from epubDocument: EPUBDocument) {
+    func build(from epubDocument: EKDocument) {
         var model: [Chapter] = []
         
-        func evaluate(tableOfContents: [EPUBTableOfContents]) {
+        func evaluate(tableOfContents: [EKTableOfContents]) {
             for content in tableOfContents {
                 model.append(Chapter(title: content.label))
                 if let children = content.subTable {
@@ -53,7 +53,7 @@ extension EPUBTableOfContentsDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        return UITableViewCell()
     }
     
 }

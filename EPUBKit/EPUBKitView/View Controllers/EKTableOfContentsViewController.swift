@@ -1,5 +1,5 @@
 //
-//  EPUBTableOfContentsViewController.swift
+//  EKTableOfContentsViewController.swift
 //  EPUBKit
 //
 //  Created by Witek on 06/08/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EPUBTableOfContentsViewController: UIViewController {
+class EKTableOfContentsViewController: UIViewController {
 
     
 }

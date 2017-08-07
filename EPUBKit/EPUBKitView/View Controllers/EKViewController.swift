@@ -1,5 +1,5 @@
 //
-//  EPUBViewController.swift
+//  EKViewController.swift
 //  EPUBKit
 //
 //  Created by Witek on 06/08/2017.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-public class EPUBViewController: UIViewController {
+public class EKViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UINavigationItem!
     
-    public var epubDocument: EPUBDocument!
-    var dataSource: EPUBViewDataSource?
+    public var document: EKDocument!
+    var dataSource: EKViewDataSource?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,21 +26,21 @@ public class EPUBViewController: UIViewController {
     }
 }
 
-extension EPUBViewController {
+extension EKViewController {
     
     fileprivate func configure() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.backItem?.title = ""
-        titleLabel.title = epubDocument.title
-        dataSource = EPUBViewDataSource()
+        titleLabel.title = document.title
+        dataSource = EKViewDataSource()
         dataSource?.delegate = self
-        dataSource?.build(from: epubDocument)
+        dataSource?.build(from: document)
         collectionView.dataSource = dataSource
         collectionView.delegate = self
-        collectionView.register(UINib(nibName: "EPUBViewCell", bundle: Bundle(for: classForCoder)),
-                                    forCellWithReuseIdentifier: "EPUBViewCell")
+        collectionView.register(UINib(nibName: "EKViewCell", bundle: Bundle(for: classForCoder)),
+                                    forCellWithReuseIdentifier: "EKViewCell")
     }
     
     fileprivate func layoutCollectionView() {
@@ -53,13 +53,13 @@ extension EPUBViewController {
     }
 }
 
-extension EPUBViewController: UICollectionViewDelegate {
+extension EKViewController: UICollectionViewDelegate {
     
 }
 
-extension EPUBViewController: EPUBViewDataSourceDelegate {
+extension EKViewController: EKViewDataSourceDelegate {
     
-    func dataSourceDidFinishBuilding(_ dataSource: EPUBDataSource) {
+    func dataSourceDidFinishBuilding(_ dataSource: EKDataSource) {
         collectionView.reloadData()
     }
 }

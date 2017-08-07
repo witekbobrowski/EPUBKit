@@ -12,7 +12,7 @@
         <!--EPUB-->
         <scene sceneID="Pk9-7u-4hj">
             <objects>
-                <viewController storyboardIdentifier="EPUBViewController" id="fgo-un-eog" customClass="EPUBViewController" customModule="EPUBKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EKViewController" id="fgo-un-eog" customClass="EKViewController" customModule="EPUBKit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fu8-nN-5xz"/>
                         <viewControllerLayoutGuide type="bottom" id="gf6-PG-AVz"/>
@@ -60,7 +60,7 @@
         <!--Table Of Contents View Controller-->
         <scene sceneID="j41-eI-RJI">
             <objects>
-                <viewController id="lti-1N-t7i" customClass="EPUBTableOfContentsViewController" customModule="EPUBKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lti-1N-t7i" customClass="EKTableOfContentsViewController" customModule="EPUBKit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UIu-Ry-9Bz"/>
                         <viewControllerLayoutGuide type="bottom" id="Ncn-gJ-V3X"/>

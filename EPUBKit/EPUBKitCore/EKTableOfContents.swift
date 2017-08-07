@@ -1,6 +1,6 @@
 //
-//  EPUBTableOfContents.swift
-//  Reader
+//  EKTableOfContents.swift
+//  EPUBKit
 //
 //  Created by Witek on 09/06/2017.
 //  Copyright © 2017 Witek Bobrowski. All rights reserved.
@@ -8,15 +8,15 @@
 
 import Foundation
 
-public class EPUBTableOfContents {
+public class EKTableOfContents {
 
     var label: String
     var id: String
     var item: String?
     var page: Int?
-    var subTable: [EPUBTableOfContents]?
+    var subTable: [EKTableOfContents]?
     
-    init(label: String, id: String, item: String?, subTable: [EPUBTableOfContents]?) {
+    init(label: String, id: String, item: String?, subTable: [EKTableOfContents]?) {
         self.label = label
         self.id = id
         self.item = item

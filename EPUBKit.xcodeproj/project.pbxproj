@@ -10,7 +10,7 @@
 		4130F6641EF2012E0073D37F /* EKParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4130F6631EF2012E0073D37F /* EKParserError.swift */; };
 		413A073D1EEC19C40089D947 /* EKManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A073C1EEC19C40089D947 /* EKManifest.swift */; };
 		413A07411EED763F0089D947 /* EKSpine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A07401EED763F0089D947 /* EKSpine.swift */; };
-		4162DE8E1F3790E000751D1D /* EPUBKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4162DE8D1F3790E000751D1D /* EPUBKit.storyboard */; };
+		4162DE8E1F3790E000751D1D /* EKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4162DE8D1F3790E000751D1D /* EKMain.storyboard */; };
 		4162DE901F37924900751D1D /* EKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE8F1F37924900751D1D /* EKViewController.swift */; };
 		4162DE921F37928200751D1D /* EKTableOfContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE911F37928200751D1D /* EKTableOfContentsViewController.swift */; };
 		4162DE941F37947A00751D1D /* EKTableOfContentsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE931F37947A00751D1D /* EKTableOfContentsDataSource.swift */; };
@@ -34,7 +34,7 @@
 		4130F6631EF2012E0073D37F /* EKParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKParserError.swift; path = EPUBKitCore/EKParserError.swift; sourceTree = "<group>"; };
 		413A073C1EEC19C40089D947 /* EKManifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKManifest.swift; path = EPUBKitCore/EKManifest.swift; sourceTree = "<group>"; };
 		413A07401EED763F0089D947 /* EKSpine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKSpine.swift; path = EPUBKitCore/EKSpine.swift; sourceTree = "<group>"; };
-		4162DE8D1F3790E000751D1D /* EPUBKit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EPUBKit.storyboard; sourceTree = "<group>"; };
+		4162DE8D1F3790E000751D1D /* EKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EKMain.storyboard; path = EPUBKitView/EKMain.storyboard; sourceTree = "<group>"; };
 		4162DE8F1F37924900751D1D /* EKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKViewController.swift; path = "EPUBKitView/View Controllers/EKViewController.swift"; sourceTree = "<group>"; };
 		4162DE911F37928200751D1D /* EKTableOfContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKTableOfContentsViewController.swift; path = "EPUBKitView/View Controllers/EKTableOfContentsViewController.swift"; sourceTree = "<group>"; };
 		4162DE931F37947A00751D1D /* EKTableOfContentsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKTableOfContentsDataSource.swift; path = "EPUBKitView/Data Sources/EKTableOfContentsDataSource.swift"; sourceTree = "<group>"; };
@@ -84,6 +84,7 @@
 		4130F6391EEE0B190073D37F /* EPUBKitView */ = {
 			isa = PBXGroup;
 			children = (
+				4162DE8D1F3790E000751D1D /* EKMain.storyboard */,
 				4162DE9E1F38D9DA00751D1D /* Protocols */,
 				4162DE9B1F38D6DF00751D1D /* View Controllers */,
 				4162DE9C1F38D6EB00751D1D /* Data Sources */,
@@ -151,7 +152,6 @@
 			children = (
 				4130F6381EEE0B070073D37F /* EPUBKitCore */,
 				4130F6391EEE0B190073D37F /* EPUBKitView */,
-				4162DE8D1F3790E000751D1D /* EPUBKit.storyboard */,
 				41689DD81EE997D1004D6003 /* EPUBKit.h */,
 				41689DD91EE997D1004D6003 /* Info.plist */,
 			);
@@ -252,7 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4162DE981F3797F200751D1D /* EKViewCell.xib in Resources */,
-				4162DE8E1F3790E000751D1D /* EPUBKit.storyboard in Resources */,
+				4162DE8E1F3790E000751D1D /* EKMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

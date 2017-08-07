@@ -1,5 +1,5 @@
 //
-//  EPUBViewDataSource.swift
+//  EKViewDataSource.swift
 //  EPUBKit
 //
 //  Created by Witek on 06/08/2017.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class EPUBViewDataSource: NSObject {
+class EKViewDataSource: NSObject {
     
-    public weak var delegate: EPUBViewDataSourceDelegate?
+    public weak var delegate: EKViewDataSourceDelegate?
     fileprivate var model: [Chapter] = []
     
     struct Chapter {
@@ -26,10 +26,10 @@ class EPUBViewDataSource: NSObject {
 
 }
 
-//MARK: - EPUBDataSource
-extension EPUBViewDataSource: EPUBDataSource {
+//MARK: - EKDataSource
+extension EKViewDataSource: EKDataSource {
 
-    func build(from epubDocument: EPUBDocument) {
+    func build(from epubDocument: EKDocument) {
         var model: [Chapter] = []
         for item in epubDocument.spine.children {
             if let manifestItem = epubDocument.manifest.children[item.idref] {
@@ -45,7 +45,7 @@ extension EPUBViewDataSource: EPUBDataSource {
 }
 
 //MARK: - UICollectionViewDataSource
-extension EPUBViewDataSource: UICollectionViewDataSource {
+extension EKViewDataSource: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -56,7 +56,7 @@ extension EPUBViewDataSource: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EPUBViewCell", for: indexPath) as! EPUBViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EKViewCell", for: indexPath) as! EKViewCell
         cell.configure(with: model[indexPath.row].path, at: model[indexPath.row].directory)
         return cell
     }

@@ -1,6 +1,6 @@
 //
-//  EPUBParserError.swift
-//  EPUBDemo
+//  EKParserError.swift
+//  EPUBKit
 //
 //  Created by Witek on 14/06/2017.
 //  Copyright © 2017 Witek Bobrowski. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum EPUBParserError: LocalizedError {
+enum EKParserError: LocalizedError {
     
     case unZipError
     case containerParseError
