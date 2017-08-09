@@ -1,5 +1,5 @@
 //
-//  EPUBTableOfContentsDataSource.swift
+//  EKTableOfContentsDataSource.swift
 //  EPUBKit
 //
 //  Created by Witek on 07/08/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EPUBTableOfContentsDataSource: NSObject {
+class EKTableOfContentsDataSource: NSObject {
     
     public weak var delegate: EKViewDataSourceDelegate?
     fileprivate var model: [Chapter] = []
@@ -19,22 +19,24 @@ class EPUBTableOfContentsDataSource: NSObject {
     
 }
 
-extension EPUBTableOfContentsDataSource: EKViewDataSource {
+//MARK: - EKViewDataSource
+extension EKTableOfContentsDataSource: EKViewDataSource {
 
     func build(from epubDocument: EKDocument) {
         var model: [Chapter] = []
         
-        func evaluate(tableOfContents: [EKTableOfContents]) {
+        func evaluate(tableOfContents: [EKTableOfContents], space: String) {
             for content in tableOfContents {
-                model.append(Chapter(title: content.label))
+                model.append(Chapter(title: space + content.label))
+                print( "  " + content.label)
                 if let children = content.subTable {
-                    evaluate(tableOfContents: children)
+                    evaluate(tableOfContents: children, space: space + "    ")
                 }
             }
         }
         
         if let children = epubDocument.tableOfContents.subTable {
-            evaluate(tableOfContents: children)
+            evaluate(tableOfContents: children, space: "")
         }
         
         self.model = model
@@ -42,7 +44,8 @@ extension EPUBTableOfContentsDataSource: EKViewDataSource {
     
 }
 
-extension EPUBTableOfContentsDataSource: UITableViewDataSource {
+//MARK: - UICollectionViewDataSource
+extension EKTableOfContentsDataSource: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return model.isEmpty ? 0 : 1
@@ -53,7 +56,10 @@ extension EPUBTableOfContentsDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EKTableOfContentsViewCellTableViewCell" ,
+                                                 for: indexPath) as! EKTableOfContentsViewCellTableViewCell
+        cell.configure(with: model[indexPath.row].title)
+        return cell
     }
     
 }

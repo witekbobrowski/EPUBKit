@@ -23,7 +23,7 @@ class EKPageViewCell: UICollectionViewCell {
     
 }
 
-
+//MARK: - Configuration
 extension EKPageViewCell {
 
     func configure(with file: String, id: Int, at path: URL) {

@@ -22,6 +22,8 @@
 		41A911511F38E7C400957077 /* EKViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A911501F38E7C400957077 /* EKViewDataSource.swift */; };
 		41A911551F3A53C400957077 /* EKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A911541F3A53C400957077 /* EKPageView.swift */; };
 		41A911571F3A53EF00957077 /* EKPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A911561F3A53EF00957077 /* EKPageView.xib */; };
+		41A9115A1F3BB97F00957077 /* EKTableOfContentsViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A911581F3BB97F00957077 /* EKTableOfContentsViewCellTableViewCell.swift */; };
+		41A9115B1F3BB97F00957077 /* EKTableOfContentsViewCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A911591F3BB97F00957077 /* EKTableOfContentsViewCellTableViewCell.xib */; };
 		41FD36801EEAF80A00C34105 /* EKDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367D1EEAF80A00C34105 /* EKDocument.swift */; };
 		41FD36811EEAF80A00C34105 /* EKTableOfContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367E1EEAF80A00C34105 /* EKTableOfContents.swift */; };
 		41FD36821EEAF80A00C34105 /* EKParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367F1EEAF80A00C34105 /* EKParser.swift */; };
@@ -50,6 +52,8 @@
 		41A911501F38E7C400957077 /* EKViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKViewDataSource.swift; path = EPUBKitView/Protocols/EKViewDataSource.swift; sourceTree = "<group>"; };
 		41A911541F3A53C400957077 /* EKPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKPageView.swift; path = EPUBKitView/Views/EKPageView.swift; sourceTree = "<group>"; };
 		41A911561F3A53EF00957077 /* EKPageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EKPageView.xib; path = EPUBKitView/Views/EKPageView.xib; sourceTree = "<group>"; };
+		41A911581F3BB97F00957077 /* EKTableOfContentsViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKTableOfContentsViewCellTableViewCell.swift; path = EPUBKitView/Views/EKTableOfContentsViewCellTableViewCell.swift; sourceTree = "<group>"; };
+		41A911591F3BB97F00957077 /* EKTableOfContentsViewCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EKTableOfContentsViewCellTableViewCell.xib; path = EPUBKitView/Views/EKTableOfContentsViewCellTableViewCell.xib; sourceTree = "<group>"; };
 		41FD367D1EEAF80A00C34105 /* EKDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKDocument.swift; path = EPUBKitCore/EKDocument.swift; sourceTree = "<group>"; };
 		41FD367E1EEAF80A00C34105 /* EKTableOfContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKTableOfContents.swift; path = EPUBKitCore/EKTableOfContents.swift; sourceTree = "<group>"; };
 		41FD367F1EEAF80A00C34105 /* EKParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKParser.swift; path = EPUBKitCore/EKParser.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 			children = (
 				41A911541F3A53C400957077 /* EKPageView.swift */,
 				41A911561F3A53EF00957077 /* EKPageView.xib */,
+				41A911581F3BB97F00957077 /* EKTableOfContentsViewCellTableViewCell.swift */,
+				41A911591F3BB97F00957077 /* EKTableOfContentsViewCellTableViewCell.xib */,
 				4162DE951F3797F200751D1D /* EKPageViewCell.swift */,
 				4162DE961F3797F200751D1D /* EKPageViewCell.xib */,
 			);
@@ -257,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A9115B1F3BB97F00957077 /* EKTableOfContentsViewCellTableViewCell.xib in Resources */,
 				41A911571F3A53EF00957077 /* EKPageView.xib in Resources */,
 				4162DE981F3797F200751D1D /* EKPageViewCell.xib in Resources */,
 				4162DE8E1F3790E000751D1D /* EKMain.storyboard in Resources */,
@@ -303,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A9115A1F3BB97F00957077 /* EKTableOfContentsViewCellTableViewCell.swift in Sources */,
 				4162DE9A1F38D57500751D1D /* EKPageViewDataSource.swift in Sources */,
 				413A07411EED763F0089D947 /* EKSpine.swift in Sources */,
 				41A911551F3A53C400957077 /* EKPageView.swift in Sources */,

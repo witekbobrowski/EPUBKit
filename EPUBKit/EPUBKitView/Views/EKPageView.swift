@@ -23,6 +23,7 @@ class EKPageView: UIView {
     }
 }
 
+//MARK: - Configuration
 extension EKPageView {
     
     public func configure(with document: EKDocument) {
@@ -46,6 +47,7 @@ extension EKPageView {
     }
 }
 
+//MARK: - EKViewDataSourceDelegate
 extension EKPageView: EKViewDataSourceDelegate {
     
     func dataSourceDidFinishBuilding(_ dataSource: EKViewDataSource) {

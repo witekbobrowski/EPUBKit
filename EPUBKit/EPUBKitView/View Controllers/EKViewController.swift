@@ -19,8 +19,16 @@ public class EKViewController: UIViewController {
         configure()
     }
 
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let tableOfContentsVC = segue.destination as? EKTableOfContentsViewController {
+            tableOfContentsVC.configure(with: document)
+            tableOfContentsVC.delegate = self
+        }
+    }
+    
 }
 
+//MARK: - Configuration
 extension EKViewController {
     
     fileprivate func configure() {
@@ -29,10 +37,9 @@ extension EKViewController {
         view.addSubview(pageView)
         documentView = pageView
         pageView.configure(with: document)
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.backItem?.title = ""
-        navigationController?.navigationBar.isOpaque = true
         let tapGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(hideNavigationBar(_:)))
         view.addGestureRecognizer(tapGestureRecogniser)
         pageView.addGestureRecognizer(tapGestureRecogniser)
@@ -46,6 +53,14 @@ extension EKViewController {
             navBar.isHidden = false
         } else {
             navBar.isHidden = true
+        }
+    }
+}
+
+extension EKViewController: EKTableOfContentsViewControllerDelegate {
+    func tableOfContentsView(_ tableOfContentsView: EKTableOfContentsViewController, didSelectRowAt indexPath: IndexPath) {
+        if let pageView = documentView as? EKPageView {
+            pageView.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
         }
     }
 }
