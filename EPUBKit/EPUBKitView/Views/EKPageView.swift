@@ -32,8 +32,8 @@ extension EKPageView {
     fileprivate func configure() {
         dataSource.delegate = self
         collectionView.dataSource = dataSource
-        collectionView.register(UINib(nibName: "EKViewCell", bundle: Bundle(for: classForCoder)),
-                                forCellWithReuseIdentifier: "EKViewCell")
+        collectionView.register(UINib(nibName: "EKPageViewCell", bundle: Bundle(for: classForCoder)),
+                                forCellWithReuseIdentifier: "EKPageViewCell")
     }
     
     fileprivate func layoutCollectionView() {

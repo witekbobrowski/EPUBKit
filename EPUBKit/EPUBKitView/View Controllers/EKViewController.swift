@@ -32,9 +32,22 @@ extension EKViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.backItem?.title = ""
-        navigationController?.hidesBarsOnTap = true
+        navigationController?.navigationBar.isOpaque = true
+        let tapGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(hideNavigationBar(_:)))
+        view.addGestureRecognizer(tapGestureRecogniser)
+        pageView.addGestureRecognizer(tapGestureRecogniser)
     }
     
+    @objc private func hideNavigationBar(_ sender: UITapGestureRecognizer){
+        guard let navBar = navigationController?.navigationBar else {
+            return
+        }
+        if navBar.isHidden {
+            navBar.isHidden = false
+        } else {
+            navBar.isHidden = true
+        }
+    }
 }
 
 

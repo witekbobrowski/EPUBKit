@@ -14,6 +14,7 @@ class EKPageViewDataSource: NSObject {
     fileprivate var model: [Chapter] = []
     
     struct Chapter {
+        let id: Int
         let title: String
         let path: URL
         let directory: URL
@@ -24,17 +25,16 @@ class EKPageViewDataSource: NSObject {
         let HTMLContent: String
         let baseURL: URL
     }
-
 }
 
-//MARK: - EKDataSource
+//MARK: - EKViewDataSource
 extension EKPageViewDataSource: EKViewDataSource {
 
     func build(from epubDocument: EKDocument) {
         var model: [Chapter] = []
-        for item in epubDocument.spine.children {
+        for (index, item) in epubDocument.spine.children.enumerated() {
             if let manifestItem = epubDocument.manifest.children[item.idref] {
-                model.append(Chapter(title: epubDocument.title,path: epubDocument.contentDirectory.appendingPathComponent(manifestItem.path),
+                model.append(Chapter(id: index, title: epubDocument.title,path: epubDocument.contentDirectory.appendingPathComponent(manifestItem.path),
                                      directory: epubDocument.contentDirectory,
                                      pages: []))
             }
@@ -42,7 +42,6 @@ extension EKPageViewDataSource: EKViewDataSource {
         self.model = epubDocument.spine.pageProgressionDirection == .leftToRight ? model : model.reversed()
         delegate?.dataSourceDidFinishBuilding(self)
     }
-    
 }
 
 //MARK: - UICollectionViewDataSource
@@ -57,8 +56,9 @@ extension EKPageViewDataSource: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EKViewCell", for: indexPath) as! EKViewCell
-        cell.configure(with:model[indexPath.row].title, at: model[indexPath.row].path)
+        let chapter = model[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EKPageViewCell", for: indexPath) as! EKPageViewCell
+        cell.configure(with:chapter.title, id: chapter.id, at: chapter.path)
         return cell
     }
     

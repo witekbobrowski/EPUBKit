@@ -9,9 +9,10 @@
 import UIKit
 import WebKit
 
-class EKViewCell: UICollectionViewCell {
+class EKPageViewCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var pageView: UIView!
     fileprivate var webView: WKWebView!
 
@@ -23,10 +24,11 @@ class EKViewCell: UICollectionViewCell {
 }
 
 
-extension EKViewCell {
+extension EKPageViewCell {
 
-    func configure(with file: String, at path: URL) {
+    func configure(with file: String, id: Int, at path: URL) {
         titleLabel.text = file
+        pageLabel.text = String(id + 1)
         webView.loadFileURL(path, allowingReadAccessTo: path.deletingLastPathComponent())
     }
 
