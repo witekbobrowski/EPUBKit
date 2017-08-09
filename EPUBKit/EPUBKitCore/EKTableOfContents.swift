@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class EKTableOfContents {
+class EKTableOfContents {
 
     var label: String
     var id: String

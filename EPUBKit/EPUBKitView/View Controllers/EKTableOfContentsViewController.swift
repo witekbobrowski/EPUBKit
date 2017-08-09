@@ -10,5 +10,6 @@ import UIKit
 
 class EKTableOfContentsViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     
 }

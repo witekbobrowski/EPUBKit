@@ -10,12 +10,45 @@ import UIKit
 
 class EKPageView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            configure()
+        }
     }
-    */
+    fileprivate var dataSource = EKPageViewDataSource()
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layoutCollectionView()
+    }
+}
 
+extension EKPageView {
+    
+    public func configure(with document: EKDocument) {
+        dataSource.build(from: document)
+    }
+    
+    fileprivate func configure() {
+        dataSource.delegate = self
+        collectionView.dataSource = dataSource
+        collectionView.register(UINib(nibName: "EKViewCell", bundle: Bundle(for: classForCoder)),
+                                forCellWithReuseIdentifier: "EKViewCell")
+    }
+    
+    fileprivate func layoutCollectionView() {
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = collectionView.frame.size
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        layout.invalidateLayout()
+    }
+}
+
+extension EKPageView: EKViewDataSourceDelegate {
+    
+    func dataSourceDidFinishBuilding(_ dataSource: EKViewDataSource) {
+        collectionView.reloadData()
+    }
 }

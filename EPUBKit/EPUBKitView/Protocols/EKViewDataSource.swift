@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol EKDataSource: class {
+protocol EKViewDataSource: class {
     func build(from epubDocument: EKDocument)
 }

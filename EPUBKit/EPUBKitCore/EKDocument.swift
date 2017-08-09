@@ -8,13 +8,7 @@
 
 import Foundation
 
-public protocol Parsable {
-    
-    init?(fileName: String)
-    
-}
-
-public class EKDocument: Parsable {
+public class EKDocument {
     
     var directory: URL
     var contentDirectory: URL
@@ -22,6 +16,22 @@ public class EKDocument: Parsable {
     var manifest: EKManifest
     var spine: EKSpine
     var tableOfContents: EKTableOfContents
+    
+    public var title: String {
+        return metadata.title ?? "Untitled"
+    }
+    
+    public var author: String {
+        return metadata.creator?.name ?? "Author unknown"
+    }
+    
+    public var publisher: String {
+        return metadata.publisher ?? "Publisher unknown"
+    }
+    
+    public var cover: URL? {
+        return contentDirectory.appendingPathComponent(manifest.children[metadata.coverId ?? ""]?.path ?? "")
+    }
     
     init (directory: URL, contentDirectory: URL, metadata: EKMetadata, manifest: EKManifest, spine: EKSpine, toc: EKTableOfContents) {
         self.directory = directory
@@ -40,21 +50,4 @@ public class EKDocument: Parsable {
             return nil
         }
     }
-    
-    public var title: String {
-        return metadata.title ?? "Untitled"
-    }
-    
-    public var author: String {
-        return metadata.creator?.name ?? "Author unknown"
-    }
-    
-    public var publisher: String {
-        return metadata.publisher ?? "Publisher unknown"
-    }
-    
-    public var cover: URL? {
-        return contentDirectory.appendingPathComponent(manifest.children[metadata.coverId ?? ""]?.path ?? "")
-    }
-    
 }

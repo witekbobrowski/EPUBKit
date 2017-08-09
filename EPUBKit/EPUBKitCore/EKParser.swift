@@ -10,7 +10,7 @@ import Zip
 import AEXML
 import Foundation
 
-public class EKParser {
+class EKParser {
     
     class public func parse(_ fileName: String) throws -> EKDocument {
         do {

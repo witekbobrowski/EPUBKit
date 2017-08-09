@@ -8,12 +8,13 @@
 
 import UIKit
 
-class EKViewDataSource: NSObject {
+class EKPageViewDataSource: NSObject {
     
     public weak var delegate: EKViewDataSourceDelegate?
     fileprivate var model: [Chapter] = []
     
     struct Chapter {
+        let title: String
         let path: URL
         let directory: URL
         let pages: [Page]
@@ -27,13 +28,13 @@ class EKViewDataSource: NSObject {
 }
 
 //MARK: - EKDataSource
-extension EKViewDataSource: EKDataSource {
+extension EKPageViewDataSource: EKViewDataSource {
 
     func build(from epubDocument: EKDocument) {
         var model: [Chapter] = []
         for item in epubDocument.spine.children {
             if let manifestItem = epubDocument.manifest.children[item.idref] {
-                model.append(Chapter(path: epubDocument.contentDirectory.appendingPathComponent(manifestItem.path),
+                model.append(Chapter(title: epubDocument.title,path: epubDocument.contentDirectory.appendingPathComponent(manifestItem.path),
                                      directory: epubDocument.contentDirectory,
                                      pages: []))
             }
@@ -45,7 +46,7 @@ extension EKViewDataSource: EKDataSource {
 }
 
 //MARK: - UICollectionViewDataSource
-extension EKViewDataSource: UICollectionViewDataSource {
+extension EKPageViewDataSource: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -57,7 +58,7 @@ extension EKViewDataSource: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EKViewCell", for: indexPath) as! EKViewCell
-        cell.configure(with: model[indexPath.row].path, at: model[indexPath.row].directory)
+        cell.configure(with:model[indexPath.row].title, at: model[indexPath.row].path)
         return cell
     }
     

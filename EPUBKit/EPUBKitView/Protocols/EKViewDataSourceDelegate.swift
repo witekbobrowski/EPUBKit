@@ -9,5 +9,5 @@
 import Foundation
 
 protocol EKViewDataSourceDelegate: class {
-    func dataSourceDidFinishBuilding(_ dataSource: EKDataSource)
+    func dataSourceDidFinishBuilding(_ dataSource: EKViewDataSource)
 }

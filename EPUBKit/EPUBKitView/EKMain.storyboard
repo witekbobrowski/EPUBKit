@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--EPUB-->
+        <!--View Controller-->
         <scene sceneID="Pk9-7u-4hj">
             <objects>
-                <viewController storyboardIdentifier="EKViewController" id="fgo-un-eog" customClass="EKViewController" customModule="EPUBKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EKViewController" automaticallyAdjustsScrollViewInsets="NO" id="fgo-un-eog" customClass="EKViewController" customModule="EPUBKit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fu8-nN-5xz"/>
                         <viewControllerLayoutGuide type="bottom" id="gf6-PG-AVz"/>
@@ -21,27 +21,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4jt-mz-4su">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgO-Jv-LDH">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="MH2-OL-zvj">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gf6-PG-AVz" firstAttribute="top" secondItem="4jt-mz-4su" secondAttribute="bottom" id="2ah-Ab-V4Q"/>
-                            <constraint firstItem="4jt-mz-4su" firstAttribute="top" secondItem="Fu8-nN-5xz" secondAttribute="bottom" id="5AL-kn-zbe"/>
-                            <constraint firstItem="4jt-mz-4su" firstAttribute="leading" secondItem="aKe-QB-9O6" secondAttribute="leading" id="ngB-22-NH6"/>
-                            <constraint firstAttribute="trailing" secondItem="4jt-mz-4su" secondAttribute="trailing" id="uS4-qb-jWF"/>
+                            <constraint firstAttribute="trailing" secondItem="sgO-Jv-LDH" secondAttribute="trailing" id="avQ-XO-5ZF"/>
+                            <constraint firstItem="gf6-PG-AVz" firstAttribute="top" secondItem="sgO-Jv-LDH" secondAttribute="bottom" id="hb3-ej-zBH"/>
+                            <constraint firstItem="sgO-Jv-LDH" firstAttribute="leading" secondItem="aKe-QB-9O6" secondAttribute="leading" id="t7o-A9-g3e"/>
+                            <constraint firstItem="sgO-Jv-LDH" firstAttribute="top" secondItem="Fu8-nN-5xz" secondAttribute="bottom" id="zCQ-nr-3EW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="EPUB" id="v6h-fr-LBC">
+                    <navigationItem key="navigationItem" id="v6h-fr-LBC">
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="4to-J8-iL0">
                             <connections>
                                 <segue destination="lti-1N-t7i" kind="show" id="yoS-iC-ctL"/>
@@ -49,8 +42,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="4jt-mz-4su" id="d9G-Bz-IZv"/>
-                        <outlet property="titleLabel" destination="v6h-fr-LBC" id="84b-tz-K2j"/>
+                        <outlet property="documentView" destination="sgO-Jv-LDH" id="CWK-0o-0we"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Piw-1w-1KT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -82,6 +74,9 @@
                             <constraint firstAttribute="trailing" secondItem="Dgj-Nk-UV1" secondAttribute="trailing" id="Mdk-Y9-1LZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Dgj-Nk-UV1" id="xMj-AF-3LD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bff-cs-Fe1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class EKMetadata {
+class EKMetadata {
     
     //  DCMI Metadata
     var contributor: EKCreator?

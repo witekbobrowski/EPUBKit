@@ -16,10 +16,12 @@
 		4162DE941F37947A00751D1D /* EKTableOfContentsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE931F37947A00751D1D /* EKTableOfContentsDataSource.swift */; };
 		4162DE971F3797F200751D1D /* EKViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE951F3797F200751D1D /* EKViewCell.swift */; };
 		4162DE981F3797F200751D1D /* EKViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4162DE961F3797F200751D1D /* EKViewCell.xib */; };
-		4162DE9A1F38D57500751D1D /* EKViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE991F38D57500751D1D /* EKViewDataSource.swift */; };
+		4162DE9A1F38D57500751D1D /* EKPageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE991F38D57500751D1D /* EKPageViewDataSource.swift */; };
 		4162DEA01F38DA2B00751D1D /* EKViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE9F1F38DA2B00751D1D /* EKViewDataSourceDelegate.swift */; };
 		41689DDA1EE997D1004D6003 /* EPUBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 41689DD81EE997D1004D6003 /* EPUBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		41A911511F38E7C400957077 /* EKDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A911501F38E7C400957077 /* EKDataSource.swift */; };
+		41A911511F38E7C400957077 /* EKViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A911501F38E7C400957077 /* EKViewDataSource.swift */; };
+		41A911551F3A53C400957077 /* EKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A911541F3A53C400957077 /* EKPageView.swift */; };
+		41A911571F3A53EF00957077 /* EKPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A911561F3A53EF00957077 /* EKPageView.xib */; };
 		41FD36801EEAF80A00C34105 /* EKDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367D1EEAF80A00C34105 /* EKDocument.swift */; };
 		41FD36811EEAF80A00C34105 /* EKTableOfContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367E1EEAF80A00C34105 /* EKTableOfContents.swift */; };
 		41FD36821EEAF80A00C34105 /* EKParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367F1EEAF80A00C34105 /* EKParser.swift */; };
@@ -40,12 +42,14 @@
 		4162DE931F37947A00751D1D /* EKTableOfContentsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKTableOfContentsDataSource.swift; path = "EPUBKitView/Data Sources/EKTableOfContentsDataSource.swift"; sourceTree = "<group>"; };
 		4162DE951F3797F200751D1D /* EKViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKViewCell.swift; path = EPUBKitView/Views/EKViewCell.swift; sourceTree = "<group>"; };
 		4162DE961F3797F200751D1D /* EKViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EKViewCell.xib; path = EPUBKitView/Views/EKViewCell.xib; sourceTree = "<group>"; };
-		4162DE991F38D57500751D1D /* EKViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKViewDataSource.swift; path = "EPUBKitView/Data Sources/EKViewDataSource.swift"; sourceTree = "<group>"; };
+		4162DE991F38D57500751D1D /* EKPageViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKPageViewDataSource.swift; path = "EPUBKitView/Data Sources/EKPageViewDataSource.swift"; sourceTree = "<group>"; };
 		4162DE9F1F38DA2B00751D1D /* EKViewDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKViewDataSourceDelegate.swift; path = EPUBKitView/Protocols/EKViewDataSourceDelegate.swift; sourceTree = "<group>"; };
 		41689DD51EE997D1004D6003 /* EPUBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41689DD81EE997D1004D6003 /* EPUBKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPUBKit.h; sourceTree = "<group>"; };
 		41689DD91EE997D1004D6003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41A911501F38E7C400957077 /* EKDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKDataSource.swift; path = EPUBKitView/Protocols/EKDataSource.swift; sourceTree = "<group>"; };
+		41A911501F38E7C400957077 /* EKViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKViewDataSource.swift; path = EPUBKitView/Protocols/EKViewDataSource.swift; sourceTree = "<group>"; };
+		41A911541F3A53C400957077 /* EKPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKPageView.swift; path = EPUBKitView/Views/EKPageView.swift; sourceTree = "<group>"; };
+		41A911561F3A53EF00957077 /* EKPageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EKPageView.xib; path = EPUBKitView/Views/EKPageView.xib; sourceTree = "<group>"; };
 		41FD367D1EEAF80A00C34105 /* EKDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKDocument.swift; path = EPUBKitCore/EKDocument.swift; sourceTree = "<group>"; };
 		41FD367E1EEAF80A00C34105 /* EKTableOfContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKTableOfContents.swift; path = EPUBKitCore/EKTableOfContents.swift; sourceTree = "<group>"; };
 		41FD367F1EEAF80A00C34105 /* EKParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKParser.swift; path = EPUBKitCore/EKParser.swift; sourceTree = "<group>"; };
@@ -105,7 +109,7 @@
 		4162DE9C1F38D6EB00751D1D /* Data Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4162DE991F38D57500751D1D /* EKViewDataSource.swift */,
+				4162DE991F38D57500751D1D /* EKPageViewDataSource.swift */,
 				4162DE931F37947A00751D1D /* EKTableOfContentsDataSource.swift */,
 			);
 			name = "Data Sources";
@@ -114,6 +118,8 @@
 		4162DE9D1F38D6FC00751D1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				41A911541F3A53C400957077 /* EKPageView.swift */,
+				41A911561F3A53EF00957077 /* EKPageView.xib */,
 				4162DE951F3797F200751D1D /* EKViewCell.swift */,
 				4162DE961F3797F200751D1D /* EKViewCell.xib */,
 			);
@@ -123,7 +129,7 @@
 		4162DE9E1F38D9DA00751D1D /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				41A911501F38E7C400957077 /* EKDataSource.swift */,
+				41A911501F38E7C400957077 /* EKViewDataSource.swift */,
 				4162DE9F1F38DA2B00751D1D /* EKViewDataSourceDelegate.swift */,
 			);
 			name = Protocols;
@@ -251,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A911571F3A53EF00957077 /* EKPageView.xib in Resources */,
 				4162DE981F3797F200751D1D /* EKViewCell.xib in Resources */,
 				4162DE8E1F3790E000751D1D /* EKMain.storyboard in Resources */,
 			);
@@ -296,8 +303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4162DE9A1F38D57500751D1D /* EKViewDataSource.swift in Sources */,
+				4162DE9A1F38D57500751D1D /* EKPageViewDataSource.swift in Sources */,
 				413A07411EED763F0089D947 /* EKSpine.swift in Sources */,
+				41A911551F3A53C400957077 /* EKPageView.swift in Sources */,
 				4162DE901F37924900751D1D /* EKViewController.swift in Sources */,
 				41FD36801EEAF80A00C34105 /* EKDocument.swift in Sources */,
 				4162DEA01F38DA2B00751D1D /* EKViewDataSourceDelegate.swift in Sources */,
@@ -308,7 +316,7 @@
 				4162DE941F37947A00751D1D /* EKTableOfContentsDataSource.swift in Sources */,
 				413A073D1EEC19C40089D947 /* EKManifest.swift in Sources */,
 				41FD36921EEB24DC00C34105 /* EKMetadata.swift in Sources */,
-				41A911511F38E7C400957077 /* EKDataSource.swift in Sources */,
+				41A911511F38E7C400957077 /* EKViewDataSource.swift in Sources */,
 				41FD36821EEAF80A00C34105 /* EKParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +458,7 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U82NM6NPZS;
 				DYLIB_COMPATIBILITY_VERSION = 1;

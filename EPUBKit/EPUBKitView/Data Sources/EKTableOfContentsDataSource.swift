@@ -19,7 +19,7 @@ class EPUBTableOfContentsDataSource: NSObject {
     
 }
 
-extension EPUBTableOfContentsDataSource: EKDataSource {
+extension EPUBTableOfContentsDataSource: EKViewDataSource {
 
     func build(from epubDocument: EKDocument) {
         var model: [Chapter] = []

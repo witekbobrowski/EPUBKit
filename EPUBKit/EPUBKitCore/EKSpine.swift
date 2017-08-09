@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class EKSpine {
+class EKSpine {
     
     var id: String?
     var toc: String?

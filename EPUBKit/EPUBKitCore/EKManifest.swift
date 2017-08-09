@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class EKManifest {
+class EKManifest {
     
     var id: String?
     var children: [String:EKManifestItem]

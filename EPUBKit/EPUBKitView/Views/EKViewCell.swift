@@ -11,6 +11,7 @@ import WebKit
 
 class EKViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pageView: UIView!
     fileprivate var webView: WKWebView!
 
@@ -24,8 +25,9 @@ class EKViewCell: UICollectionViewCell {
 
 extension EKViewCell {
 
-    func configure(with file: URL, at directory: URL) {
-        webView.loadFileURL(file, allowingReadAccessTo: directory)
+    func configure(with file: String, at path: URL) {
+        titleLabel.text = file
+        webView.loadFileURL(path, allowingReadAccessTo: path.deletingLastPathComponent())
     }
 
 //TODO: Populating cell with page content
