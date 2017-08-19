@@ -1,5 +1,5 @@
 //
-//  EKSpine.swift
+//  EPUBSpine.swift
 //  EPUBKit
 //
 //  Created by Witek on 11/06/2017.
@@ -8,35 +8,33 @@
 
 import Foundation
 
-class EKSpine {
-    
+class EPUBSpine {
     var id: String?
     var toc: String?
     var pageProgressionDirection: EKPageProgressionDirection
-    var children: [EKSpineItem]
+    var children: [EPUBSpineItem]
     
-    init(id: String?, toc: String?, pageProgressionDirection: EKPageProgressionDirection, children: [EKSpineItem]) {
+    init(id: String?, toc: String?, pageProgressionDirection: EKPageProgressionDirection, children: [EPUBSpineItem]) {
         self.id = id
         self.toc = toc
         self.pageProgressionDirection = pageProgressionDirection
         self.children = children
     }
     
-    convenience init(id: String?, toc: String?, children: [EKSpineItem]) {
+    convenience init(id: String?, toc: String?, children: [EPUBSpineItem]) {
         self.init(id: id, toc: toc, pageProgressionDirection: .leftToRight, children: children)
     }
     
-    public func getTOCid() throws -> String {
-        if toc != nil {
-            return toc!
+    public func getTableOfContentsId() throws -> String {
+        if let tableOfContents = toc {
+            return tableOfContents
         } else {
-            throw EKParserError.noIdForTableOfContents
+            throw EPUBParserError.noIdForTableOfContents
         }
     }
 }
 
-class EKSpineItem {
-    
+struct EPUBSpineItem {
     var id: String?
     var idref: String
     var linear: Bool
@@ -47,10 +45,9 @@ class EKSpineItem {
         self.linear = linear
     }
     
-    convenience init(id: String?, idref: String) {
+    init(id: String?, idref: String) {
         self.init(id: id, idref: idref, linear: true)
     }
-    
 }
 
 enum EKPageProgressionDirection {

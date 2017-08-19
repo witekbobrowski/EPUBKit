@@ -22,13 +22,12 @@ class EKTableOfContentsDataSource: NSObject {
 //MARK: - EKViewDataSource
 extension EKTableOfContentsDataSource: EKViewDataSource {
 
-    func build(from epubDocument: EKDocument) {
+    func build(from epubDocument: EPUBDocument) {
         var model: [Chapter] = []
         
-        func evaluate(tableOfContents: [EKTableOfContents], space: String) {
+        func evaluate(tableOfContents: [EPUBTableOfContents], space: String) {
             for content in tableOfContents {
                 model.append(Chapter(title: space + content.label))
-                print( "  " + content.label)
                 if let children = content.subTable {
                     evaluate(tableOfContents: children, space: space + "    ")
                 }

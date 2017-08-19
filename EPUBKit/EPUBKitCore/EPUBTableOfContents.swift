@@ -1,5 +1,5 @@
 //
-//  EKTableOfContents.swift
+//  EPUBTableOfContents.swift
 //  EPUBKit
 //
 //  Created by Witek on 09/06/2017.
@@ -8,15 +8,14 @@
 
 import Foundation
 
-class EKTableOfContents {
-
+struct EPUBTableOfContents {
     var label: String
     var id: String
     var item: String?
     var page: Int?
-    var subTable: [EKTableOfContents]?
+    var subTable: [EPUBTableOfContents]?
     
-    init(label: String, id: String, item: String?, subTable: [EKTableOfContents]?) {
+    init(label: String, id: String, item: String?, subTable: [EPUBTableOfContents]?) {
         self.label = label
         self.id = id
         self.item = item
@@ -24,8 +23,7 @@ class EKTableOfContents {
         self.page = nil
     }
     
-    convenience init(label: String, id: String, item: String?) {
+    init(label: String, id: String, item: String?) {
         self.init(label: label, id: id, item: item, subTable: nil)
     }
-    
 }

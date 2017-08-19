@@ -30,11 +30,11 @@ class EKPageViewDataSource: NSObject {
 //MARK: - EKViewDataSource
 extension EKPageViewDataSource: EKViewDataSource {
 
-    func build(from epubDocument: EKDocument) {
+    func build(from epubDocument: EPUBDocument) {
         var model: [Chapter] = []
         for (index, item) in epubDocument.spine.children.enumerated() {
             if let manifestItem = epubDocument.manifest.children[item.idref] {
-                model.append(Chapter(id: index, title: epubDocument.title,path: epubDocument.contentDirectory.appendingPathComponent(manifestItem.path),
+                model.append(Chapter(id: index, title: epubDocument.title ?? "" ,path: epubDocument.contentDirectory.appendingPathComponent(manifestItem.path),
                                      directory: epubDocument.contentDirectory,
                                      pages: []))
             }

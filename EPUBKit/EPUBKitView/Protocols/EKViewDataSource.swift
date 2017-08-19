@@ -9,5 +9,5 @@
 import Foundation
 
 protocol EKViewDataSource: class {
-    func build(from epubDocument: EKDocument)
+    func build(from epubDocument: EPUBDocument)
 }

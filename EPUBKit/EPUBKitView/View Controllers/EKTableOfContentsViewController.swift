@@ -35,7 +35,7 @@ extension EKTableOfContentsViewController {
                                  forCellReuseIdentifier: "EKTableOfContentsViewCellTableViewCell")
     }
     
-    public func configure(with document: EKDocument) {
+    public func configure(with document: EPUBDocument) {
         dataSource.build(from: document)
     }
 }

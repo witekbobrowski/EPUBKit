@@ -1,5 +1,5 @@
 //
-//  EKItem.swift
+//  EPUBManifest.swift
 //  EPUBKit
 //
 //  Created by Witek on 10/06/2017.
@@ -8,54 +8,51 @@
 
 import Foundation
 
-class EKManifest {
-    
+struct EPUBManifest {
     var id: String?
-    var children: [String:EKManifestItem]
+    var children: [String:EPUBManifestItem]
     
-    init(id: String?, children: [String:EKManifestItem]) {
+    init(id: String?, children: [String:EPUBManifestItem]) {
         self.id = id
         self.children = children
     }
     
-    convenience init(children: [String:EKManifestItem]) {
+    init(children: [String:EPUBManifestItem]) {
         self.init(id: nil, children: children)
     }
     
-    func getTOCPath(id: String) throws -> String {
-        if let toc = children[id] {
-            return toc.path
+    func getItemPath(for id: String) throws -> String {
+        if let item = children[id] {
+            return item.path
         } else {
-            throw EKParserError.noPathForTableOfContents
+            throw EPUBParserError.noPathForItem(id)
         }
     }
-    
 }
 
-public class EKManifestItem: Hashable {
-    
+public struct EPUBManifestItem {
     var id: String
     var path: String
-    var mediaType: EKMediaTypes
+    var mediaType: EPUBMediaTypes
     var property: String?
     
     init(id: String, path: String, mediaType: String, property: String?) {
         self.id = id
         self.path = path
-        self.mediaType = EKMediaTypes(rawValue: mediaType) ?? EKMediaTypes.unknown
+        self.mediaType = EPUBMediaTypes(rawValue: mediaType) ?? EPUBMediaTypes.unknown
         self.property = property
     }
-    
-    static public func == (left: EKManifestItem, right: EKManifestItem) -> Bool {
-        return left.id == right.id
-    }
-    
-    public var hashValue: Int { return self.id.hashValue }
-
 }
 
-public enum EKMediaTypes: String {
+extension EPUBManifestItem: Hashable {
+    public var hashValue: Int { return self.id.hashValue }
     
+    static public func == (left: EPUBManifestItem, right: EPUBManifestItem) -> Bool {
+        return left.id == right.id
+    }
+}
+
+enum EPUBMediaTypes: String {
     case GIF = "image/gif"
     case JPEG = "image/jpeg"
     case PNG = "image/png"

@@ -1,5 +1,5 @@
 //
-//  EKMetadata.swift
+//  EPUBMetadata.swift
 //  EPUBKit
 //
 //  Created by Witek on 09/06/2017.
@@ -8,12 +8,10 @@
 
 import Foundation
 
-class EKMetadata {
-    
-    //  DCMI Metadata
-    var contributor: EKCreator?
+public struct EPUBMetadata {
+    var contributor: Creator?
     var coverage: String?
-    var creator: EKCreator?
+    var creator: Creator?
     var date: String?
     var description: String?
     var format: String?
@@ -29,8 +27,7 @@ class EKMetadata {
     var coverId: String?
 }
 
-public class EKCreator {
-    
+public struct Creator {
     var name: String?
     var role: String?
     var fileAs: String?
@@ -40,5 +37,4 @@ public class EKCreator {
         self.role = role
         self.fileAs = fileAs
     }
-    
 }

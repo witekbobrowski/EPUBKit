@@ -1,5 +1,5 @@
 //
-//  EKParserError.swift
+//  EPUBParserError
 //  EPUBKit
 //
 //  Created by Witek on 14/06/2017.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum EKParserError: LocalizedError {
+enum EPUBParserError: LocalizedError {
     
     case unZipError
     case containerParseError
-    case noPathForTableOfContents
+    case noPathForItem(String)
     case noIdForTableOfContents
     
     var errorDescription: String? {
@@ -21,8 +21,8 @@ enum EKParserError: LocalizedError {
             return "Error while trying to unzip the archive"
         case .containerParseError:
             return "Error with parsing container.xml"
-        case .noPathForTableOfContents:
-            return "Error with getting ID for toc.ncx"
+        case .noPathForItem (let message):
+            return "Error with getting ID for item: '\(message)'"
         case .noIdForTableOfContents:
             return "Error with getting path for toc.ncx"
         }
@@ -34,8 +34,8 @@ enum EKParserError: LocalizedError {
             return "Zip module was unable to unzip this archive"
         case .containerParseError:
             return "The path to container.xml may be wrong, or the file itself may be missing"
-        case .noPathForTableOfContents:
-            return "Path to table of contents was not found in the manifest!"
+        case .noPathForItem (let message):
+            return "Path to item with id: '\(message)' was not found in the manifest!"
         case .noIdForTableOfContents:
             return "Table of contents ID was probably not mentioned in the spine"
         }
@@ -47,8 +47,8 @@ enum EKParserError: LocalizedError {
             return "Make sure your archive is a proper .epub archive"
         case .containerParseError:
             return "Make sure the path to container.xml is correct"
-        case .noPathForTableOfContents:
-            return "Path to table of contents was not found in the manifest!"
+        case .noPathForItem (let message):
+            return "Make sure to check if the item with id: '\(message)' is in the manifest!"
         case .noIdForTableOfContents:
             return "Make sure to check if the '<spine>' contains the ID for TOC"
         }

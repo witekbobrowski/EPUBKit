@@ -12,7 +12,7 @@ public class EKViewController: UIViewController {
     
     @IBOutlet weak var documentView: UIView!
     
-    public var document: EKDocument!
+    public var document: EPUBDocument!
     
     public override func viewDidLoad() {
         super.viewDidLoad()

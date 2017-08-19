@@ -26,7 +26,7 @@ class EKPageView: UIView {
 //MARK: - Configuration
 extension EKPageView {
     
-    public func configure(with document: EKDocument) {
+    public func configure(with document: EPUBDocument) {
         dataSource.build(from: document)
     }
     
