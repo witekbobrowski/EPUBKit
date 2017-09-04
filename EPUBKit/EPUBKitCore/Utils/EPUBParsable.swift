@@ -9,8 +9,8 @@
 import Foundation
 import AEXML
 
-protocol EPUBParsable: class {
-    func unzip(archive name: String) throws -> URL
+protocol EPUBParsable {
+    func unzip(archive name: String) throws -> URL 
     func getContentPath(from bookDirectory: URL) throws -> URL
     func getMetadata(from xmlElement: AEXMLElement) -> EPUBMetadata
     func getManifest(from xmlElement: AEXMLElement) -> EPUBManifest

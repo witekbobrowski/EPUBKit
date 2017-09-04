@@ -8,13 +8,15 @@
 
 import Foundation
 
-enum EPUBParserError: LocalizedError {
-    
+enum EPUBParserError {
     case unZipError
     case containerParseError
     case noPathForItem(String)
     case noIdForTableOfContents
-    
+}
+
+//MARK: - LocalizedError
+extension EPUBParserError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .unZipError:
@@ -53,5 +55,4 @@ enum EPUBParserError: LocalizedError {
             return "Make sure to check if the '<spine>' contains the ID for TOC"
         }
     }
-    
 }
