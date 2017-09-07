@@ -1,33 +1,33 @@
 # EPUBKit
 
-### Installation
+## Installation
 
-##### CocoaPods
+#### CocoaPods
 Add the following to your `Podfile`:
 ```
 pod 'EPUBKit', :git => 'https://github.com/witekbobrowski/EPUBKit.git'
 
 ```
-and then run this command
+And then run this command:
 ```
 pod install
 ```
 
-### Usage
+## Usage
 Just import EPUBKit in your swift file.
 
 ```
 import EPUBKit
 ```
-### API
-Initialize document with name of `EPUB` file
+## API
+Initialize document with name of `EPUB` file (eg. `brave-new-world.epub`).
 
 ```
-let epubDocument: EPUBDocument? = EPUBDocument(named: "Brave New World")
+let epubDocument: EPUBDocument? = EPUBDocument(named: "brave-new-world")
 ```
 
 
-### Structure
+## Structure
 
 ```
 |-- EPUBKit.h
@@ -62,7 +62,7 @@ let epubDocument: EPUBDocument? = EPUBDocument(named: "Brave New World")
 `-- Info.plist
 ```
 
-### TODO
+## TODO
 
 - [ ] CocoaPods support
 - [ ] Carthage support
