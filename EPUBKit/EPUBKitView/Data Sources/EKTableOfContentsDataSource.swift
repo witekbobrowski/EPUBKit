@@ -11,9 +11,17 @@ import Foundation
 class EKTableOfContentsDataSource: NSObject {
     
     public weak var delegate: EKViewDataSourceDelegate?
-    fileprivate var model: [Chapter] = []
+    public var epubDocument: EPUBDocument? {
+        didSet {
+            if epubDocument != nil {
+                build(from: epubDocument!)
+            }
+        }
+    }
+    fileprivate var model: [[Item]] = []
     
-    struct Chapter {
+    struct Item {
+        let item: String
         let title: String
     }
     
@@ -23,12 +31,12 @@ class EKTableOfContentsDataSource: NSObject {
 extension EKTableOfContentsDataSource: EKViewDataSource {
 
     func build(from epubDocument: EPUBDocument) {
-        var model: [Chapter] = []
+        var section: [Item] = []
         
         func evaluate(tableOfContents: [EPUBTableOfContents], space: String) {
-            for content in tableOfContents {
-                model.append(Chapter(title: space + content.label))
-                if let children = content.subTable {
+            for item in tableOfContents {
+                section.append(Item(item: item.item ?? "" , title: space + item.label))
+                if let children = item.subTable {
                     evaluate(tableOfContents: children, space: space + "    ")
                 }
             }
@@ -38,7 +46,11 @@ extension EKTableOfContentsDataSource: EKViewDataSource {
             evaluate(tableOfContents: children, space: "")
         }
         
-        self.model = model
+        self.model = [section]
+    }
+    
+    public func item(at indexPath: IndexPath) -> Any {
+        return model[indexPath.section][indexPath.row]
     }
     
 }
@@ -47,17 +59,18 @@ extension EKTableOfContentsDataSource: EKViewDataSource {
 extension EKTableOfContentsDataSource: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return model.isEmpty ? 0 : 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return model[section].count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let chapter = item(at: indexPath) as! Item
         let cell = tableView.dequeueReusableCell(withIdentifier: "EKTableOfContentsViewCellTableViewCell" ,
                                                  for: indexPath) as! EKTableOfContentsViewCellTableViewCell
-        cell.configure(with: model[indexPath.row].title)
+        cell.configure(with: chapter.title)
         return cell
     }
     

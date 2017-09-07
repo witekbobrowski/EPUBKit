@@ -10,4 +10,5 @@ import Foundation
 
 protocol EKViewDataSource: class {
     func build(from epubDocument: EPUBDocument)
+    func item(at indexPath: IndexPath) -> Any
 }

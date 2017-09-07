@@ -90,7 +90,7 @@ extension EPUBParser: EPUBParsable {
         metadata.type = xmlElement["dc:type"].value
         for metaItem in xmlElement["meta"].all! {
             if metaItem.attributes["name"] == "cover" {
-                metadata.coverId = metaItem.attributes["xmlElement"]
+                metadata.coverId = metaItem.attributes["content"]
             }
         }
         return metadata
@@ -116,7 +116,7 @@ extension EPUBParser: EPUBParsable {
             let linear = (item.attributes["linear"] ?? "yes") == "yes" ? true : false
             items.append(EPUBSpine.Item(id: id, idref: idref, linear: linear))
         }
-        let pageProgressionDirection = xmlElement["page-progression-direction"].value ?? ""
+        let pageProgressionDirection = xmlElement["page-progression-direction"].value ?? "ltr"
         return EPUBSpine(id: xmlElement.attributes["id"], toc: xmlElement.attributes["toc"], pageProgressionDirection: EPUBPageProgressionDirection(rawValue: pageProgressionDirection), items: items)
     }
     

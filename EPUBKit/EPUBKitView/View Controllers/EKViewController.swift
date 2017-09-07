@@ -12,17 +12,26 @@ public class EKViewController: UIViewController {
     
     @IBOutlet weak var documentView: UIView!
     
-    public var document: EPUBDocument!
+    public var epubDocument: EPUBDocument!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
-
+    
+    override public var prefersStatusBarHidden: Bool {
+        return navigationController?.isNavigationBarHidden == true
+    }
+    
+    override public var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return UIStatusBarAnimation.slide
+    }
+    
+    
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let tableOfContentsVC = segue.destination as? EKTableOfContentsViewController {
-            tableOfContentsVC.configure(with: document)
             tableOfContentsVC.delegate = self
+            tableOfContentsVC.epubDocument = epubDocument
         }
     }
     
@@ -32,37 +41,29 @@ public class EKViewController: UIViewController {
 extension EKViewController {
     
     fileprivate func configure() {
-        let nib = UINib(nibName: "EKPageView" , bundle: Bundle(for: classForCoder))
-        let pageView = nib.instantiate(withOwner: self, options: nil).first as! EKPageView
-        view.addSubview(pageView)
-        documentView = pageView
-        pageView.configure(with: document)
+        let nibName = String(describing: EKInfiniteScrollView.self)
+        let nib = UINib(nibName: nibName, bundle: Bundle(for: EKInfiniteScrollView.classForCoder()))
+        let infiniteScrollView = nib.instantiate(withOwner: EKInfiniteScrollView.self, options: nil).first as! EKInfiniteScrollView
+        view.addSubview(infiniteScrollView)
+        documentView = infiniteScrollView
+        infiniteScrollView.epubDocument = epubDocument
         navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.backItem?.title = ""
         let tapGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(hideNavigationBar(_:)))
         view.addGestureRecognizer(tapGestureRecogniser)
-        pageView.addGestureRecognizer(tapGestureRecogniser)
+        infiniteScrollView.addGestureRecognizer(tapGestureRecogniser)
     }
     
     @objc private func hideNavigationBar(_ sender: UITapGestureRecognizer){
-        guard let navBar = navigationController?.navigationBar else {
-            return
-        }
-        if navBar.isHidden {
-            navBar.isHidden = false
-        } else {
-            navBar.isHidden = true
-        }
+         navigationController?.setNavigationBarHidden(navigationController?.isNavigationBarHidden == false, animated: true)
     }
 }
 
+//MARK: - EKTableOfContentsViewControllerDelegate
 extension EKViewController: EKTableOfContentsViewControllerDelegate {
     func tableOfContentsView(_ tableOfContentsView: EKTableOfContentsViewController, didSelectRowAt indexPath: IndexPath) {
-        if let pageView = documentView as? EKPageView {
-            pageView.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+        if let infiniteScrollView = documentView as? EKInfiniteScrollView {
+            infiniteScrollView.idOfElementToDisplay = (tableOfContentsView.dataSource.item(at: indexPath) as? EKTableOfContentsDataSource.Item)?.item
         }
     }
 }
-
-

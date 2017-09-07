@@ -9,11 +9,16 @@
 import UIKit
 
 class EKTableOfContentsViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
-    public weak var delegate: EKTableOfContentsViewControllerDelegate?
-    fileprivate var dataSource = EKTableOfContentsDataSource()
     
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    
+    public weak var delegate: EKTableOfContentsViewControllerDelegate?
+    public var dataSource = EKTableOfContentsDataSource()
+    public var epubDocument: EPUBDocument? {
+        didSet {
+            dataSource.epubDocument = epubDocument
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -35,12 +40,9 @@ extension EKTableOfContentsViewController {
                                  forCellReuseIdentifier: "EKTableOfContentsViewCellTableViewCell")
     }
     
-    public func configure(with document: EPUBDocument) {
-        dataSource.build(from: document)
-    }
 }
 
-//MARK: - EKViewDataSourceDelegate
+//MARK: - UITableViewDelegate
 extension EKTableOfContentsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -56,6 +58,7 @@ extension EKTableOfContentsViewController: EKViewDataSourceDelegate {
     func dataSourceDidFinishBuilding(_ dataSource: EKViewDataSource) {
         tableView.reloadData()
     }
+    
 }
 
 protocol EKTableOfContentsViewControllerDelegate: class {
