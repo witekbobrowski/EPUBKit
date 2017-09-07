@@ -6,16 +6,13 @@
 Add the following to your `Podfile`:
 ```
 pod 'EPUBKit', :git => 'https://github.com/witekbobrowski/EPUBKit.git'
-
 ```
 And then run this command:
 ```
 pod install
 ```
-
 ## Usage
 Just import EPUBKit in your swift file.
-
 ```
 import EPUBKit
 ```
