@@ -6,7 +6,6 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
   EPUBKit was created with simplicity in mind. Easily parse EPUB files and display them using a custom view.
                    DESC
-
   s.homepage     = "https://github.com/witekbobrowski/EPUBKit"
   s.license      = "MIT"
   s.author             = { "witekbobrowski" => "witek@bobrowski.com.pl" }
@@ -16,6 +15,10 @@ Pod::Spec.new do |s|
   s.source_files = [
       'EPUBKit/*.{h,swift}',
       'EPUBKit/**/*.swift',
+    ]
+  s.resources = [
+      'EPUBKit/EPUBKitView/Main.{storyboard}',
+      'EPUBKit/EPUBKitView/Views/**/*.{xib}',
     ]
   s.libraries  = "z"
   s.dependency 'Zip', '~> 0.7'
