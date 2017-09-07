@@ -11,10 +11,12 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author             = { "witekbobrowski" => "witek@bobrowski.com.pl" }
   s.social_media_url   = "https://github.com/witekbobrowski"
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '10.0'
   s.source       = { :git => "https://github.com/witekbobrowski/EPUBKit.git", :tag => "master" }
-  s.source_files  = "EPUBKit", "EPUBKit/**/*.{h,m}"
-
+  s.source_files = [
+      'EPUBKit/*.{h,swift}',
+      'EPUBKit/**/*.swift',
+    ]
   s.libraries  = "z"
   s.dependency 'Zip', '~> 0.7'
   s.dependency 'AEXML', '~> 4.1'
