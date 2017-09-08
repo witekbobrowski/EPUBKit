@@ -55,7 +55,7 @@ extension EKTableOfContentsDataSource: EKViewDataSource {
     
 }
 
-//MARK: - UICollectionViewDataSource
+//MARK: - UITableViewDataSource
 extension EKTableOfContentsDataSource: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,8 +68,8 @@ extension EKTableOfContentsDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let chapter = item(at: indexPath) as! Item
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EKTableOfContentsViewCellTableViewCell" ,
-                                                 for: indexPath) as! EKTableOfContentsViewCellTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EKTableOfContentsViewCell" ,
+                                                 for: indexPath) as! EKTableOfContentsViewCell
         cell.configure(with: chapter.title)
         return cell
     }

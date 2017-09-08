@@ -1,5 +1,5 @@
 //
-//  EKTableOfContentsViewCellTableViewCell.swift
+//  EKTableOfContentsViewCell.swift
 //  EPUBKit
 //
 //  Created by Witek on 09/08/2017.
@@ -8,13 +8,18 @@
 
 import UIKit
 
-class EKTableOfContentsViewCellTableViewCell: UITableViewCell {
+class EKTableOfContentsViewCell: UITableViewCell {
     
     @IBOutlet weak var chapterLabel: UILabel!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        chapterLabel.text = ""
+    }
+    
 }
 
-extension EKTableOfContentsViewCellTableViewCell {
+extension EKTableOfContentsViewCell {
     
     public func configure(with chapterTitle: String) {
         chapterLabel.text = chapterTitle

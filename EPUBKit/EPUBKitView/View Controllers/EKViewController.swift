@@ -10,24 +10,22 @@ import UIKit
 
 public class EKViewController: UIViewController {
     
-    @IBOutlet weak var documentView: UIView!
+    @IBOutlet fileprivate weak var documentView: UIView!
     
-    public var epubDocument: EPUBDocument!
+    public var epubDocument: EPUBDocument?
+    
+    
+    public override var prefersStatusBarHidden: Bool {
+        return navigationController?.isNavigationBarHidden == true
+    }
+    public override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return UIStatusBarAnimation.slide
+    }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
-    
-    override public var prefersStatusBarHidden: Bool {
-        return navigationController?.isNavigationBarHidden == true
-    }
-    
-    override public var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return UIStatusBarAnimation.slide
-    }
-    
-    
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let tableOfContentsVC = segue.destination as? EKTableOfContentsViewController {
             tableOfContentsVC.delegate = self
@@ -51,19 +49,21 @@ extension EKViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         let tapGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(hideNavigationBar(_:)))
         view.addGestureRecognizer(tapGestureRecogniser)
-        infiniteScrollView.addGestureRecognizer(tapGestureRecogniser)
     }
     
     @objc private func hideNavigationBar(_ sender: UITapGestureRecognizer){
          navigationController?.setNavigationBarHidden(navigationController?.isNavigationBarHidden == false, animated: true)
     }
+    
 }
 
 //MARK: - EKTableOfContentsViewControllerDelegate
 extension EKViewController: EKTableOfContentsViewControllerDelegate {
+    
     func tableOfContentsView(_ tableOfContentsView: EKTableOfContentsViewController, didSelectRowAt indexPath: IndexPath) {
         if let infiniteScrollView = documentView as? EKInfiniteScrollView {
             infiniteScrollView.idOfElementToDisplay = (tableOfContentsView.dataSource.item(at: indexPath) as? EKTableOfContentsDataSource.Item)?.item
         }
     }
+    
 }

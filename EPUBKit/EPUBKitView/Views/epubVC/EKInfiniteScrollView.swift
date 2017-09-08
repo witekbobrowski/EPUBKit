@@ -44,10 +44,8 @@ extension EKInfiniteScrollView {
 
     fileprivate func configure() {
         webView = WKWebView(frame: contentView.frame)
-        contentView.addSubview(webView)
         constrainView(view: webView, toView: contentView)
         webView.allowsBackForwardNavigationGestures = false
-        webView.scrollView.showsVerticalScrollIndicator = true
         webView.scrollView.showsHorizontalScrollIndicator = false
         webView.scrollView.pinchGestureRecognizer?.isEnabled = false
         webView.navigationDelegate = self
@@ -68,7 +66,8 @@ extension EKInfiniteScrollView {
         webView.loadHTMLString(htmlString, baseURL: epubDocument.contentDirectory)
     }
     
-    fileprivate func constrainView(view:UIView, toView contentView:UIView) {
+    fileprivate func constrainView(view:UIView, toView contentView: UIView) {
+        contentView.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         view.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true

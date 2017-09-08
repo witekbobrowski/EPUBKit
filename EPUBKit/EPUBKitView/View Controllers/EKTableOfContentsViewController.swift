@@ -36,8 +36,7 @@ extension EKTableOfContentsViewController {
         dataSource.delegate = self
         tableView.dataSource = dataSource
         tableView.delegate = self
-        tableView.register(UINib(nibName: "EKTableOfContentsViewCellTableViewCell", bundle: Bundle(for: classForCoder)),
-                                 forCellReuseIdentifier: "EKTableOfContentsViewCellTableViewCell")
+        tableView.register(UINib(nibName: "EKTableOfContentsViewCell", bundle: Bundle(for: classForCoder)), forCellReuseIdentifier: "EKTableOfContentsViewCell")
     }
     
 }

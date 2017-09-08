@@ -49,7 +49,7 @@ let epubDocument: EPUBDocument? = EPUBDocument(named: "brave-new-world")
 |   |-- Protocols
 |   |   |-- EKViewDataSource.swift
 |   |   `-- EKViewDataSourceDelegate.swift
-|   |-- View\ Controllers
+|   |-- View Controllers
 |   |   |-- EKTableOfContentsViewController.swift
 |   |   `-- EKViewController.swift
 |   `-- Views
