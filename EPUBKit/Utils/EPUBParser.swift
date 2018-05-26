@@ -173,4 +173,5 @@ extension EPUBParser: EPUBParsable {
         tableOfContents.subTable = evaluateChildren(from: xmlElement["navMap"])
         return tableOfContents
     }
+
 }

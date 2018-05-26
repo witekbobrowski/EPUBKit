@@ -19,4 +19,5 @@ public struct EPUBManifest {
             throw EPUBParserError.noPathForItem(id)
         }
     }
+
 }
