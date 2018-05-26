@@ -97,13 +97,13 @@ extension EPUBParser: EPUBParsable {
     }
     
     func getManifest(from xmlElement: AEXMLElement) -> EPUBManifest {
-        var items: [String:EPUBManifest.Item] = [:]
+        var items: [String: EPUBManifestItem] = [:]
         for item in xmlElement["item"].all! {
             let id = item.attributes["id"]!
             let path = item.attributes["href"]!
             let mediaType = item.attributes["media-type"]
             let properties = item.attributes["properties"]
-            items[id] = EPUBManifest.Item(id: id, path: path, mediaType: EPUBMediaType(rawValue: mediaType!) ?? .unknown, property: properties)
+            items[id] = EPUBManifestItem(id: id, path: path, mediaType: EPUBMediaType(rawValue: mediaType!) ?? .unknown, property: properties)
         }
         return EPUBManifest(id: xmlElement["id"].value, items: items)
     }

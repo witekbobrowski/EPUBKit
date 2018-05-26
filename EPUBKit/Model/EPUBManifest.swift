@@ -9,15 +9,9 @@
 import Foundation
 
 public struct EPUBManifest {
-    public struct Item {
-        public var id: String
-        public var path: String
-        public var mediaType: EPUBMediaType
-        public var property: String?
-    }
     
     public var id: String?
-    public var items: [String:Item]
+    public var items: [String: EPUBManifestItem]
     
     public func path(forItemWithId id: String) throws -> String {
         if let item = items[id] {
