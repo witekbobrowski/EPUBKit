@@ -19,9 +19,9 @@ class EPUBParser {
     var spine: EPUBSpine?
     var tableOfContents: EPUBTableOfContents?
 
-    init(named: String) throws {
+    init(url: URL) throws {
         do {
-            directory = try unzip(archive: named)
+            directory = try unzip(archiveAt: url)
             let contentPath = try getContentPath(from: directory!)
             contentDirectory = contentPath.deletingLastPathComponent()
             let data = try Data(contentsOf: contentPath)
@@ -44,11 +44,10 @@ class EPUBParser {
 //MARK: - EPUBParsable
 extension EPUBParser: EPUBParsable {
     
-    func unzip(archive named: String) throws -> URL {
+    func unzip(archiveAt path: URL) throws -> URL {
         Zip.addCustomFileExtension("epub")
         do {
-            let filePath = Bundle.main.url(forResource: named, withExtension: "epub")!
-            let unzipDirectory = try Zip.quickUnzipFile(filePath)
+            let unzipDirectory = try Zip.quickUnzipFile(path)
             return unzipDirectory
         } catch ZipError.unzipFail {
             throw EPUBParserError.unZipError

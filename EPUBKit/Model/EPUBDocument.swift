@@ -26,8 +26,8 @@ public class EPUBDocument {
         self.tableOfContents = toc
     }
     
-    public convenience init?(named: String) {
-        let parser = try? EPUBParser(named: named)
+    public convenience init?(url: URL) {
+        let parser = try? EPUBParser(url: url)
         guard let directory = parser?.directory,
             let contentDirectory = parser?.contentDirectory,
             let metadata = parser?.metadata,
