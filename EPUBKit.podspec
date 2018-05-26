@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
 
   s.name         = "EPUBKit"
-  s.version      = "0.0.1"
-  s.summary      = "A simple swift library to parse and display EPUB files."
+  s.version      = "0.2.0"
+  s.summary      = "📚 A simple swift library for parsing EPUB documents."
   s.description  = <<-DESC
-  EPUBKit was created with simplicity in mind. Easily parse EPUB files and display them using a custom view.
+  EPUBKit is a lightweight library designed for parsing EPUB documents.
                    DESC
   s.homepage     = "https://github.com/witekbobrowski/EPUBKit"
   s.license      = "MIT"
@@ -16,12 +16,8 @@ Pod::Spec.new do |s|
       'EPUBKit/*.{h,swift}',
       'EPUBKit/**/*.swift',
     ]
-  s.resources = [
-      'EPUBKit/EPUBKitView/Main.{storyboard}',
-      'EPUBKit/EPUBKitView/Views/**/*.{xib}',
-    ]
   s.libraries  = "z"
-  s.dependency 'Zip', '~> 0.7'
-  s.dependency 'AEXML', '~> 4.1'
+  s.dependency 'Zip'
+  s.dependency 'AEXML'
 
 end
