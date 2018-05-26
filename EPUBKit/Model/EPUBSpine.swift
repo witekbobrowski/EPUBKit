@@ -13,7 +13,6 @@ public struct EPUBSpine {
     public var toc: String?
     public var pageProgressionDirection: EPUBPageProgressionDirection?
     public var items: [EPUBSpineItem]
-    
 }
 
 public enum EPUBPageProgressionDirection: String {

@@ -69,11 +69,11 @@ extension EPUBParser: EPUBParsable {
     
     func getMetadata(from xmlElement: AEXMLElement) -> EPUBMetadata {
         var metadata = EPUBMetadata()
-        metadata.contributor = EPUBMetadata.Creator(name: xmlElement["dc:contributor"].value,
+        metadata.contributor = Creator(name: xmlElement["dc:contributor"].value,
                                        role: xmlElement["dc:contributor"].attributes["opf:role"],
                                        fileAs: xmlElement["dc:contributor"].attributes["opf:file-as"])
         metadata.coverage = xmlElement["dc:coverage"].value
-        metadata.creator = EPUBMetadata.Creator(name: xmlElement["dc:creator"].value,
+        metadata.creator = Creator(name: xmlElement["dc:creator"].value,
                                    role: xmlElement["dc:creator"].attributes["opf:role"],
                                    fileAs: xmlElement["dc:creator"].attributes["opf:file-as"])
         metadata.date = xmlElement["dc:date"].value
