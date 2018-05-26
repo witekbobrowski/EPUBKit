@@ -109,12 +109,12 @@ extension EPUBParser: EPUBParsable {
     }
     
     func getSpine(from xmlElement: AEXMLElement) -> EPUBSpine {
-        var items: [EPUBSpine.Item] = []
+        var items: [EPUBSpineItem] = []
         for item in xmlElement["itemref"].all! {
             let id = item.attributes["id"]
             let idref = item.attributes["idref"]!
             let linear = (item.attributes["linear"] ?? "yes") == "yes" ? true : false
-            items.append(EPUBSpine.Item(id: id, idref: idref, linear: linear))
+            items.append(EPUBSpineItem(id: id, idref: idref, linear: linear))
         }
         let pageProgressionDirection = xmlElement["page-progression-direction"].value ?? "ltr"
         return EPUBSpine(id: xmlElement.attributes["id"], toc: xmlElement.attributes["toc"], pageProgressionDirection: EPUBPageProgressionDirection(rawValue: pageProgressionDirection), items: items)
