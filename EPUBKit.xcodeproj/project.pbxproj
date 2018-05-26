@@ -11,17 +11,7 @@
 		413A073D1EEC19C40089D947 /* EPUBManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A073C1EEC19C40089D947 /* EPUBManifest.swift */; };
 		413A07411EED763F0089D947 /* EPUBSpine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A07401EED763F0089D947 /* EPUBSpine.swift */; };
 		4142D7951F48CA6000A868D3 /* EPUBParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4142D7941F48CA6000A868D3 /* EPUBParsable.swift */; };
-		4162DE8E1F3790E000751D1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4162DE8D1F3790E000751D1D /* Main.storyboard */; };
-		4162DE901F37924900751D1D /* EKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE8F1F37924900751D1D /* EKViewController.swift */; };
-		4162DE921F37928200751D1D /* EKTableOfContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE911F37928200751D1D /* EKTableOfContentsViewController.swift */; };
-		4162DE941F37947A00751D1D /* EKTableOfContentsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE931F37947A00751D1D /* EKTableOfContentsDataSource.swift */; };
-		4162DEA01F38DA2B00751D1D /* EKViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE9F1F38DA2B00751D1D /* EKViewDataSourceDelegate.swift */; };
 		41689DDA1EE997D1004D6003 /* EPUBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 41689DD81EE997D1004D6003 /* EPUBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		41845E411F6142BB00463176 /* EKInfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41845E401F6142BB00463176 /* EKInfiniteScrollView.swift */; };
-		41845E431F6142D700463176 /* EKInfiniteScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41845E421F6142D700463176 /* EKInfiniteScrollView.xib */; };
-		41A911511F38E7C400957077 /* EKViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A911501F38E7C400957077 /* EKViewDataSource.swift */; };
-		41A9115A1F3BB97F00957077 /* EKTableOfContentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A911581F3BB97F00957077 /* EKTableOfContentsViewCell.swift */; };
-		41A9115B1F3BB97F00957077 /* EKTableOfContentsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A911591F3BB97F00957077 /* EKTableOfContentsViewCell.xib */; };
 		41FD36801EEAF80A00C34105 /* EPUBDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */; };
 		41FD36811EEAF80A00C34105 /* EPUBTableOfContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */; };
 		41FD36821EEAF80A00C34105 /* EPUBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367F1EEAF80A00C34105 /* EPUBParser.swift */; };
@@ -37,19 +27,9 @@
 		413A073C1EEC19C40089D947 /* EPUBManifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBManifest.swift; path = EPUBKitCore/Model/EPUBManifest.swift; sourceTree = "<group>"; };
 		413A07401EED763F0089D947 /* EPUBSpine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBSpine.swift; path = EPUBKitCore/Model/EPUBSpine.swift; sourceTree = "<group>"; };
 		4142D7941F48CA6000A868D3 /* EPUBParsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBParsable.swift; path = EPUBKitCore/Utils/EPUBParsable.swift; sourceTree = "<group>"; };
-		4162DE8D1F3790E000751D1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = EPUBKitView/Main.storyboard; sourceTree = "<group>"; };
-		4162DE8F1F37924900751D1D /* EKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKViewController.swift; path = "EPUBKitView/View Controllers/EKViewController.swift"; sourceTree = "<group>"; };
-		4162DE911F37928200751D1D /* EKTableOfContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKTableOfContentsViewController.swift; path = "EPUBKitView/View Controllers/EKTableOfContentsViewController.swift"; sourceTree = "<group>"; };
-		4162DE931F37947A00751D1D /* EKTableOfContentsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKTableOfContentsDataSource.swift; path = "EPUBKitView/Data Sources/EKTableOfContentsDataSource.swift"; sourceTree = "<group>"; };
-		4162DE9F1F38DA2B00751D1D /* EKViewDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKViewDataSourceDelegate.swift; path = EPUBKitView/Protocols/EKViewDataSourceDelegate.swift; sourceTree = "<group>"; };
 		41689DD51EE997D1004D6003 /* EPUBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41689DD81EE997D1004D6003 /* EPUBKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPUBKit.h; sourceTree = "<group>"; };
 		41689DD91EE997D1004D6003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41845E401F6142BB00463176 /* EKInfiniteScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKInfiniteScrollView.swift; path = EPUBKitView/Views/epubVC/EKInfiniteScrollView.swift; sourceTree = "<group>"; };
-		41845E421F6142D700463176 /* EKInfiniteScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EKInfiniteScrollView.xib; path = EPUBKitView/Views/epubVC/EKInfiniteScrollView.xib; sourceTree = "<group>"; };
-		41A911501F38E7C400957077 /* EKViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKViewDataSource.swift; path = EPUBKitView/Protocols/EKViewDataSource.swift; sourceTree = "<group>"; };
-		41A911581F3BB97F00957077 /* EKTableOfContentsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKTableOfContentsViewCell.swift; path = EPUBKitView/Views/tableOfConentsVC/EKTableOfContentsViewCell.swift; sourceTree = "<group>"; };
-		41A911591F3BB97F00957077 /* EKTableOfContentsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EKTableOfContentsViewCell.xib; path = EPUBKitView/Views/tableOfConentsVC/EKTableOfContentsViewCell.xib; sourceTree = "<group>"; };
 		41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBDocument.swift; path = EPUBKitCore/Model/EPUBDocument.swift; sourceTree = "<group>"; };
 		41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBTableOfContents.swift; path = EPUBKitCore/Model/EPUBTableOfContents.swift; sourceTree = "<group>"; };
 		41FD367F1EEAF80A00C34105 /* EPUBParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBParser.swift; path = EPUBKitCore/Utils/EPUBParser.swift; sourceTree = "<group>"; };
@@ -80,18 +60,6 @@
 			name = EPUBKitCore;
 			sourceTree = "<group>";
 		};
-		4130F6391EEE0B190073D37F /* EPUBKitView */ = {
-			isa = PBXGroup;
-			children = (
-				4162DE8D1F3790E000751D1D /* Main.storyboard */,
-				4162DE9E1F38D9DA00751D1D /* Protocols */,
-				4162DE9C1F38D6EB00751D1D /* Data Sources */,
-				4162DE9B1F38D6DF00751D1D /* View Controllers */,
-				4162DE9D1F38D6FC00751D1D /* Views */,
-			);
-			name = EPUBKitView;
-			sourceTree = "<group>";
-		};
 		4142D7931F48BB0300A868D3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,41 +80,6 @@
 				41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		4162DE9B1F38D6DF00751D1D /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				4162DE8F1F37924900751D1D /* EKViewController.swift */,
-				4162DE911F37928200751D1D /* EKTableOfContentsViewController.swift */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		4162DE9C1F38D6EB00751D1D /* Data Sources */ = {
-			isa = PBXGroup;
-			children = (
-				4162DE931F37947A00751D1D /* EKTableOfContentsDataSource.swift */,
-			);
-			name = "Data Sources";
-			sourceTree = "<group>";
-		};
-		4162DE9D1F38D6FC00751D1D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				41845E441F6198DF00463176 /* tableOfContentsVC */,
-				41845E451F61990100463176 /* epubVC */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		4162DE9E1F38D9DA00751D1D /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				41A911501F38E7C400957077 /* EKViewDataSource.swift */,
-				4162DE9F1F38DA2B00751D1D /* EKViewDataSourceDelegate.swift */,
-			);
-			name = Protocols;
 			sourceTree = "<group>";
 		};
 		41689DCB1EE997D0004D6003 = {
@@ -171,29 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				4130F6381EEE0B070073D37F /* EPUBKitCore */,
-				4130F6391EEE0B190073D37F /* EPUBKitView */,
 				41689DD81EE997D1004D6003 /* EPUBKit.h */,
 				41689DD91EE997D1004D6003 /* Info.plist */,
 			);
 			path = EPUBKit;
-			sourceTree = "<group>";
-		};
-		41845E441F6198DF00463176 /* tableOfContentsVC */ = {
-			isa = PBXGroup;
-			children = (
-				41A911581F3BB97F00957077 /* EKTableOfContentsViewCell.swift */,
-				41A911591F3BB97F00957077 /* EKTableOfContentsViewCell.xib */,
-			);
-			name = tableOfContentsVC;
-			sourceTree = "<group>";
-		};
-		41845E451F61990100463176 /* epubVC */ = {
-			isa = PBXGroup;
-			children = (
-				41845E401F6142BB00463176 /* EKInfiniteScrollView.swift */,
-				41845E421F6142D700463176 /* EKInfiniteScrollView.xib */,
-			);
-			name = epubVC;
 			sourceTree = "<group>";
 		};
 		7948D3251C881CB54B808900 /* Pods */ = {
@@ -289,9 +203,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41A9115B1F3BB97F00957077 /* EKTableOfContentsViewCell.xib in Resources */,
-				41845E431F6142D700463176 /* EKInfiniteScrollView.xib in Resources */,
-				4162DE8E1F3790E000751D1D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,19 +246,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41A9115A1F3BB97F00957077 /* EKTableOfContentsViewCell.swift in Sources */,
 				413A07411EED763F0089D947 /* EPUBSpine.swift in Sources */,
-				4162DE901F37924900751D1D /* EKViewController.swift in Sources */,
 				41FD36801EEAF80A00C34105 /* EPUBDocument.swift in Sources */,
-				4162DEA01F38DA2B00751D1D /* EKViewDataSourceDelegate.swift in Sources */,
-				4162DE921F37928200751D1D /* EKTableOfContentsViewController.swift in Sources */,
 				4130F6641EF2012E0073D37F /* EPUBParserError.swift in Sources */,
 				41FD36811EEAF80A00C34105 /* EPUBTableOfContents.swift in Sources */,
-				4162DE941F37947A00751D1D /* EKTableOfContentsDataSource.swift in Sources */,
 				413A073D1EEC19C40089D947 /* EPUBManifest.swift in Sources */,
 				41FD36921EEB24DC00C34105 /* EPUBMetadata.swift in Sources */,
-				41A911511F38E7C400957077 /* EKViewDataSource.swift in Sources */,
-				41845E411F6142BB00463176 /* EKInfiniteScrollView.swift in Sources */,
 				4142D7951F48CA6000A868D3 /* EPUBParsable.swift in Sources */,
 				41FD36821EEAF80A00C34105 /* EPUBParser.swift in Sources */,
 			);
