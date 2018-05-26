@@ -1,15 +1,20 @@
 PODS:
-  - AEXML (4.1.0)
-  - Zip (0.7.0)
+  - AEXML (4.3.0)
+  - Zip (1.1.0)
 
 DEPENDENCIES:
-  - AEXML (~> 4.1)
-  - Zip (~> 0.7)
+  - AEXML
+  - Zip
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AEXML
+    - Zip
 
 SPEC CHECKSUMS:
-  AEXML: 647fbb051280f3fb38a1a7caa62b0344055a851c
-  Zip: e34513299ac38c0686d5b24504da7ce343799ab9
+  AEXML: bae92c01e0da64132fd72f748721cda07466032b
+  Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: dfb64abfe1b9b1cfb583afec01a9bfc123160d9e
+PODFILE CHECKSUM: 5c10f798228d9dfcb42d8900e4fa2e1449833842
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.2

@@ -35,7 +35,7 @@ public struct EPUBDocument {
         guard let parser = try? EPUBParser(url: url), let document = parser.document else { return nil }
         self = document
     }
-    
+
 }
 
 //MARK: - Public
