@@ -64,12 +64,12 @@ class EPUBParser {
                             spine: spine,
                             tableOfContents: tableOfContents)
     }
-    
+
 }
 
-//MARK: - EPUBParsable
+// MARK: - EPUBParsable
 extension EPUBParser: EPUBParsable {
-    
+
     func unzip(archiveAt path: URL) throws -> URL {
         Zip.addCustomFileExtension("epub")
         do {
@@ -78,7 +78,7 @@ extension EPUBParser: EPUBParsable {
             throw EPUBParserError.unZipError
         }
     }
-    
+
     func getContentPath(from bookDirectory: URL) throws -> URL {
         do {
             let path = bookDirectory.appendingPathComponent("META-INF/container.xml")
@@ -90,7 +90,7 @@ extension EPUBParser: EPUBParsable {
             throw EPUBParserError.containerParseError
         }
     }
-    
+
     func getMetadata(from xmlElement: AEXMLElement) -> EPUBMetadata {
         var metadata = EPUBMetadata()
         metadata.contributor = Creator(name: xmlElement["dc:contributor"].value,
@@ -112,14 +112,12 @@ extension EPUBParser: EPUBParsable {
         metadata.subject = xmlElement["dc:subject"].value
         metadata.title = xmlElement["dc:title"].value
         metadata.type = xmlElement["dc:type"].value
-        for metaItem in xmlElement["meta"].all! {
-            if metaItem.attributes["name"] == "cover" {
-                metadata.coverId = metaItem.attributes["content"]
-            }
+        for metaItem in xmlElement["meta"].all ?? [] where metaItem.attributes["name"] == "cover" {
+            metadata.coverId = metaItem.attributes["content"]
         }
         return metadata
     }
-    
+
     func getManifest(from xmlElement: AEXMLElement) -> EPUBManifest {
         var items: [String: EPUBManifestItem] = [:]
         for item in xmlElement["item"].all! {
@@ -127,11 +125,14 @@ extension EPUBParser: EPUBParsable {
             let path = item.attributes["href"]!
             let mediaType = item.attributes["media-type"]
             let properties = item.attributes["properties"]
-            items[id] = EPUBManifestItem(id: id, path: path, mediaType: EPUBMediaType(rawValue: mediaType!) ?? .unknown, property: properties)
+            items[id] = EPUBManifestItem(id: id,
+                                         path: path,
+                                         mediaType: EPUBMediaType(rawValue: mediaType!) ?? .unknown,
+                                         property: properties)
         }
         return EPUBManifest(id: xmlElement["id"].value, items: items)
     }
-    
+
     func getSpine(from xmlElement: AEXMLElement) -> EPUBSpine {
         var items: [EPUBSpineItem] = []
         for item in xmlElement["itemref"].all! {
@@ -141,18 +142,28 @@ extension EPUBParser: EPUBParsable {
             items.append(EPUBSpineItem(id: id, idref: idref, linear: linear))
         }
         let pageProgressionDirection = xmlElement["page-progression-direction"].value ?? "ltr"
-        return EPUBSpine(id: xmlElement.attributes["id"], toc: xmlElement.attributes["toc"], pageProgressionDirection: EPUBPageProgressionDirection(rawValue: pageProgressionDirection), items: items)
+        return EPUBSpine(id: xmlElement.attributes["id"],
+                         toc: xmlElement.attributes["toc"],
+                         pageProgressionDirection: EPUBPageProgressionDirection(
+                            rawValue: pageProgressionDirection),
+                         items: items)
     }
-    
+
     func getTableOfContents(from xmlElement: AEXMLElement) -> EPUBTableOfContents {
-        let item = xmlElement["head"]["meta"].all(withAttributes: ["name":"dtb=uid"])?.first?.attributes["content"]
-        var tableOfContents = EPUBTableOfContents(label: xmlElement["docTitle"]["text"].value!, id: "0", item: item, subTable: [])
-        
-        func evaluateChildren(from xmlElement: AEXMLElement) -> [EPUBTableOfContents]{
-            if let _ = xmlElement["navPoint"].all {
+        let item = xmlElement["head"]["meta"].all(
+            withAttributes: ["name": "dtb=uid"])?.first?.attributes["content"]
+        var tableOfContents = EPUBTableOfContents(label: xmlElement["docTitle"]["text"].value!,
+                                                  id: "0",
+                                                  item: item, subTable: [])
+
+        func evaluateChildren(from xmlElement: AEXMLElement) -> [EPUBTableOfContents] {
+            if xmlElement["navPoint"].all != nil {
                 var subs: [EPUBTableOfContents] = []
                 for point in xmlElement["navPoint"].all! {
-                    subs.append(EPUBTableOfContents(label: point["navLabel"]["text"].value!, id: point.attributes["id"]!, item: point["content"].attributes["src"]!, subTable: evaluateChildren(from: point)))
+                    subs.append(EPUBTableOfContents(label: point["navLabel"]["text"].value!,
+                                                    id: point.attributes["id"]!,
+                                                    item: point["content"].attributes["src"]!,
+                                                    subTable: evaluateChildren(from: point)))
                 }
                 return subs
             } else {

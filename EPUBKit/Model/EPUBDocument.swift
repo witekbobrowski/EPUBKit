@@ -9,7 +9,7 @@
 import Foundation
 
 public struct EPUBDocument {
-    
+
     public let directory: URL
     public let contentDirectory: URL
     public let metadata: EPUBMetadata
@@ -30,7 +30,7 @@ public struct EPUBDocument {
         self.spine = spine
         self.tableOfContents = tableOfContents
     }
-    
+
     public init?(url: URL) {
         guard let parser = try? EPUBParser(url: url), let document = parser.document else { return nil }
         self = document
@@ -38,7 +38,6 @@ public struct EPUBDocument {
 
 }
 
-//MARK: - Public
 extension EPUBDocument {
     public var title: String? {
         return metadata.title

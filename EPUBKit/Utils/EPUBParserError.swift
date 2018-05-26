@@ -15,7 +15,7 @@ enum EPUBParserError {
     case noIdForTableOfContents
 }
 
-//MARK: - LocalizedError
+// MARK: - LocalizedError
 extension EPUBParserError: LocalizedError {
     var errorDescription: String? {
         switch self {
@@ -29,7 +29,7 @@ extension EPUBParserError: LocalizedError {
             return "Error with getting path for toc.ncx"
         }
     }
-    
+
     var failureReason: String? {
         switch self {
         case .unZipError:
@@ -42,7 +42,7 @@ extension EPUBParserError: LocalizedError {
             return "Table of contents ID was probably not mentioned in the spine"
         }
     }
-    
+
     var recoverySuggestion: String? {
         switch self {
         case .unZipError:

@@ -5,4 +5,5 @@ use_frameworks!
 target 'EPUBKit' do
     pod 'Zip'
     pod 'AEXML'
+    pod 'SwiftLint'
 end
