@@ -11,17 +11,27 @@ import AEXML
 import Foundation
 
 class EPUBParser {
-    
-    var directory: URL?
-    var contentDirectory: URL?
-    var metadata: EPUBMetadata?
-    var manifest: EPUBManifest?
-    var spine: EPUBSpine?
-    var tableOfContents: EPUBTableOfContents?
+
+    private var directory: URL?
+    private var contentDirectory: URL?
+    private var metadata: EPUBMetadata?
+    private var manifest: EPUBManifest?
+    private var spine: EPUBSpine?
+    private var tableOfContents: EPUBTableOfContents?
+
+    var document: EPUBDocument? { return build() }
 
     init(url: URL) throws {
         do {
-            directory = try unzip(archiveAt: url)
+            try parse(documentAt: url)
+        } catch {
+            throw error
+        }
+    }
+
+    func parse(documentAt path: URL) throws {
+        do {
+            directory = try unzip(archiveAt: path)
             let contentPath = try getContentPath(from: directory!)
             contentDirectory = contentPath.deletingLastPathComponent()
             let data = try Data(contentsOf: contentPath)
@@ -34,9 +44,25 @@ class EPUBParser {
             let tocContent = try AEXMLDocument(xml: tocData)
             tableOfContents = getTableOfContents(from: tocContent.root)
         } catch {
-            print(error.localizedDescription)
             throw error
         }
+    }
+
+    func build() -> EPUBDocument? {
+        guard
+            let directory = directory,
+            let contentDirectory = contentDirectory,
+            let metadata = metadata,
+            let manifest = manifest,
+            let spine = spine,
+            let tableOfContents = tableOfContents
+        else { return nil }
+        return EPUBDocument(directory: directory,
+                            contentDirectory: contentDirectory,
+                            metadata: metadata,
+                            manifest: manifest,
+                            spine: spine,
+                            tableOfContents: tableOfContents)
     }
     
 }
@@ -47,8 +73,7 @@ extension EPUBParser: EPUBParsable {
     func unzip(archiveAt path: URL) throws -> URL {
         Zip.addCustomFileExtension("epub")
         do {
-            let unzipDirectory = try Zip.quickUnzipFile(path)
-            return unzipDirectory
+            return try Zip.quickUnzipFile(path)
         } catch ZipError.unzipFail {
             throw EPUBParserError.unZipError
         }
