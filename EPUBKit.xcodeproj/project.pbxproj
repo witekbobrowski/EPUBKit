@@ -11,17 +11,11 @@
 		413A073D1EEC19C40089D947 /* EPUBManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A073C1EEC19C40089D947 /* EPUBManifest.swift */; };
 		413A07411EED763F0089D947 /* EPUBSpine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A07401EED763F0089D947 /* EPUBSpine.swift */; };
 		4142D7951F48CA6000A868D3 /* EPUBParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4142D7941F48CA6000A868D3 /* EPUBParsable.swift */; };
-		4162DE8E1F3790E000751D1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4162DE8D1F3790E000751D1D /* Main.storyboard */; };
-		4162DE901F37924900751D1D /* EKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE8F1F37924900751D1D /* EKViewController.swift */; };
-		4162DE921F37928200751D1D /* EKTableOfContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE911F37928200751D1D /* EKTableOfContentsViewController.swift */; };
-		4162DE941F37947A00751D1D /* EKTableOfContentsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE931F37947A00751D1D /* EKTableOfContentsDataSource.swift */; };
-		4162DEA01F38DA2B00751D1D /* EKViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162DE9F1F38DA2B00751D1D /* EKViewDataSourceDelegate.swift */; };
 		41689DDA1EE997D1004D6003 /* EPUBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 41689DD81EE997D1004D6003 /* EPUBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		41845E411F6142BB00463176 /* EKInfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41845E401F6142BB00463176 /* EKInfiniteScrollView.swift */; };
-		41845E431F6142D700463176 /* EKInfiniteScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41845E421F6142D700463176 /* EKInfiniteScrollView.xib */; };
-		41A911511F38E7C400957077 /* EKViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A911501F38E7C400957077 /* EKViewDataSource.swift */; };
-		41A9115A1F3BB97F00957077 /* EKTableOfContentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A911581F3BB97F00957077 /* EKTableOfContentsViewCell.swift */; };
-		41A9115B1F3BB97F00957077 /* EKTableOfContentsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A911591F3BB97F00957077 /* EKTableOfContentsViewCell.xib */; };
+		419DC01420B9E6DF00D654B2 /* EPUBSpineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419DC01320B9E6DF00D654B2 /* EPUBSpineItem.swift */; };
+		419DC01620B9E7E600D654B2 /* EPUBManifestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419DC01520B9E7E600D654B2 /* EPUBManifestItem.swift */; };
+		419DC01820B9E85C00D654B2 /* EPUBMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419DC01720B9E85C00D654B2 /* EPUBMediaType.swift */; };
+		419DC01A20B9E90200D654B2 /* Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419DC01920B9E90200D654B2 /* Creator.swift */; };
 		41FD36801EEAF80A00C34105 /* EPUBDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */; };
 		41FD36811EEAF80A00C34105 /* EPUBTableOfContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */; };
 		41FD36821EEAF80A00C34105 /* EPUBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367F1EEAF80A00C34105 /* EPUBParser.swift */; };
@@ -33,27 +27,21 @@
 		4130F63C1EEFE5300073D37F /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = "../../Library/Developer/Xcode/DerivedData/EPUBKit-alwcxcqtnsmjlhakipukyqjlsijr/Build/Products/Debug-iphonesimulator/AEXML/AEXML.framework"; sourceTree = "<group>"; };
 		4130F63D1EEFE5300073D37F /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = "../../Library/Developer/Xcode/DerivedData/EPUBKit-alwcxcqtnsmjlhakipukyqjlsijr/Build/Products/Debug-iphonesimulator/Zip/Zip.framework"; sourceTree = "<group>"; };
 		4130F6411EF070840073D37F /* Pods_EPUBKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_EPUBKit.framework; path = "../../Library/Developer/Xcode/DerivedData/EPUBKit-alwcxcqtnsmjlhakipukyqjlsijr/Build/Products/Debug-iphonesimulator/Pods_EPUBKit.framework"; sourceTree = "<group>"; };
-		4130F6631EF2012E0073D37F /* EPUBParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBParserError.swift; path = EPUBKitCore/Utils/EPUBParserError.swift; sourceTree = "<group>"; };
-		413A073C1EEC19C40089D947 /* EPUBManifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBManifest.swift; path = EPUBKitCore/Model/EPUBManifest.swift; sourceTree = "<group>"; };
-		413A07401EED763F0089D947 /* EPUBSpine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBSpine.swift; path = EPUBKitCore/Model/EPUBSpine.swift; sourceTree = "<group>"; };
-		4142D7941F48CA6000A868D3 /* EPUBParsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBParsable.swift; path = EPUBKitCore/Utils/EPUBParsable.swift; sourceTree = "<group>"; };
-		4162DE8D1F3790E000751D1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = EPUBKitView/Main.storyboard; sourceTree = "<group>"; };
-		4162DE8F1F37924900751D1D /* EKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKViewController.swift; path = "EPUBKitView/View Controllers/EKViewController.swift"; sourceTree = "<group>"; };
-		4162DE911F37928200751D1D /* EKTableOfContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKTableOfContentsViewController.swift; path = "EPUBKitView/View Controllers/EKTableOfContentsViewController.swift"; sourceTree = "<group>"; };
-		4162DE931F37947A00751D1D /* EKTableOfContentsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKTableOfContentsDataSource.swift; path = "EPUBKitView/Data Sources/EKTableOfContentsDataSource.swift"; sourceTree = "<group>"; };
-		4162DE9F1F38DA2B00751D1D /* EKViewDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKViewDataSourceDelegate.swift; path = EPUBKitView/Protocols/EKViewDataSourceDelegate.swift; sourceTree = "<group>"; };
+		4130F6631EF2012E0073D37F /* EPUBParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBParserError.swift; sourceTree = "<group>"; };
+		413A073C1EEC19C40089D947 /* EPUBManifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBManifest.swift; sourceTree = "<group>"; };
+		413A07401EED763F0089D947 /* EPUBSpine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBSpine.swift; sourceTree = "<group>"; };
+		4142D7941F48CA6000A868D3 /* EPUBParsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBParsable.swift; sourceTree = "<group>"; };
 		41689DD51EE997D1004D6003 /* EPUBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41689DD81EE997D1004D6003 /* EPUBKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPUBKit.h; sourceTree = "<group>"; };
 		41689DD91EE997D1004D6003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41845E401F6142BB00463176 /* EKInfiniteScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKInfiniteScrollView.swift; path = EPUBKitView/Views/epubVC/EKInfiniteScrollView.swift; sourceTree = "<group>"; };
-		41845E421F6142D700463176 /* EKInfiniteScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EKInfiniteScrollView.xib; path = EPUBKitView/Views/epubVC/EKInfiniteScrollView.xib; sourceTree = "<group>"; };
-		41A911501F38E7C400957077 /* EKViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKViewDataSource.swift; path = EPUBKitView/Protocols/EKViewDataSource.swift; sourceTree = "<group>"; };
-		41A911581F3BB97F00957077 /* EKTableOfContentsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKTableOfContentsViewCell.swift; path = EPUBKitView/Views/tableOfConentsVC/EKTableOfContentsViewCell.swift; sourceTree = "<group>"; };
-		41A911591F3BB97F00957077 /* EKTableOfContentsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EKTableOfContentsViewCell.xib; path = EPUBKitView/Views/tableOfConentsVC/EKTableOfContentsViewCell.xib; sourceTree = "<group>"; };
-		41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBDocument.swift; path = EPUBKitCore/Model/EPUBDocument.swift; sourceTree = "<group>"; };
-		41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBTableOfContents.swift; path = EPUBKitCore/Model/EPUBTableOfContents.swift; sourceTree = "<group>"; };
-		41FD367F1EEAF80A00C34105 /* EPUBParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBParser.swift; path = EPUBKitCore/Utils/EPUBParser.swift; sourceTree = "<group>"; };
-		41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPUBMetadata.swift; path = EPUBKitCore/Model/EPUBMetadata.swift; sourceTree = "<group>"; };
+		419DC01320B9E6DF00D654B2 /* EPUBSpineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBSpineItem.swift; sourceTree = "<group>"; };
+		419DC01520B9E7E600D654B2 /* EPUBManifestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBManifestItem.swift; sourceTree = "<group>"; };
+		419DC01720B9E85C00D654B2 /* EPUBMediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBMediaType.swift; sourceTree = "<group>"; };
+		419DC01920B9E90200D654B2 /* Creator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creator.swift; sourceTree = "<group>"; };
+		41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBDocument.swift; sourceTree = "<group>"; };
+		41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBTableOfContents.swift; sourceTree = "<group>"; };
+		41FD367F1EEAF80A00C34105 /* EPUBParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBParser.swift; sourceTree = "<group>"; };
+		41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBMetadata.swift; sourceTree = "<group>"; };
 		A733833F94FC3901BBC67090 /* Pods_EPUBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EPUBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A966D60C710203563DA76D53 /* Pods-EPUBKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EPUBKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EPUBKit/Pods-EPUBKit.debug.xcconfig"; sourceTree = "<group>"; };
 		BF46E42B7DC30D8168A048B8 /* Pods-EPUBKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EPUBKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-EPUBKit/Pods-EPUBKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,84 +59,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4130F6381EEE0B070073D37F /* EPUBKitCore */ = {
-			isa = PBXGroup;
-			children = (
-				4142D7931F48BB0300A868D3 /* Utils */,
-				4142D7961F48E0AA00A868D3 /* Model */,
-			);
-			name = EPUBKitCore;
-			sourceTree = "<group>";
-		};
-		4130F6391EEE0B190073D37F /* EPUBKitView */ = {
-			isa = PBXGroup;
-			children = (
-				4162DE8D1F3790E000751D1D /* Main.storyboard */,
-				4162DE9E1F38D9DA00751D1D /* Protocols */,
-				4162DE9C1F38D6EB00751D1D /* Data Sources */,
-				4162DE9B1F38D6DF00751D1D /* View Controllers */,
-				4162DE9D1F38D6FC00751D1D /* Views */,
-			);
-			name = EPUBKitView;
-			sourceTree = "<group>";
-		};
-		4142D7931F48BB0300A868D3 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				41FD367F1EEAF80A00C34105 /* EPUBParser.swift */,
-				4142D7941F48CA6000A868D3 /* EPUBParsable.swift */,
-				4130F6631EF2012E0073D37F /* EPUBParserError.swift */,
-			);
-			name = Utils;
-			sourceTree = "<group>";
-		};
-		4142D7961F48E0AA00A868D3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */,
-				41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */,
-				413A073C1EEC19C40089D947 /* EPUBManifest.swift */,
-				413A07401EED763F0089D947 /* EPUBSpine.swift */,
-				41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		4162DE9B1F38D6DF00751D1D /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				4162DE8F1F37924900751D1D /* EKViewController.swift */,
-				4162DE911F37928200751D1D /* EKTableOfContentsViewController.swift */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		4162DE9C1F38D6EB00751D1D /* Data Sources */ = {
-			isa = PBXGroup;
-			children = (
-				4162DE931F37947A00751D1D /* EKTableOfContentsDataSource.swift */,
-			);
-			name = "Data Sources";
-			sourceTree = "<group>";
-		};
-		4162DE9D1F38D6FC00751D1D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				41845E441F6198DF00463176 /* tableOfContentsVC */,
-				41845E451F61990100463176 /* epubVC */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		4162DE9E1F38D9DA00751D1D /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				41A911501F38E7C400957077 /* EKViewDataSource.swift */,
-				4162DE9F1F38DA2B00751D1D /* EKViewDataSourceDelegate.swift */,
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
 		41689DCB1EE997D0004D6003 = {
 			isa = PBXGroup;
 			children = (
@@ -170,30 +80,38 @@
 		41689DD71EE997D1004D6003 /* EPUBKit */ = {
 			isa = PBXGroup;
 			children = (
-				4130F6381EEE0B070073D37F /* EPUBKitCore */,
-				4130F6391EEE0B190073D37F /* EPUBKitView */,
+				419DC01220B9E65900D654B2 /* Utils */,
+				419DC01120B9E64A00D654B2 /* Model */,
 				41689DD81EE997D1004D6003 /* EPUBKit.h */,
 				41689DD91EE997D1004D6003 /* Info.plist */,
 			);
 			path = EPUBKit;
 			sourceTree = "<group>";
 		};
-		41845E441F6198DF00463176 /* tableOfContentsVC */ = {
+		419DC01120B9E64A00D654B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				41A911581F3BB97F00957077 /* EKTableOfContentsViewCell.swift */,
-				41A911591F3BB97F00957077 /* EKTableOfContentsViewCell.xib */,
+				41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */,
+				41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */,
+				419DC01920B9E90200D654B2 /* Creator.swift */,
+				413A073C1EEC19C40089D947 /* EPUBManifest.swift */,
+				419DC01720B9E85C00D654B2 /* EPUBMediaType.swift */,
+				419DC01520B9E7E600D654B2 /* EPUBManifestItem.swift */,
+				413A07401EED763F0089D947 /* EPUBSpine.swift */,
+				419DC01320B9E6DF00D654B2 /* EPUBSpineItem.swift */,
+				41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */,
 			);
-			name = tableOfContentsVC;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		41845E451F61990100463176 /* epubVC */ = {
+		419DC01220B9E65900D654B2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				41845E401F6142BB00463176 /* EKInfiniteScrollView.swift */,
-				41845E421F6142D700463176 /* EKInfiniteScrollView.xib */,
+				41FD367F1EEAF80A00C34105 /* EPUBParser.swift */,
+				4142D7941F48CA6000A868D3 /* EPUBParsable.swift */,
+				4130F6631EF2012E0073D37F /* EPUBParserError.swift */,
 			);
-			name = epubVC;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		7948D3251C881CB54B808900 /* Pods */ = {
@@ -237,9 +155,9 @@
 				5CB30D24972BD07767759BF7 /* [CP] Check Pods Manifest.lock */,
 				41689DD01EE997D1004D6003 /* Sources */,
 				41689DD11EE997D1004D6003 /* Frameworks */,
+				41BBAE8D20BA0E9D00CD411F /* Run SwiftLint */,
 				41689DD21EE997D1004D6003 /* Headers */,
 				41689DD31EE997D1004D6003 /* Resources */,
-				3A3B08C22840F94198608107 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,13 +174,13 @@
 		41689DCC1EE997D0004D6003 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Witek Bobrowski";
 				TargetAttributes = {
 					41689DD41EE997D1004D6003 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = U82NM6NPZS;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -289,29 +207,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41A9115B1F3BB97F00957077 /* EKTableOfContentsViewCell.xib in Resources */,
-				41845E431F6142D700463176 /* EKInfiniteScrollView.xib in Resources */,
-				4162DE8E1F3790E000751D1D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3A3B08C22840F94198608107 /* [CP] Copy Pods Resources */ = {
+		41BBAE8D20BA0E9D00CD411F /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "Run SwiftLint";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EPUBKit/Pods-EPUBKit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		5CB30D24972BD07767759BF7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -319,13 +233,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EPUBKit-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -335,19 +252,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41A9115A1F3BB97F00957077 /* EKTableOfContentsViewCell.swift in Sources */,
 				413A07411EED763F0089D947 /* EPUBSpine.swift in Sources */,
-				4162DE901F37924900751D1D /* EKViewController.swift in Sources */,
+				419DC01420B9E6DF00D654B2 /* EPUBSpineItem.swift in Sources */,
 				41FD36801EEAF80A00C34105 /* EPUBDocument.swift in Sources */,
-				4162DEA01F38DA2B00751D1D /* EKViewDataSourceDelegate.swift in Sources */,
-				4162DE921F37928200751D1D /* EKTableOfContentsViewController.swift in Sources */,
 				4130F6641EF2012E0073D37F /* EPUBParserError.swift in Sources */,
 				41FD36811EEAF80A00C34105 /* EPUBTableOfContents.swift in Sources */,
-				4162DE941F37947A00751D1D /* EKTableOfContentsDataSource.swift in Sources */,
+				419DC01820B9E85C00D654B2 /* EPUBMediaType.swift in Sources */,
 				413A073D1EEC19C40089D947 /* EPUBManifest.swift in Sources */,
 				41FD36921EEB24DC00C34105 /* EPUBMetadata.swift in Sources */,
-				41A911511F38E7C400957077 /* EKViewDataSource.swift in Sources */,
-				41845E411F6142BB00463176 /* EKInfiniteScrollView.swift in Sources */,
+				419DC01A20B9E90200D654B2 /* Creator.swift in Sources */,
+				419DC01620B9E7E600D654B2 /* EPUBManifestItem.swift in Sources */,
 				4142D7951F48CA6000A868D3 /* EPUBParsable.swift in Sources */,
 				41FD36821EEAF80A00C34105 /* EPUBParser.swift in Sources */,
 			);
@@ -366,15 +280,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -420,15 +342,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -478,7 +408,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -503,7 +434,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = witek.bobrowski.EPUBKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -9,18 +9,10 @@
 import Foundation
 
 public struct EPUBSpine {
-    
-    public struct Item {
-        public var id: String?
-        public var idref: String
-        public var linear: Bool
-    }
-    
     public var id: String?
     public var toc: String?
     public var pageProgressionDirection: EPUBPageProgressionDirection?
-    public var items: [Item]
-    
+    public var items: [EPUBSpineItem]
 }
 
 public enum EPUBPageProgressionDirection: String {

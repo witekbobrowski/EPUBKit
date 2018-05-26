@@ -8,8 +8,8 @@
 
 import Foundation
 
-public class EPUBDocument {
-    
+public struct EPUBDocument {
+
     public let directory: URL
     public let contentDirectory: URL
     public let metadata: EPUBMetadata
@@ -17,28 +17,27 @@ public class EPUBDocument {
     public let spine: EPUBSpine
     public let tableOfContents: EPUBTableOfContents
 
-    private init (directory: URL, contentDirectory: URL, metadata: EPUBMetadata, manifest: EPUBManifest, spine: EPUBSpine, toc: EPUBTableOfContents) {
+    init (directory: URL,
+          contentDirectory: URL,
+          metadata: EPUBMetadata,
+          manifest: EPUBManifest,
+          spine: EPUBSpine,
+          tableOfContents: EPUBTableOfContents) {
         self.directory = directory
         self.contentDirectory = contentDirectory
         self.metadata = metadata
         self.manifest = manifest
         self.spine = spine
-        self.tableOfContents = toc
+        self.tableOfContents = tableOfContents
     }
-    
-    public convenience init?(named: String) {
-        let parser = try? EPUBParser(named: named)
-        guard let directory = parser?.directory,
-            let contentDirectory = parser?.contentDirectory,
-            let metadata = parser?.metadata,
-            let manifest = parser?.manifest,
-            let spine = parser?.spine,
-            let tableOfContents = parser?.tableOfContents else { return nil }
-        self.init(directory: directory, contentDirectory: contentDirectory, metadata: metadata, manifest: manifest, spine: spine, toc: tableOfContents)
+
+    public init?(url: URL) {
+        guard let parser = try? EPUBParser(url: url), let document = parser.document else { return nil }
+        self = document
     }
+
 }
 
-//MARK: - Public
 extension EPUBDocument {
     public var title: String? {
         return metadata.title

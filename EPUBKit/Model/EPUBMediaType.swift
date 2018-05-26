@@ -1,32 +1,12 @@
 //
-//  EPUBManifest.swift
+//  EPUBMediaType.swift
 //  EPUBKit
 //
-//  Created by Witek on 10/06/2017.
-//  Copyright © 2017 Witek Bobrowski. All rights reserved.
+//  Created by Witek Bobrowski on 26/05/2018.
+//  Copyright © 2018 Witek Bobrowski. All rights reserved.
 //
 
 import Foundation
-
-public struct EPUBManifest {
-    public struct Item {
-        public var id: String
-        public var path: String
-        public var mediaType: EPUBMediaType
-        public var property: String?
-    }
-    
-    public var id: String?
-    public var items: [String:Item]
-    
-    public func path(forItemWithId id: String) throws -> String {
-        if let item = items[id] {
-            return item.path
-        } else {
-            throw EPUBParserError.noPathForItem(id)
-        }
-    }
-}
 
 public enum EPUBMediaType: String {
     case gif = "image/gif"

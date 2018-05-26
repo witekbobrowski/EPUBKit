@@ -9,13 +9,6 @@
 import Foundation
 
 public struct EPUBMetadata {
-    
-    public struct Creator {
-        public var name: String?
-        public var role: String?
-        public var fileAs: String?
-    }
-    
     public var contributor: Creator?
     public var coverage: String?
     public var creator: Creator?
@@ -33,4 +26,3 @@ public struct EPUBMetadata {
     public var type: String?
     public var coverId: String?
 }
-
