@@ -1,9 +1,12 @@
-# EPUBKit
-
+<p align=center>
+<a href="">
+<img alt="Logo" src="logo.png">
+</a>
+</p>
 <p align=center>
     <a href="https://www.codacy.com/app/witekbobrowski/EPUBKit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=witekbobrowski/EPUBKit&amp;utm_campaign=Badge_Grade"><img alt="CodacyBadge" src="https://api.codacy.com/project/badge/Grade/35b59c32fd77448da5bab9041ebba524"</a>
     <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-4.0-oragne.svg"></a>
-    <a><img alt="CocoaPods" src="https://img.shields.io/badge/pod-0.2.0-blue.svg"></a>
+    <a href="https://cocoapods.org/pods/EPUBKit"><img alt="CocoaPods" src="https://img.shields.io/badge/pod-0.2.1-blue.svg"></a>
     <a><img alt="Platforms" src="https://img.shields.io/badge/platform-iOS-oragne.svg"></a>
     <a href="https://twitter.com/witekbobrowski"><img alt="Contact" src="https://img.shields.io/badge/contact-@witekbobrowski-blue.svg"></a>
 </p>
