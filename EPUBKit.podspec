@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "https://github.com/witekbobrowski"
   s.platform     = :ios, '10.0'
   s.swift_version = '4.0'
-  s.source       = { :git => "https://github.com/witekbobrowski/EPUBKit.git", :tag => "master" }
+  s.source       = { :git => "https://github.com/witekbobrowski/EPUBKit.git", :tag => "0.2.0" }
   s.source_files = [
       'EPUBKit/*.{h,swift}',
       'EPUBKit/**/*.swift',
