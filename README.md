@@ -22,8 +22,15 @@ __Note:__ This library is still in its early stages! I will experiment and chang
 #### CocoaPods
 Add the following to your `Podfile`:
 ```
-pod 'EPUBKit'
+pod 'EPUBKit', '~> 0.2.1'
 ```
+
+#### Carthage
+Add to `Cartfile`:
+```
+github "witekbobrowski/EPUBKit" ~> 0.2.1
+```
+
 __Note:__ Future versions will support and [Swift Package Manager](https://swift.org/package-manager/) 💃
 
 ## Usage

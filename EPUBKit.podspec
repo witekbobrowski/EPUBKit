@@ -17,6 +17,9 @@ Pod::Spec.new do |s|
       'EPUBKit/*.{h,swift}',
       'EPUBKit/**/*.swift',
     ]
-  s.libraries  = "z"
+  s.libraries  = "z"  
+  s.dependency 'Zip'
+  s.dependency 'AEXML'
+
 
 end
