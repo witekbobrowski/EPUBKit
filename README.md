@@ -1,6 +1,6 @@
 <p align=center>
 <a href="">
-<img alt="Logo" src="logo.png">
+<img height=180 alt="Logo" src="logo.png">
 </a>
 </p>
 <p align=center>
@@ -15,7 +15,7 @@
 </p>
 
 __Note:__ This library is still in its early stages! I will experiment and change the API until I am satisfied with the result. I do not reccomend using this library in larger projects (who am I fooling, nobody will use it anyway), although feedback will be highly appreciated 🙇
- 
+
 ## Installation
 
 #### CocoaPods
@@ -31,19 +31,19 @@ Just import EPUBKit in your swift file.
 import EPUBKit
 ```
 
-Initialize document instance with `URL` of your EPUB document. 
+Initialize document instance with `URL` of your EPUB document.
 ```
 guard
     let path = Bundle.main.url(forResource: "steve_jobs", withExtension: "epub"),
-    let document = EPUBDocument(url: path) 
+    let document = EPUBDocument(url: path)
     else { return }
 ```
 
 If the document gets parsed correctly, you have access to full document metadata, contents, etc.
 ```
-print(document.title) 
+print(document.title)
 > Steve Jobs
-print(document.author) 
+print(document.author)
 > Walter Isaacson
 ```
 __Note:__ Documentation is not yet ready, but you should find it easy to explore the api by yourself 🙃
