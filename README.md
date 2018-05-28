@@ -27,20 +27,20 @@ __Note:__ Future versions will support [Carthage](https://github.com/Carthage/Ca
 
 ## Usage
 Just import EPUBKit in your swift file.
-```
+```swift
 import EPUBKit
 ```
 
 Initialize document instance with `URL` of your EPUB document.
-```
+```swift
 guard
     let path = Bundle.main.url(forResource: "steve_jobs", withExtension: "epub"),
     let document = EPUBDocument(url: path)
-    else { return }
+else { return }
 ```
 
 If the document gets parsed correctly, you have access to full document metadata, contents, etc.
-```
+```swift
 print(document.title)
 > Steve Jobs
 print(document.author)
