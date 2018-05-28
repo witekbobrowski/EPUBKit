@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410E71DB20BC6F2F008081C4 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410E71D920BC6F2F008081C4 /* Zip.framework */; };
+		410E71DC20BC6F2F008081C4 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410E71DA20BC6F2F008081C4 /* AEXML.framework */; };
 		4130F6641EF2012E0073D37F /* EPUBParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4130F6631EF2012E0073D37F /* EPUBParserError.swift */; };
 		413A073D1EEC19C40089D947 /* EPUBManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A073C1EEC19C40089D947 /* EPUBManifest.swift */; };
 		413A07411EED763F0089D947 /* EPUBSpine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A07401EED763F0089D947 /* EPUBSpine.swift */; };
@@ -20,13 +22,11 @@
 		41FD36811EEAF80A00C34105 /* EPUBTableOfContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */; };
 		41FD36821EEAF80A00C34105 /* EPUBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367F1EEAF80A00C34105 /* EPUBParser.swift */; };
 		41FD36921EEB24DC00C34105 /* EPUBMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */; };
-		DA82262ACCC85C0E1140CDF0 /* Pods_EPUBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A733833F94FC3901BBC67090 /* Pods_EPUBKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4130F63C1EEFE5300073D37F /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = "../../Library/Developer/Xcode/DerivedData/EPUBKit-alwcxcqtnsmjlhakipukyqjlsijr/Build/Products/Debug-iphonesimulator/AEXML/AEXML.framework"; sourceTree = "<group>"; };
-		4130F63D1EEFE5300073D37F /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = "../../Library/Developer/Xcode/DerivedData/EPUBKit-alwcxcqtnsmjlhakipukyqjlsijr/Build/Products/Debug-iphonesimulator/Zip/Zip.framework"; sourceTree = "<group>"; };
-		4130F6411EF070840073D37F /* Pods_EPUBKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_EPUBKit.framework; path = "../../Library/Developer/Xcode/DerivedData/EPUBKit-alwcxcqtnsmjlhakipukyqjlsijr/Build/Products/Debug-iphonesimulator/Pods_EPUBKit.framework"; sourceTree = "<group>"; };
+		410E71D920BC6F2F008081C4 /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = Carthage/Build/iOS/Zip.framework; sourceTree = "<group>"; };
+		410E71DA20BC6F2F008081C4 /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = Carthage/Build/iOS/AEXML.framework; sourceTree = "<group>"; };
 		4130F6631EF2012E0073D37F /* EPUBParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBParserError.swift; sourceTree = "<group>"; };
 		413A073C1EEC19C40089D947 /* EPUBManifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBManifest.swift; sourceTree = "<group>"; };
 		413A07401EED763F0089D947 /* EPUBSpine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBSpine.swift; sourceTree = "<group>"; };
@@ -42,7 +42,6 @@
 		41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBTableOfContents.swift; sourceTree = "<group>"; };
 		41FD367F1EEAF80A00C34105 /* EPUBParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBParser.swift; sourceTree = "<group>"; };
 		41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBMetadata.swift; sourceTree = "<group>"; };
-		A733833F94FC3901BBC67090 /* Pods_EPUBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EPUBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A966D60C710203563DA76D53 /* Pods-EPUBKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EPUBKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EPUBKit/Pods-EPUBKit.debug.xcconfig"; sourceTree = "<group>"; };
 		BF46E42B7DC30D8168A048B8 /* Pods-EPUBKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EPUBKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-EPUBKit/Pods-EPUBKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA82262ACCC85C0E1140CDF0 /* Pods_EPUBKit.framework in Frameworks */,
+				410E71DC20BC6F2F008081C4 /* AEXML.framework in Frameworks */,
+				410E71DB20BC6F2F008081C4 /* Zip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,10 +126,8 @@
 		BAB91426085D666715B2FBDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4130F6411EF070840073D37F /* Pods_EPUBKit.framework */,
-				4130F63C1EEFE5300073D37F /* AEXML.framework */,
-				4130F63D1EEFE5300073D37F /* Zip.framework */,
-				A733833F94FC3901BBC67090 /* Pods_EPUBKit.framework */,
+				410E71DA20BC6F2F008081C4 /* AEXML.framework */,
+				410E71D920BC6F2F008081C4 /* Zip.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,7 +150,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41689DDD1EE997D1004D6003 /* Build configuration list for PBXNativeTarget "EPUBKit" */;
 			buildPhases = (
-				5CB30D24972BD07767759BF7 /* [CP] Check Pods Manifest.lock */,
 				41689DD01EE997D1004D6003 /* Sources */,
 				41689DD11EE997D1004D6003 /* Frameworks */,
 				41BBAE8D20BA0E9D00CD411F /* Run SwiftLint */,
@@ -226,24 +223,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		5CB30D24972BD07767759BF7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EPUBKit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -401,6 +380,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EPUBKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -428,6 +411,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EPUBKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

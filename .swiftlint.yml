@@ -1,5 +1,5 @@
 excluded:
-  - Pods
+  - Carthage
 
 disabled_rules:
   - line_length
