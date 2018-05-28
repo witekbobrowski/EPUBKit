@@ -6,7 +6,7 @@
 <p align=center>
     <a href="https://www.codacy.com/app/witekbobrowski/EPUBKit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=witekbobrowski/EPUBKit&amp;utm_campaign=Badge_Grade"><img alt="CodacyBadge" src="https://api.codacy.com/project/badge/Grade/35b59c32fd77448da5bab9041ebba524"</a>
     <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-4.0-oragne.svg"></a>
-    <a href="https://cocoapods.org/pods/EPUBKit"><img alt="CocoaPods" src="https://img.shields.io/badge/pod-0.2.1-blue.svg"></a>
+    <a href="https://cocoapods.org/pods/EPUBKit"><img alt="CocoaPods" src="https://img.shields.io/badge/pod-0.2.2-blue.svg"></a>
     <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg"></a>
     <a><img alt="Platforms" src="https://img.shields.io/badge/platform-iOS-lightgray.svg"></a>
     <a href="https://twitter.com/witekbobrowski"><img alt="Contact" src="https://img.shields.io/badge/contact-@witekbobrowski-blue.svg"></a>
@@ -19,19 +19,19 @@ __Note:__ This library is still in its early stages! I will experiment and chang
 
 ## Installation
 
-#### CocoaPods
+#### [CocoaPods](https://cocoapods.org)
 Add the following to your `Podfile`:
 ```
-pod 'EPUBKit', '~> 0.2.1'
+pod 'EPUBKit', '~> 0.2.2'
 ```
 
-#### Carthage
+#### [Carthage](https://github.com/Carthage/Carthage)
 Add to `Cartfile`:
 ```
-github "witekbobrowski/EPUBKit" ~> 0.2.1
+github "witekbobrowski/EPUBKit" ~> 0.2.2
 ```
 
-__Note:__ Future versions will support and [Swift Package Manager](https://swift.org/package-manager/) 💃
+__Note:__ [Swift Package Manager](https://swift.org/package-manager/) support coming soon 💃
 
 ## Usage
 Just import EPUBKit in your swift file.
