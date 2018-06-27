@@ -80,7 +80,7 @@
 		41689DD71EE997D1004D6003 /* EPUBKit */ = {
 			isa = PBXGroup;
 			children = (
-				419DC01220B9E65900D654B2 /* Utils */,
+				419DC01220B9E65900D654B2 /* Parser */,
 				419DC01120B9E64A00D654B2 /* Model */,
 				41689DD81EE997D1004D6003 /* EPUBKit.h */,
 				41689DD91EE997D1004D6003 /* Info.plist */,
@@ -104,14 +104,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		419DC01220B9E65900D654B2 /* Utils */ = {
+		419DC01220B9E65900D654B2 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
 				41FD367F1EEAF80A00C34105 /* EPUBParser.swift */,
 				4142D7941F48CA6000A868D3 /* EPUBParsable.swift */,
 				4130F6631EF2012E0073D37F /* EPUBParserError.swift */,
 			);
-			path = Utils;
+			path = Parser;
 			sourceTree = "<group>";
 		};
 		7948D3251C881CB54B808900 /* Pods */ = {
