@@ -10,76 +10,48 @@ import Zip
 import AEXML
 import Foundation
 
-public final class EPUBParser {
-
-    private var directory: URL?
-    private var contentDirectory: URL?
-    private var metadata: EPUBMetadata?
-    private var manifest: EPUBManifest?
-    private var spine: EPUBSpine?
-    private var tableOfContents: EPUBTableOfContents?
+public final class EPUBParser: EPUBParserProtocol {
 
     public weak var delegate: EPUBParserDelegate?
 
-    public var document: EPUBDocument? { return build() }
-
-    public init() {}
-
-    public init(url: URL) throws {
-        do {
-            try parse(documentAt: url)
-        } catch {
-            throw error
-        }
-    }
-
-    public func parse(documentAt path: URL) throws {
+    public func parse(documentAt path: URL) throws -> EPUBDocument {
         do {
             delegate?.parser(self, didBeginParsingDocumentAt: path)
 
-            directory = try unzip(archiveAt: path)
-            let contentPath = try getContentPath(from: directory!)
-            contentDirectory = contentPath.deletingLastPathComponent()
-            let data = try Data(contentsOf: contentPath)
-            let content = try AEXMLDocument(xml: data)
+            let directory = try unzip(archiveAt: path)
+            delegate?.parser(self, didUnzipArchiveTo: directory)
 
-            metadata = getMetadata(from: content.root["metadata"])
+            let contentPath = try getContentPath(from: directory)
+            let contentDirectory = contentPath.deletingLastPathComponent()
+            let content = try AEXMLDocument(xml: try Data(contentsOf: contentPath))
+
+            let metadata = getMetadata(from: content.root["metadata"])
             delegate?.parser(self, didFinishParsing: metadata)
 
-            manifest = getManifest(from: content.root["manifest"])
+            let manifest = getManifest(from: content.root["manifest"])
             delegate?.parser(self, didFinishParsing: manifest)
 
-            spine =  getSpine(from: content.root["spine"])
+            let spine =  getSpine(from: content.root["spine"])
             delegate?.parser(self, didFinishParsing: spine)
 
-            let tocPath = contentDirectory!.appendingPathComponent(try manifest!.path(forItemWithId: spine?.toc ?? ""))
+            let tocPathComponent = try manifest.path(forItemWithId: spine.toc ?? "")
+            let tocPath = contentDirectory.appendingPathComponent(tocPathComponent)
             let tocData = try Data(contentsOf: tocPath)
             let tocContent = try AEXMLDocument(xml: tocData)
-
-            tableOfContents = getTableOfContents(from: tocContent.root)
+            let tableOfContents = getTableOfContents(from: tocContent.root)
             delegate?.parser(self, didFinishParsing: tableOfContents)
+
             delegate?.parser(self, didFinishParsingDocumentAt: path)
+            return EPUBDocument(directory: directory,
+                                contentDirectory: contentDirectory,
+                                metadata: metadata,
+                                manifest: manifest,
+                                spine: spine,
+                                tableOfContents: tableOfContents)
         } catch let error {
             delegate?.parser(self, didFailParsingDocumentAt: path, with: error)
             throw error
         }
-    }
-
-    func build() -> EPUBDocument? {
-        guard
-            let directory = directory,
-            let contentDirectory = contentDirectory,
-            let metadata = metadata,
-            let manifest = manifest,
-            let spine = spine,
-            let tableOfContents = tableOfContents
-        else { return nil }
-        return EPUBDocument(directory: directory,
-                            contentDirectory: contentDirectory,
-                            metadata: metadata,
-                            manifest: manifest,
-                            spine: spine,
-                            tableOfContents: tableOfContents)
     }
 
 }
@@ -91,7 +63,7 @@ extension EPUBParser: EPUBParsable {
         Zip.addCustomFileExtension("epub")
         do {
             return try Zip.quickUnzipFile(path)
-        } catch ZipError.unzipFail {
+        } catch {
             throw EPUBParserError.unZipError
         }
     }

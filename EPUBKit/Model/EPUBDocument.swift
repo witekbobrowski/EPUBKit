@@ -32,7 +32,7 @@ public struct EPUBDocument {
     }
 
     public init?(url: URL) {
-        guard let parser = try? EPUBParser(url: url), let document = parser.document else { return nil }
+        guard let document = try? EPUBParser().parse(documentAt: url) else { return nil }
         self = document
     }
 
