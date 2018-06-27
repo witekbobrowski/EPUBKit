@@ -68,13 +68,13 @@ extension EPUBParser: EPUBParsable {
         }
     }
 
-    func getContentPath(from bookDirectory: URL) throws -> URL {
+    func getContentPath(from documentPath: URL) throws -> URL {
         do {
-            let path = bookDirectory.appendingPathComponent("META-INF/container.xml")
+            let path = documentPath.appendingPathComponent("META-INF/container.xml")
             let data = try Data(contentsOf: path)
             let container = try AEXMLDocument(xml: data)
             let content = container.root["rootfiles"]["rootfile"].attributes["full-path"]
-            return bookDirectory.appendingPathComponent(content!)
+            return documentPath.appendingPathComponent(content!)
         } catch {
             throw EPUBParserError.containerParseError
         }
