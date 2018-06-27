@@ -10,7 +10,7 @@ import Zip
 import AEXML
 import Foundation
 
-class EPUBParser {
+public final class EPUBParser {
 
     private var directory: URL?
     private var contentDirectory: URL?
@@ -19,9 +19,13 @@ class EPUBParser {
     private var spine: EPUBSpine?
     private var tableOfContents: EPUBTableOfContents?
 
-    var document: EPUBDocument? { return build() }
+    public weak var delegate: EPUBParserDelegate?
 
-    init(url: URL) throws {
+    public var document: EPUBDocument? { return build() }
+
+    public init() {}
+
+    public init(url: URL) throws {
         do {
             try parse(documentAt: url)
         } catch {
@@ -29,21 +33,34 @@ class EPUBParser {
         }
     }
 
-    func parse(documentAt path: URL) throws {
+    public func parse(documentAt path: URL) throws {
         do {
+            delegate?.parser(self, didBeginParsingDocumentAt: path)
+
             directory = try unzip(archiveAt: path)
             let contentPath = try getContentPath(from: directory!)
             contentDirectory = contentPath.deletingLastPathComponent()
             let data = try Data(contentsOf: contentPath)
             let content = try AEXMLDocument(xml: data)
+
             metadata = getMetadata(from: content.root["metadata"])
+            delegate?.parser(self, didFinishParsing: metadata)
+
             manifest = getManifest(from: content.root["manifest"])
+            delegate?.parser(self, didFinishParsing: manifest)
+
             spine =  getSpine(from: content.root["spine"])
+            delegate?.parser(self, didFinishParsing: spine)
+
             let tocPath = contentDirectory!.appendingPathComponent(try manifest!.path(forItemWithId: spine?.toc ?? ""))
             let tocData = try Data(contentsOf: tocPath)
             let tocContent = try AEXMLDocument(xml: tocData)
+
             tableOfContents = getTableOfContents(from: tocContent.root)
-        } catch {
+            delegate?.parser(self, didFinishParsing: tableOfContents)
+            delegate?.parser(self, didFinishParsingDocumentAt: path)
+        } catch let error {
+            delegate?.parser(self, didFailParsingDocumentAt: path, with: error)
             throw error
         }
     }
