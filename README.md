@@ -34,6 +34,9 @@ github "witekbobrowski/EPUBKit" ~> 0.2.2
 __Note:__ [Swift Package Manager](https://swift.org/package-manager/) support coming soon 💃
 
 ## Usage
+
+#### Basic
+
 Just import EPUBKit in your swift file.
 ```swift
 import EPUBKit
@@ -54,7 +57,70 @@ print(document.title)
 print(document.author)
 > Walter Isaacson
 ```
-__Note:__ Documentation is not yet ready, but you should find it easy to explore the api by yourself 🙃
+
+#### Advanced
+
+Although the basic usage is perfectly fine, there are times you want to have more control over stuff.
+That is why I have made the parser public, so you can manually parse documents and take full adventage over the library API.
+
+Main functionality is wrapped in a simple `EPUBParserProtocol` protocol:
+```swift
+public protocol EPUBParserProtocol where Self: EPUBParsable {
+    var delegate: EPUBParserDelegate? { get set }
+    func parse(documentAt path: URL) throws -> EPUBDocument
+}
+```
+This basically defines the parser capabilities, and enforces one very important thing, which is conditional conformance to internal protocol `EPUBParsable`. 
+The idea behind this protocol arrangement is to hide implementation details of the parsing itself, yet provide some kind of overview on the 'identity' of the `EPUBParser` class.
+
+Having the delegate is nice becouse you can have more insight over what is happening behind the scenes.
+`EPUBParserDelegate` provides a wide range of methods that let you peek under the hood of parser.
+
+__Some simple flow would go like this:__
+
+Lets say we are developing an app for `iOS` and have a view controller that handles epub documents in some way, for example displays a list.
+
+In the first place you could add these two properties to the view controller
+```swift
+let parser: EPUBParser
+let urls: [URL]
+
+var documents: [EPUBDocument] = []
+```
+
+Add feed the VC with the missing properties through the dependency injection in init.
+```swift
+init(parser: EPUBParser, urls: [URL]) {
+    self.parser = parser
+    self.urls = urls
+    super.init(nibName: nil, bundle: nil)
+}
+```
+
+Now after the view loads we could set ourselfs as the delegate of the parser (after extending view controller with `EPUBParserDelegate` protocol, otherwise we get an error).
+```swift
+parser.delegate = self
+```
+
+And iterate over the array of url in hope of parsing every document correctly and append them to previously defined array.
+```swift
+urls.forEach { url in
+    guard let document = try? parser.parse(documentAt: url) else { return }
+    documents.append(document)
+}
+```
+
+And that is basically it. Now we can for example pass parsed documents to the table view cells to enable displaing user's library.
+
+What are the adventages of taking this approach? Firstly its reusing the parser object. 
+Using the previously mentioned `EPUBDocument`'s `init(url:)` initializer we avoid instantiating it every time for each document. 
+Now we have also a lot more insight on the parsing process itself, we could either check on errors in the standard swift way using `do-catch` statement,
+or using delegation and `parser(:,didFailParsingDocumentAt:,with:)` that passed an error if such occurs. 
+And finally we could improve user experience with something like starting to load cover before the process of parsing finishes.
+
+As the library evolves and API gets richer and richer the possibilities of advanced usage of this library will come more and more handy.
+
+__Note:__ Documentation is not yet ready, but you should find it easy to explore the API by yourself 🙃
 
 ## Contents
 
@@ -72,8 +138,11 @@ EPUBKit
 │   ├── EPUBSpine.swift
 │   ├── EPUBSpineItem.swift
 │   └── EPUBTableOfContents.swift
-└── Utils
+├── Parser
+│   ├── EPUBParser.swift
+│   └── EPUBParserError.swift
+└── Protocols
     ├── EPUBParsable.swift
-    ├── EPUBParser.swift
-    └── EPUBParserError.swift
+    ├── EPUBParserDelegate.swift
+    └── EPUBParserProtocol.swift
 ```
