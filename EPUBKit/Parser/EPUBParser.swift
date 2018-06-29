@@ -6,13 +6,18 @@
 //  Copyright © 2017 Witek Bobrowski. All rights reserved.
 //
 
-import Zip
 import AEXML
 import Foundation
 
 public final class EPUBParser: EPUBParserProtocol {
 
+    private let archiveService: ArchiveService
+
     public weak var delegate: EPUBParserDelegate?
+
+    public init() {
+        archiveService = EPUBArchiveService()
+    }
 
     public func parse(documentAt path: URL) throws -> EPUBDocument {
         do {
@@ -60,12 +65,7 @@ public final class EPUBParser: EPUBParserProtocol {
 extension EPUBParser: EPUBParsable {
 
     func unzip(archiveAt path: URL) throws -> URL {
-        Zip.addCustomFileExtension("epub")
-        do {
-            return try Zip.quickUnzipFile(path)
-        } catch let error {
-            throw EPUBParserError.unzipFailed(reason: error)
-        }
+        return try archiveService.unarchive(archive: path)
     }
 
     func getContentPath(from documentPath: URL) throws -> URL {
