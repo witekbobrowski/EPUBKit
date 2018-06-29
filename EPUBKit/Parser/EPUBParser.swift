@@ -63,8 +63,8 @@ extension EPUBParser: EPUBParsable {
         Zip.addCustomFileExtension("epub")
         do {
             return try Zip.quickUnzipFile(path)
-        } catch {
-            throw EPUBParserError.unZipError
+        } catch let error {
+            throw EPUBParserError.unzipFailed(reason: error)
         }
     }
 

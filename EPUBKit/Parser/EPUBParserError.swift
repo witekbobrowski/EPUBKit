@@ -9,7 +9,7 @@
 import Foundation
 
 enum EPUBParserError {
-    case unZipError
+    case unzipFailed(reason: Error)
     case containerParseError
     case noPathForItem(String)
     case noIdForTableOfContents
@@ -19,7 +19,7 @@ enum EPUBParserError {
 extension EPUBParserError: LocalizedError {
     var errorDescription: String? {
         switch self {
-        case .unZipError:
+        case .unzipFailed:
             return "Error while trying to unzip the archive"
         case .containerParseError:
             return "Error with parsing container.xml"
@@ -32,7 +32,7 @@ extension EPUBParserError: LocalizedError {
 
     var failureReason: String? {
         switch self {
-        case .unZipError:
+        case .unzipFailed:
             return "Zip module was unable to unzip this archive"
         case .containerParseError:
             return "The path to container.xml may be wrong, or the file itself may be missing"
@@ -45,7 +45,7 @@ extension EPUBParserError: LocalizedError {
 
     var recoverySuggestion: String? {
         switch self {
-        case .unZipError:
+        case .unzipFailed:
             return "Make sure your archive is a proper .epub archive"
         case .containerParseError:
             return "Make sure the path to container.xml is correct"
