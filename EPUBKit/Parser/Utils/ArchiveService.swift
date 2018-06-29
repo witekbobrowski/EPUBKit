@@ -15,8 +15,11 @@ protocol ArchiveService {
 
 class EPUBArchiveService: ArchiveService {
 
-    func unarchive(archive url: URL) throws -> URL {
+    init() {
         Zip.addCustomFileExtension("epub")
+    }
+
+    func unarchive(archive url: URL) throws -> URL {
         do {
             return try Zip.quickUnzipFile(url)
         } catch let error {
