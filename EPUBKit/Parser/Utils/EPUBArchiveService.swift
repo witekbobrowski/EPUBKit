@@ -1,5 +1,5 @@
 //
-//  ArchiveService.swift
+//  EPUBArchiveService.swift
 //  EPUBKit
 //
 //  Created by Witek Bobrowski on 30/06/2018.
@@ -9,14 +9,19 @@
 import Foundation
 import Zip
 
-protocol ArchiveService {
+protocol EPUBArchiveService {
+    func archive(archive url: URL, fileName name: String) throws -> URL
     func unarchive(archive url: URL) throws -> URL
 }
 
-class EPUBArchiveService: ArchiveService {
+class EPUBArchiveServiceImplementation: EPUBArchiveService {
 
     init() {
         Zip.addCustomFileExtension("epub")
+    }
+
+    func archive(archive url: URL, fileName name: String) throws -> URL {
+        return try Zip.quickZipFiles([url], fileName: name)
     }
 
     func unarchive(archive url: URL) throws -> URL {
