@@ -11,6 +11,9 @@
 		410E71DC20BC6F2F008081C4 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410E71DA20BC6F2F008081C4 /* AEXML.framework */; };
 		4130F6641EF2012E0073D37F /* EPUBParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4130F6631EF2012E0073D37F /* EPUBParserError.swift */; };
 		4134172120E6EF7E003D101D /* EPUBMetadataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4134172020E6EF7E003D101D /* EPUBMetadataParser.swift */; };
+		4134172320E7016F003D101D /* EPUBManifestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4134172220E7016F003D101D /* EPUBManifestParser.swift */; };
+		4134172520E702A5003D101D /* EPUBSpineParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4134172420E702A5003D101D /* EPUBSpineParser.swift */; };
+		4134172920E70915003D101D /* EPUBTableOfContentsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4134172820E70915003D101D /* EPUBTableOfContentsParser.swift */; };
 		413A073D1EEC19C40089D947 /* EPUBManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A073C1EEC19C40089D947 /* EPUBManifest.swift */; };
 		413A07411EED763F0089D947 /* EPUBSpine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A07401EED763F0089D947 /* EPUBSpine.swift */; };
 		413DB33020E3CE1C00B5E1C3 /* EPUBParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413DB32F20E3CE1C00B5E1C3 /* EPUBParserDelegate.swift */; };
@@ -33,6 +36,9 @@
 		410E71DA20BC6F2F008081C4 /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = Carthage/Build/iOS/AEXML.framework; sourceTree = "<group>"; };
 		4130F6631EF2012E0073D37F /* EPUBParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBParserError.swift; sourceTree = "<group>"; };
 		4134172020E6EF7E003D101D /* EPUBMetadataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBMetadataParser.swift; sourceTree = "<group>"; };
+		4134172220E7016F003D101D /* EPUBManifestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBManifestParser.swift; sourceTree = "<group>"; };
+		4134172420E702A5003D101D /* EPUBSpineParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBSpineParser.swift; sourceTree = "<group>"; };
+		4134172820E70915003D101D /* EPUBTableOfContentsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBTableOfContentsParser.swift; sourceTree = "<group>"; };
 		413A073C1EEC19C40089D947 /* EPUBManifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBManifest.swift; sourceTree = "<group>"; };
 		413A07401EED763F0089D947 /* EPUBSpine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBSpine.swift; sourceTree = "<group>"; };
 		413DB32F20E3CE1C00B5E1C3 /* EPUBParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBParserDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 			children = (
 				413DB33520E6EAD300B5E1C3 /* EPUBArchiveService.swift */,
 				4134172020E6EF7E003D101D /* EPUBMetadataParser.swift */,
+				4134172820E70915003D101D /* EPUBTableOfContentsParser.swift */,
+				4134172220E7016F003D101D /* EPUBManifestParser.swift */,
+				4134172420E702A5003D101D /* EPUBSpineParser.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -187,7 +196,7 @@
 		41689DCC1EE997D0004D6003 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Witek Bobrowski";
 				TargetAttributes = {
 					41689DD41EE997D1004D6003 = {
@@ -253,10 +262,13 @@
 				419DC01420B9E6DF00D654B2 /* EPUBSpineItem.swift in Sources */,
 				41FD36801EEAF80A00C34105 /* EPUBDocument.swift in Sources */,
 				4130F6641EF2012E0073D37F /* EPUBParserError.swift in Sources */,
+				4134172520E702A5003D101D /* EPUBSpineParser.swift in Sources */,
 				41FD36811EEAF80A00C34105 /* EPUBTableOfContents.swift in Sources */,
 				419DC01820B9E85C00D654B2 /* EPUBMediaType.swift in Sources */,
+				4134172920E70915003D101D /* EPUBTableOfContentsParser.swift in Sources */,
 				413A073D1EEC19C40089D947 /* EPUBManifest.swift in Sources */,
 				41FD36921EEB24DC00C34105 /* EPUBMetadata.swift in Sources */,
+				4134172320E7016F003D101D /* EPUBManifestParser.swift in Sources */,
 				419DC01A20B9E90200D654B2 /* Creator.swift in Sources */,
 				413DB33020E3CE1C00B5E1C3 /* EPUBParserDelegate.swift in Sources */,
 				419DC01620B9E7E600D654B2 /* EPUBManifestItem.swift in Sources */,
@@ -305,6 +317,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -315,6 +328,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";

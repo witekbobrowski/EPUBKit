@@ -13,12 +13,18 @@ public final class EPUBParser: EPUBParserProtocol {
 
     private let archiveService: EPUBArchiveService
     private let metadataParser: EPUBMetadataParser
+    private let manifestParser: EPUBManifestParser
+    private let spineParser: EPUBSpineParser
+    private let tableOfContentsParser: EPUBTableOfContentsParser
 
     public weak var delegate: EPUBParserDelegate?
 
     public init() {
         archiveService = EPUBArchiveServiceImplementation()
         metadataParser = EPUBMetadataParserImplementation()
+        manifestParser = EPUBManifestParserImplementation()
+        spineParser = EPUBSpineParserImplementation()
+        tableOfContentsParser = EPUBTableOfContentsParserImplementation()
     }
 
     public func parse(documentAt path: URL) throws -> EPUBDocument {
@@ -83,63 +89,19 @@ extension EPUBParser: EPUBParsable {
     }
 
     func getMetadata(from xmlElement: AEXMLElement) -> EPUBMetadata {
-        return metadataParser.metadata(from: xmlElement)
+        return metadataParser.parse(xmlElement)
     }
 
     func getManifest(from xmlElement: AEXMLElement) -> EPUBManifest {
-        var items: [String: EPUBManifestItem] = [:]
-        for item in xmlElement["item"].all! {
-            let id = item.attributes["id"]!
-            let path = item.attributes["href"]!
-            let mediaType = item.attributes["media-type"]
-            let properties = item.attributes["properties"]
-            items[id] = EPUBManifestItem(id: id,
-                                         path: path,
-                                         mediaType: EPUBMediaType(rawValue: mediaType!) ?? .unknown,
-                                         property: properties)
-        }
-        return EPUBManifest(id: xmlElement["id"].value, items: items)
+        return manifestParser.parse(xmlElement)
     }
 
     func getSpine(from xmlElement: AEXMLElement) -> EPUBSpine {
-        var items: [EPUBSpineItem] = []
-        for item in xmlElement["itemref"].all! {
-            let id = item.attributes["id"]
-            let idref = item.attributes["idref"]!
-            let linear = (item.attributes["linear"] ?? "yes") == "yes" ? true : false
-            items.append(EPUBSpineItem(id: id, idref: idref, linear: linear))
-        }
-        let pageProgressionDirection = xmlElement["page-progression-direction"].value ?? "ltr"
-        return EPUBSpine(id: xmlElement.attributes["id"],
-                         toc: xmlElement.attributes["toc"],
-                         pageProgressionDirection: EPUBPageProgressionDirection(
-                            rawValue: pageProgressionDirection),
-                         items: items)
+        return spineParser.parse(xmlElement)
     }
 
     func getTableOfContents(from xmlElement: AEXMLElement) -> EPUBTableOfContents {
-        let item = xmlElement["head"]["meta"].all(
-            withAttributes: ["name": "dtb=uid"])?.first?.attributes["content"]
-        var tableOfContents = EPUBTableOfContents(label: xmlElement["docTitle"]["text"].value!,
-                                                  id: "0",
-                                                  item: item, subTable: [])
-
-        func evaluateChildren(from xmlElement: AEXMLElement) -> [EPUBTableOfContents] {
-            if xmlElement["navPoint"].all != nil {
-                var subs: [EPUBTableOfContents] = []
-                for point in xmlElement["navPoint"].all! {
-                    subs.append(EPUBTableOfContents(label: point["navLabel"]["text"].value!,
-                                                    id: point.attributes["id"]!,
-                                                    item: point["content"].attributes["src"]!,
-                                                    subTable: evaluateChildren(from: point)))
-                }
-                return subs
-            } else {
-                return []
-            }
-        }
-        tableOfContents.subTable = evaluateChildren(from: xmlElement["navMap"])
-        return tableOfContents
+        return tableOfContentsParser.parse(xmlElement)
     }
 
 }

@@ -10,12 +10,12 @@ import Foundation
 import AEXML
 
 protocol EPUBMetadataParser {
-    func metadata(from xmlElement: AEXMLElement) -> EPUBMetadata
+    func parse(_ xmlElement: AEXMLElement) -> EPUBMetadata
 }
 
 class EPUBMetadataParserImplementation: EPUBMetadataParser {
 
-    func metadata(from xmlElement: AEXMLElement) -> EPUBMetadata {
+    func parse(_ xmlElement: AEXMLElement) -> EPUBMetadata {
         var metadata = EPUBMetadata()
         metadata.contributor = Creator(name: xmlElement["dc:contributor"].value,
                                        role: xmlElement["dc:contributor"].attributes["opf:role"],
