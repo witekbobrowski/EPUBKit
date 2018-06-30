@@ -233,12 +233,12 @@
 		419DC01120B9E64A00D654B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */,
-				41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */,
 				419DC01920B9E90200D654B2 /* Creator.swift */,
+				41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */,
 				413A073C1EEC19C40089D947 /* EPUBManifest.swift */,
-				419DC01720B9E85C00D654B2 /* EPUBMediaType.swift */,
 				419DC01520B9E7E600D654B2 /* EPUBManifestItem.swift */,
+				419DC01720B9E85C00D654B2 /* EPUBMediaType.swift */,
+				41FD36911EEB24DC00C34105 /* EPUBMetadata.swift */,
 				413A07401EED763F0089D947 /* EPUBSpine.swift */,
 				419DC01320B9E6DF00D654B2 /* EPUBSpineItem.swift */,
 				41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */,
