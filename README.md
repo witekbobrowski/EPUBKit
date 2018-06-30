@@ -15,7 +15,7 @@
 📚 A simple swift library for parsing EPUB documents
 </p>
 
-__Note:__ This library is still in its early stages! I will experiment and change the API until I am satisfied with the result. I do not reccomend using this library in larger projects (who am I fooling, nobody will use it anyway), although feedback will be highly appreciated 🙇
+__Note:__ This library is still in its early stages! I will experiment and change the API until I am satisfied with the result. I do not reccomend using this library in larger projects, although feedback will be highly appreciated 🙇
 
 ## Installation
 
@@ -31,7 +31,11 @@ Add to `Cartfile`:
 github "witekbobrowski/EPUBKit" ~> 0.2.2
 ```
 
-__Note:__ [Swift Package Manager](https://swift.org/package-manager/) support coming soon 💃
+#### [Swift Package Manager](https://swift.org/package-manager/)
+Add to `Package.swift`:
+```swift
+.Package(url: "https://github.com/witekbobrowski/EPUBKit.git", from: 0.2.2)
+```
 
 ## Usage
 
