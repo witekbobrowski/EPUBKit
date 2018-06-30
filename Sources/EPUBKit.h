@@ -6,7 +6,7 @@
 //  Copyright © 2017 Witek Bobrowski. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for EPUBKit.
 FOUNDATION_EXPORT double EPUBKitVersionNumber;

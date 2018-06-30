@@ -4,36 +4,84 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>EPUBKit iOS Tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>EPUBKit iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>EPUBKit macOS Tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>EPUBKit macOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
+		</dict>
+		<key>EPUBKit tvOS Tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>EPUBKit tvOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>EPUBKit watchOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>EPUBKit.xcscheme_^#shared#^_</key>
+		<key>EPUBKit-iOS.xcscheme_^#shared#^_</key>
 		<dict>
-			<key>isShown</key>
-			<true/>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
+		</dict>
+		<key>EPUBKit-macOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>EPUBKit-tvOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>EPUBKit-watchOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>4134174E20E7C2B9003D101D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4134177620E7C5DB003D101D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4134182820E8066D003D101D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4134183E20E8212F003D101D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>41689DD41EE997D1004D6003</key>
 		<dict>
 			<key>primary</key>

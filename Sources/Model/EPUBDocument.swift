@@ -49,6 +49,9 @@ extension EPUBDocument {
         return metadata.publisher
     }
     public var cover: URL? {
-        return contentDirectory.appendingPathComponent(manifest.items[metadata.coverId ?? ""]?.path ?? "")
+        guard let coverId = metadata.coverId, let path = manifest.items[coverId]?.path else {
+            return nil
+        }
+        return contentDirectory.appendingPathComponent(path)
     }
 }

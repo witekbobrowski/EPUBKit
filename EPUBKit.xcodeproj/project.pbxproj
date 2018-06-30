@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4117836B20E8216B00926820 /* EPUBKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4134182B20E8066D003D101D /* EPUBKitTests.swift */; };
+		4117836C20E8216B00926820 /* EPUBKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4134182B20E8066D003D101D /* EPUBKitTests.swift */; };
 		4134177F20E7C823003D101D /* EPUBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 41689DD81EE997D1004D6003 /* EPUBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4134178020E7C84D003D101D /* EPUBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 41689DD81EE997D1004D6003 /* EPUBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4134178120E7C855003D101D /* EPUBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 41689DD81EE997D1004D6003 /* EPUBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4134178220E7C85A003D101D /* EPUBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 41689DD81EE997D1004D6003 /* EPUBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4134178520E7C984003D101D /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134178320E7C984003D101D /* AEXML.framework */; };
-		4134178620E7C984003D101D /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134178420E7C984003D101D /* Zip.framework */; };
 		4134178920E7C9A2003D101D /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134178720E7C9A2003D101D /* Zip.framework */; };
 		4134178A20E7C9A2003D101D /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134178820E7C9A2003D101D /* AEXML.framework */; };
 		4134178D20E7C9BC003D101D /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134178B20E7C9BC003D101D /* Zip.framework */; };
@@ -98,7 +98,38 @@
 		4134180C20E7CA78003D101D /* EPUBSpineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419DC01320B9E6DF00D654B2 /* EPUBSpineItem.swift */; };
 		4134180D20E7CA78003D101D /* EPUBTableOfContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */; };
 		4134180F20E7CB1A003D101D /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134180E20E7CB19003D101D /* AEXML.framework */; };
+		4134182C20E8066D003D101D /* EPUBKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4134182B20E8066D003D101D /* EPUBKitTests.swift */; };
+		4134182E20E8066D003D101D /* EPUBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134177720E7C5DB003D101D /* EPUBKit.framework */; };
+		4134183420E80EC4003D101D /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134178320E7C984003D101D /* AEXML.framework */; };
+		4134183520E80EC4003D101D /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134178420E7C984003D101D /* Zip.framework */; };
+		4134183720E819CE003D101D /* alice.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4134182320E8015E003D101D /* alice.epub */; };
+		4134184420E82130003D101D /* EPUBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134174F20E7C2B9003D101D /* EPUBKit.framework */; };
+		4134185320E82141003D101D /* EPUBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134176920E7C428003D101D /* EPUBKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4134182F20E8066D003D101D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41689DCC1EE997D0004D6003 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4134177620E7C5DB003D101D;
+			remoteInfo = EPUBKit;
+		};
+		4134184520E82130003D101D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41689DCC1EE997D0004D6003 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4134174E20E7C2B9003D101D;
+			remoteInfo = "EPUBKit tvOS";
+		};
+		4134185420E82141003D101D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41689DCC1EE997D0004D6003 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4134176820E7C428003D101D;
+			remoteInfo = "EPUBKit macOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4130F6631EF2012E0073D37F /* EPUBParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBParserError.swift; sourceTree = "<group>"; };
@@ -107,10 +138,10 @@
 		4134172420E702A5003D101D /* EPUBSpineParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBSpineParser.swift; sourceTree = "<group>"; };
 		4134172820E70915003D101D /* EPUBTableOfContentsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBTableOfContentsParser.swift; sourceTree = "<group>"; };
 		4134172B20E79C7F003D101D /* EPUBContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBContentService.swift; sourceTree = "<group>"; };
-		4134174F20E7C2B9003D101D /* EPUBKit_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4134175C20E7C2D8003D101D /* EPUBKit_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4134176920E7C428003D101D /* EPUBKit_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4134177720E7C5DB003D101D /* EPUBKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4134174F20E7C2B9003D101D /* EPUBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4134175C20E7C2D8003D101D /* EPUBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4134176920E7C428003D101D /* EPUBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4134177720E7C5DB003D101D /* EPUBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPUBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4134178320E7C984003D101D /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = Carthage/Build/iOS/AEXML.framework; sourceTree = "<group>"; };
 		4134178420E7C984003D101D /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = Carthage/Build/iOS/Zip.framework; sourceTree = "<group>"; };
 		4134178720E7C9A2003D101D /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = Carthage/Build/tvOS/Zip.framework; sourceTree = "<group>"; };
@@ -118,6 +149,12 @@
 		4134178B20E7C9BC003D101D /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = Carthage/Build/Mac/Zip.framework; sourceTree = "<group>"; };
 		4134178C20E7C9BC003D101D /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = Carthage/Build/Mac/AEXML.framework; sourceTree = "<group>"; };
 		4134180E20E7CB19003D101D /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = Carthage/Build/watchOS/AEXML.framework; sourceTree = "<group>"; };
+		4134182320E8015E003D101D /* alice.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = alice.epub; sourceTree = "<group>"; };
+		4134182920E8066D003D101D /* EPUBKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EPUBKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4134182B20E8066D003D101D /* EPUBKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBKitTests.swift; sourceTree = "<group>"; };
+		4134182D20E8066D003D101D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4134183F20E8212F003D101D /* EPUBKit-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EPUBKit-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4134184E20E82140003D101D /* EPUBKit-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EPUBKit-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		413A073C1EEC19C40089D947 /* EPUBManifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBManifest.swift; sourceTree = "<group>"; };
 		413A07401EED763F0089D947 /* EPUBSpine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBSpine.swift; sourceTree = "<group>"; };
 		413DB32F20E3CE1C00B5E1C3 /* EPUBParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBParserDelegate.swift; sourceTree = "<group>"; };
@@ -167,14 +204,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4134178520E7C984003D101D /* AEXML.framework in Frameworks */,
-				4134178620E7C984003D101D /* Zip.framework in Frameworks */,
+				4134183420E80EC4003D101D /* AEXML.framework in Frameworks */,
+				4134183520E80EC4003D101D /* Zip.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4134182620E8066D003D101D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4134182E20E8066D003D101D /* EPUBKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4134183C20E8212F003D101D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4134184420E82130003D101D /* EPUBKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4134184B20E82140003D101D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4134185320E82141003D101D /* EPUBKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4134181820E800A0003D101D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4134182220E8014A003D101D /* Resources */,
+				4134182B20E8066D003D101D /* EPUBKitTests.swift */,
+				4134182D20E8066D003D101D /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		4134182220E8014A003D101D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4134182320E8015E003D101D /* alice.epub */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		413DB33320E4046100B5E1C3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				41689DD71EE997D1004D6003 /* Sources */,
+				4134181820E800A0003D101D /* Tests */,
 				41689DD61EE997D1004D6003 /* Products */,
 				BAB91426085D666715B2FBDB /* Frameworks */,
 			);
@@ -210,10 +290,13 @@
 		41689DD61EE997D1004D6003 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4134174F20E7C2B9003D101D /* EPUBKit_tvOS.framework */,
-				4134175C20E7C2D8003D101D /* EPUBKit_watchOS.framework */,
-				4134176920E7C428003D101D /* EPUBKit_macOS.framework */,
-				4134177720E7C5DB003D101D /* EPUBKit_iOS.framework */,
+				4134174F20E7C2B9003D101D /* EPUBKit.framework */,
+				4134175C20E7C2D8003D101D /* EPUBKit.framework */,
+				4134176920E7C428003D101D /* EPUBKit.framework */,
+				4134177720E7C5DB003D101D /* EPUBKit.framework */,
+				4134182920E8066D003D101D /* EPUBKit-iOS Tests.xctest */,
+				4134183F20E8212F003D101D /* EPUBKit-tvOS Tests.xctest */,
+				4134184E20E82140003D101D /* EPUBKit-macOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -308,77 +391,135 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4134174E20E7C2B9003D101D /* EPUBKit tvOS */ = {
+		4134174E20E7C2B9003D101D /* EPUBKit-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4134175420E7C2B9003D101D /* Build configuration list for PBXNativeTarget "EPUBKit tvOS" */;
+			buildConfigurationList = 4134175420E7C2B9003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-tvOS" */;
 			buildPhases = (
 				4134174A20E7C2B9003D101D /* Sources */,
 				4134174B20E7C2B9003D101D /* Frameworks */,
 				4134174C20E7C2B9003D101D /* Headers */,
 				4134174D20E7C2B9003D101D /* Resources */,
+				4134183820E81FCC003D101D /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "EPUBKit tvOS";
+			name = "EPUBKit-tvOS";
 			productName = "EPUBKit tvOS";
-			productReference = 4134174F20E7C2B9003D101D /* EPUBKit_tvOS.framework */;
+			productReference = 4134174F20E7C2B9003D101D /* EPUBKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4134175B20E7C2D8003D101D /* EPUBKit watchOS */ = {
+		4134175B20E7C2D8003D101D /* EPUBKit-watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4134176120E7C2D8003D101D /* Build configuration list for PBXNativeTarget "EPUBKit watchOS" */;
+			buildConfigurationList = 4134176120E7C2D8003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-watchOS" */;
 			buildPhases = (
 				4134175720E7C2D8003D101D /* Sources */,
 				4134175820E7C2D8003D101D /* Frameworks */,
 				4134175920E7C2D8003D101D /* Headers */,
 				4134175A20E7C2D8003D101D /* Resources */,
+				4134183A20E82057003D101D /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "EPUBKit watchOS";
+			name = "EPUBKit-watchOS";
 			productName = "EPUBKit watchOS";
-			productReference = 4134175C20E7C2D8003D101D /* EPUBKit_watchOS.framework */;
+			productReference = 4134175C20E7C2D8003D101D /* EPUBKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4134176820E7C428003D101D /* EPUBKit macOS */ = {
+		4134176820E7C428003D101D /* EPUBKit-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4134176E20E7C428003D101D /* Build configuration list for PBXNativeTarget "EPUBKit macOS" */;
+			buildConfigurationList = 4134176E20E7C428003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-macOS" */;
 			buildPhases = (
 				4134176420E7C428003D101D /* Sources */,
 				4134176520E7C428003D101D /* Frameworks */,
 				4134176620E7C428003D101D /* Headers */,
 				4134176720E7C428003D101D /* Resources */,
+				4134183920E82024003D101D /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "EPUBKit macOS";
+			name = "EPUBKit-macOS";
 			productName = "EPUBKit macOS";
-			productReference = 4134176920E7C428003D101D /* EPUBKit_macOS.framework */;
+			productReference = 4134176920E7C428003D101D /* EPUBKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4134177620E7C5DB003D101D /* EPUBKit iOS */ = {
+		4134177620E7C5DB003D101D /* EPUBKit-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4134177C20E7C5DB003D101D /* Build configuration list for PBXNativeTarget "EPUBKit iOS" */;
+			buildConfigurationList = 4134177C20E7C5DB003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-iOS" */;
 			buildPhases = (
 				4134177220E7C5DB003D101D /* Sources */,
 				4134177320E7C5DB003D101D /* Frameworks */,
 				4134177420E7C5DB003D101D /* Headers */,
 				4134177520E7C5DB003D101D /* Resources */,
+				4134183620E8161D003D101D /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "EPUBKit iOS";
+			name = "EPUBKit-iOS";
 			productName = "EPUBKit iOS";
-			productReference = 4134177720E7C5DB003D101D /* EPUBKit_iOS.framework */;
+			productReference = 4134177720E7C5DB003D101D /* EPUBKit.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		4134182820E8066D003D101D /* EPUBKit-iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4134183120E8066D003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-iOS Tests" */;
+			buildPhases = (
+				4134182520E8066D003D101D /* Sources */,
+				4134182620E8066D003D101D /* Frameworks */,
+				4134182720E8066D003D101D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4134183020E8066D003D101D /* PBXTargetDependency */,
+			);
+			name = "EPUBKit-iOS Tests";
+			productName = "EPUBKit Tests";
+			productReference = 4134182920E8066D003D101D /* EPUBKit-iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4134183E20E8212F003D101D /* EPUBKit-tvOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4134184720E82130003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-tvOS Tests" */;
+			buildPhases = (
+				4134183B20E8212F003D101D /* Sources */,
+				4134183C20E8212F003D101D /* Frameworks */,
+				4134183D20E8212F003D101D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4134184620E82130003D101D /* PBXTargetDependency */,
+			);
+			name = "EPUBKit-tvOS Tests";
+			productName = "EPUBKit tvOS Tests";
+			productReference = 4134183F20E8212F003D101D /* EPUBKit-tvOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4134184D20E82140003D101D /* EPUBKit-macOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4134185620E82141003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-macOS Tests" */;
+			buildPhases = (
+				4134184A20E82140003D101D /* Sources */,
+				4134184B20E82140003D101D /* Frameworks */,
+				4134184C20E82140003D101D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4134185520E82141003D101D /* PBXTargetDependency */,
+			);
+			name = "EPUBKit-macOS Tests";
+			productName = "EPUBKit macOS Tests";
+			productReference = 4134184E20E82140003D101D /* EPUBKit-macOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -386,6 +527,7 @@
 		41689DCC1EE997D0004D6003 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Witek Bobrowski";
 				TargetAttributes = {
@@ -409,6 +551,21 @@
 						DevelopmentTeam = U82NM6NPZS;
 						ProvisioningStyle = Automatic;
 					};
+					4134182820E8066D003D101D = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = U82NM6NPZS;
+						ProvisioningStyle = Automatic;
+					};
+					4134183E20E8212F003D101D = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = U82NM6NPZS;
+						ProvisioningStyle = Automatic;
+					};
+					4134184D20E82140003D101D = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = U82NM6NPZS;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 41689DCF1EE997D0004D6003 /* Build configuration list for PBXProject "EPUBKit" */;
@@ -423,10 +580,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4134177620E7C5DB003D101D /* EPUBKit iOS */,
-				4134174E20E7C2B9003D101D /* EPUBKit tvOS */,
-				4134176820E7C428003D101D /* EPUBKit macOS */,
-				4134175B20E7C2D8003D101D /* EPUBKit watchOS */,
+				4134177620E7C5DB003D101D /* EPUBKit-iOS */,
+				4134174E20E7C2B9003D101D /* EPUBKit-tvOS */,
+				4134176820E7C428003D101D /* EPUBKit-macOS */,
+				4134175B20E7C2D8003D101D /* EPUBKit-watchOS */,
+				4134182820E8066D003D101D /* EPUBKit-iOS Tests */,
+				4134183E20E8212F003D101D /* EPUBKit-tvOS Tests */,
+				4134184D20E82140003D101D /* EPUBKit-macOS Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -460,7 +620,92 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4134182720E8066D003D101D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4134183720E819CE003D101D /* alice.epub in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4134183D20E8212F003D101D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4134184C20E82140003D101D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4134183620E8161D003D101D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Zip.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AEXML.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		4134183820E81FCC003D101D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Zip.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/AEXML.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		4134183920E82024003D101D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Zip.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/AEXML.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		4134183A20E82057003D101D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/watchOS/Zip.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/AEXML.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4134174A20E7C2B9003D101D /* Sources */ = {
@@ -571,7 +816,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4134182520E8066D003D101D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4134182C20E8066D003D101D /* EPUBKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4134183B20E8212F003D101D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4117836B20E8216B00926820 /* EPUBKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4134184A20E82140003D101D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4117836C20E8216B00926820 /* EPUBKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4134183020E8066D003D101D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4134177620E7C5DB003D101D /* EPUBKit-iOS */;
+			targetProxy = 4134182F20E8066D003D101D /* PBXContainerItemProxy */;
+		};
+		4134184620E82130003D101D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4134174E20E7C2B9003D101D /* EPUBKit-tvOS */;
+			targetProxy = 4134184520E82130003D101D /* PBXContainerItemProxy */;
+		};
+		4134185520E82141003D101D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4134176820E7C428003D101D /* EPUBKit-macOS */;
+			targetProxy = 4134185420E82141003D101D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		410E720B20BC8E61008081C4 /* Debug */ = {
@@ -653,7 +940,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = EPUBKit;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -692,7 +979,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = EPUBKit;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -726,7 +1013,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-watchOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = EPUBKit;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -766,7 +1053,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-watchOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = EPUBKit;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -802,7 +1089,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = EPUBKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -842,7 +1129,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = EPUBKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -874,7 +1161,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = EPUBKit;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -912,12 +1199,164 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = EPUBKit;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4134183220E8066D003D101D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U82NM6NPZS;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4134183320E8066D003D101D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = U82NM6NPZS;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4134184820E82130003D101D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U82NM6NPZS;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-tvOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Release;
+		};
+		4134184920E82130003D101D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = U82NM6NPZS;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-tvOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Debug;
+		};
+		4134185720E82141003D101D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U82NM6NPZS;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-macOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		4134185820E82141003D101D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = U82NM6NPZS;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bobrowski.EPUBKit-macOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -979,7 +1418,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4134175420E7C2B9003D101D /* Build configuration list for PBXNativeTarget "EPUBKit tvOS" */ = {
+		4134175420E7C2B9003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4134175520E7C2B9003D101D /* Release */,
@@ -988,7 +1427,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		4134176120E7C2D8003D101D /* Build configuration list for PBXNativeTarget "EPUBKit watchOS" */ = {
+		4134176120E7C2D8003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4134176220E7C2D8003D101D /* Release */,
@@ -997,7 +1436,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		4134176E20E7C428003D101D /* Build configuration list for PBXNativeTarget "EPUBKit macOS" */ = {
+		4134176E20E7C428003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4134176F20E7C428003D101D /* Release */,
@@ -1006,11 +1445,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		4134177C20E7C5DB003D101D /* Build configuration list for PBXNativeTarget "EPUBKit iOS" */ = {
+		4134177C20E7C5DB003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4134177D20E7C5DB003D101D /* Release */,
 				4134177E20E7C5DB003D101D /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4134183120E8066D003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4134183220E8066D003D101D /* Release */,
+				4134183320E8066D003D101D /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4134184720E82130003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-tvOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4134184820E82130003D101D /* Release */,
+				4134184920E82130003D101D /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4134185620E82141003D101D /* Build configuration list for PBXNativeTarget "EPUBKit-macOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4134185720E82141003D101D /* Release */,
+				4134185820E82141003D101D /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
