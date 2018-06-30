@@ -11,9 +11,8 @@ import Foundation
 protocol EPUBParsable {
     associatedtype XMLElement
     func unzip(archiveAt path: URL) throws -> URL
-    func getContentPath(from documentPath: URL) throws -> URL
+    func getSpine(from xmlElement: XMLElement) -> EPUBSpine
     func getMetadata(from xmlElement: XMLElement) -> EPUBMetadata
     func getManifest(from xmlElement: XMLElement) -> EPUBManifest
-    func getSpine(from xmlElement: XMLElement) -> EPUBSpine
     func getTableOfContents(from xmlElement: XMLElement) -> EPUBTableOfContents
 }

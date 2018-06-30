@@ -11,6 +11,7 @@ import Foundation
 public protocol EPUBParserDelegate: AnyObject {
     func parser(_ parser: EPUBParser, didBeginParsingDocumentAt path: URL)
     func parser(_ parser: EPUBParser, didUnzipArchiveTo directory: URL)
+    func parser(_ parser: EPUBParser, didLocateContentAt directory: URL)
     func parser(_ parser: EPUBParser, didFinishParsing metadata: EPUBMetadata)
     func parser(_ parser: EPUBParser, didFinishParsing manifest: EPUBManifest)
     func parser(_ parser: EPUBParser, didFinishParsing spine: EPUBSpine)
@@ -22,6 +23,7 @@ public protocol EPUBParserDelegate: AnyObject {
 extension EPUBParserDelegate {
     func parser(_ parser: EPUBParser, didBeginParsingDocumentAt path: URL) {}
     func parser(_ parser: EPUBParser, didUnzipArchiveTo directory: URL) {}
+    func parser(_ parser: EPUBParser, didLocateContentAt directory: URL) {}
     func parser(_ parser: EPUBParser, didFinishParsing metadata: EPUBMetadata) {}
     func parser(_ parser: EPUBParser, didFinishParsing manifest: EPUBManifest) {}
     func parser(_ parser: EPUBParser, didFinishParsing spine: EPUBSpine) {}

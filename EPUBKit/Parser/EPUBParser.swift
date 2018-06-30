@@ -6,15 +6,17 @@
 //  Copyright © 2017 Witek Bobrowski. All rights reserved.
 //
 
-import AEXML
 import Foundation
+import AEXML
 
 public final class EPUBParser: EPUBParserProtocol {
 
+    typealias XMLElement = AEXMLElement
+
     private let archiveService: EPUBArchiveService
+    private let spineParser: EPUBSpineParser
     private let metadataParser: EPUBMetadataParser
     private let manifestParser: EPUBManifestParser
-    private let spineParser: EPUBSpineParser
     private let tableOfContentsParser: EPUBTableOfContentsParser
 
     public weak var delegate: EPUBParserDelegate?
@@ -34,33 +36,28 @@ public final class EPUBParser: EPUBParserProtocol {
             let directory = try unzip(archiveAt: path)
             delegate?.parser(self, didUnzipArchiveTo: directory)
 
-            let contentPath = try getContentPath(from: directory)
-            let contentDirectory = contentPath.deletingLastPathComponent()
-            let content = try AEXMLDocument(xml: try Data(contentsOf: contentPath))
+            let contentService = try EPUBContentServiceImplementation(directory)
+            let contentDirectory = contentService.contentDirectory
+            delegate?.parser(self, didLocateContentAt: contentDirectory)
 
-            let metadata = getMetadata(from: content.root["metadata"])
-            delegate?.parser(self, didFinishParsing: metadata)
-
-            let manifest = getManifest(from: content.root["manifest"])
-            delegate?.parser(self, didFinishParsing: manifest)
-
-            let spine =  getSpine(from: content.root["spine"])
+            let spine =  getSpine(from: contentService.spine)
             delegate?.parser(self, didFinishParsing: spine)
 
-            let tocPathComponent = try manifest.path(forItemWithId: spine.toc ?? "")
-            let tocPath = contentDirectory.appendingPathComponent(tocPathComponent)
-            let tocData = try Data(contentsOf: tocPath)
-            let tocContent = try AEXMLDocument(xml: tocData)
-            let tableOfContents = getTableOfContents(from: tocContent.root)
+            let metadata = getMetadata(from: contentService.metadata)
+            delegate?.parser(self, didFinishParsing: metadata)
+
+            let manifest = getManifest(from: contentService.manifest)
+            delegate?.parser(self, didFinishParsing: manifest)
+
+            let fileName = try manifest.path(forItemWithId: spine.toc ?? "")
+            let tableOfContentsElement = try contentService.tableOfContents(fileName)
+            let tableOfContents = getTableOfContents(from: tableOfContentsElement)
             delegate?.parser(self, didFinishParsing: tableOfContents)
 
             delegate?.parser(self, didFinishParsingDocumentAt: path)
-            return EPUBDocument(directory: directory,
-                                contentDirectory: contentDirectory,
-                                metadata: metadata,
-                                manifest: manifest,
-                                spine: spine,
-                                tableOfContents: tableOfContents)
+            return EPUBDocument(directory: directory, contentDirectory: contentDirectory,
+                                metadata: metadata, manifest: manifest,
+                                spine: spine, tableOfContents: tableOfContents)
         } catch let error {
             delegate?.parser(self, didFailParsingDocumentAt: path, with: error)
             throw error
@@ -69,38 +66,25 @@ public final class EPUBParser: EPUBParserProtocol {
 
 }
 
-// MARK: - EPUBParsable
 extension EPUBParser: EPUBParsable {
 
     func unzip(archiveAt path: URL) throws -> URL {
         return try archiveService.unarchive(archive: path)
     }
 
-    func getContentPath(from documentPath: URL) throws -> URL {
-        do {
-            let path = documentPath.appendingPathComponent("META-INF/container.xml")
-            let data = try Data(contentsOf: path)
-            let container = try AEXMLDocument(xml: data)
-            let content = container.root["rootfiles"]["rootfile"].attributes["full-path"]
-            return documentPath.appendingPathComponent(content!)
-        } catch {
-            throw EPUBParserError.containerParseError
-        }
-    }
-
-    func getMetadata(from xmlElement: AEXMLElement) -> EPUBMetadata {
-        return metadataParser.parse(xmlElement)
-    }
-
-    func getManifest(from xmlElement: AEXMLElement) -> EPUBManifest {
-        return manifestParser.parse(xmlElement)
-    }
-
-    func getSpine(from xmlElement: AEXMLElement) -> EPUBSpine {
+    func getSpine(from xmlElement: XMLElement) -> EPUBSpine {
         return spineParser.parse(xmlElement)
     }
 
-    func getTableOfContents(from xmlElement: AEXMLElement) -> EPUBTableOfContents {
+    func getMetadata(from xmlElement: XMLElement) -> EPUBMetadata {
+        return metadataParser.parse(xmlElement)
+    }
+
+    func getManifest(from xmlElement: XMLElement) -> EPUBManifest {
+        return manifestParser.parse(xmlElement)
+    }
+
+    func getTableOfContents(from xmlElement: XMLElement) -> EPUBTableOfContents {
         return tableOfContentsParser.parse(xmlElement)
     }
 
