@@ -10,6 +10,7 @@
     <a href=""><img alt="https://github.com/apple/swift-package-manager" src="https://img.shields.io/badge/SPM-compatible-orange.svg"></a>
     <a><img alt="Platforms" src="https://img.shields.io/badge/platform-iOS | macOS | tvOS-lightgray.svg"></a>
     <a href="https://www.codacy.com/app/witekbobrowski/EPUBKit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=witekbobrowski/EPUBKit&amp;utm_campaign=Badge_Grade"><img alt="CodacyBadge" src="https://api.codacy.com/project/badge/Grade/35b59c32fd77448da5bab9041ebba524"</a>
+    <a href="https://travis-ci.org/witekbobrowski/EPUBKit/"><img alt="Travis" src="https://api.travis-ci.org/witekbobrowski/EPUBKit.svg?branch=master"></a>
     <a href="https://twitter.com/witekbobrowski"><img alt="Contact" src="https://img.shields.io/badge/contact-@witekbobrowski-blue.svg"></a>
 </p>
 <p align=center>
