@@ -1,7 +1,6 @@
-language: swift 
-osx_image: xcode7
+language: objective-c
+osx_image: xcode9.3
 script:
-  - xcodebuild -scheme EPUBKit-iOS -project EPUBKit.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 5,OS=10.0' build test
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
-
+    - xcodebuild clean test -project EPUBKit.xcodeproj -scheme EPUBKit-iOS -destination "platform=iOS Simulator,name=iPhone 7,OS=10.1" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+    - xcodebuild clean test -project EPUBKit.xcodeproj -scheme EPUBKit-macOS -destination "platform=OS X" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+    - xcodebuild clean test -project EPUBKit.xcodeproj -scheme EPUBKit-tvOS -destination "platform=tvOS Simulator,name=Apple TV 1080p,OS=10.1" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
