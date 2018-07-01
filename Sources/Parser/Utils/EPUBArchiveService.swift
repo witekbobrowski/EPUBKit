@@ -10,7 +10,6 @@ import Foundation
 import Zip
 
 protocol EPUBArchiveService {
-    func archive(filesAt url: URL, fileName name: String) throws -> URL
     func unarchive(archive url: URL) throws -> URL
 }
 
@@ -20,16 +19,14 @@ class EPUBArchiveServiceImplementation: EPUBArchiveService {
         Zip.addCustomFileExtension("epub")
     }
 
-    func archive(filesAt url: URL, fileName name: String) throws -> URL {
-        return try Zip.quickZipFiles([url], fileName: name)
-    }
-
     func unarchive(archive url: URL) throws -> URL {
+        var destination: URL
         do {
-            return try Zip.quickUnzipFile(url)
+            destination = try Zip.quickUnzipFile(url)
         } catch let error {
             throw EPUBParserError.unzipFailed(reason: error)
         }
+        return destination
     }
 
 }

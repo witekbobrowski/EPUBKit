@@ -202,7 +202,7 @@ extension EPUBKitTests {
             }
         }
     }
-    func testErrorContainerWithBrokenAlice() {
+    func testErrorContainerWithBrokenGeographyofBliss() {
         let url = library.path(for: .theGeographyofBlissBrokenContainer)
         let parser = EPUBParser()
         XCTAssertThrowsError(try parser.parse(documentAt: url), "") { error in
