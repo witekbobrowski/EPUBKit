@@ -1,5 +1,10 @@
 language: objective-c
 osx_image: xcode9.3
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+before_script:
+  - carthage bootstrap
 script:
     - xcodebuild clean test -project EPUBKit.xcodeproj -scheme EPUBKit-iOS -destination "platform=iOS Simulator,name=iPhone 7,OS=10.1" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
     - xcodebuild clean test -project EPUBKit.xcodeproj -scheme EPUBKit-macOS -destination "platform=OS X" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
