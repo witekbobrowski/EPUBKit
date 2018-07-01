@@ -30,18 +30,14 @@ class EPUBTableOfContentsParserImplementation: EPUBTableOfContentsParser {
 extension EPUBTableOfContentsParserImplementation {
 
     private func evaluateChildren(from xmlElement: AEXMLElement) -> [EPUBTableOfContents] {
-        if xmlElement["navPoint"].all != nil {
-            var subs: [EPUBTableOfContents] = []
-            for point in xmlElement["navPoint"].all! {
-                subs.append(EPUBTableOfContents(label: point["navLabel"]["text"].value!,
-                                                id: point.attributes["id"]!,
-                                                item: point["content"].attributes["src"]!,
-                                                subTable: evaluateChildren(from: point)))
-            }
-            return subs
-        } else {
-            return []
+        guard let points = xmlElement["navPoint"].all else { return [] }
+        let subs: [EPUBTableOfContents] = points.map { point in
+            return EPUBTableOfContents(label: point["navLabel"]["text"].value!,
+                                       id: point.attributes["id"]!,
+                                       item: point["content"].attributes["src"]!,
+                                       subTable: evaluateChildren(from: point))
         }
+        return subs
     }
 
 }

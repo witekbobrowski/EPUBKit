@@ -30,40 +30,45 @@ public final class EPUBParser: EPUBParserProtocol {
     }
 
     public func parse(documentAt path: URL) throws -> EPUBDocument {
+        var directory: URL
+        var contentDirectory: URL
+        var metadata: EPUBMetadata
+        var manifest: EPUBManifest
+        var spine: EPUBSpine
+        var tableOfContents: EPUBTableOfContents
+        delegate?.parser(self, didBeginParsingDocumentAt: path)
         do {
-            delegate?.parser(self, didBeginParsingDocumentAt: path)
-
-            let directory = try unzip(archiveAt: path)
+            directory = try unzip(archiveAt: path)
             delegate?.parser(self, didUnzipArchiveTo: directory)
 
             let contentService = try EPUBContentServiceImplementation(directory)
-            let contentDirectory = contentService.contentDirectory
+            contentDirectory = contentService.contentDirectory
             delegate?.parser(self, didLocateContentAt: contentDirectory)
 
-            let spine =  getSpine(from: contentService.spine)
+            spine =  getSpine(from: contentService.spine)
             delegate?.parser(self, didFinishParsing: spine)
 
-            let metadata = getMetadata(from: contentService.metadata)
+            metadata = getMetadata(from: contentService.metadata)
             delegate?.parser(self, didFinishParsing: metadata)
 
-            let manifest = getManifest(from: contentService.manifest)
+            manifest = getManifest(from: contentService.manifest)
             delegate?.parser(self, didFinishParsing: manifest)
 
             guard let toc = spine.toc, let fileName = manifest.items[toc]?.path else {
                 throw EPUBParserError.tableOfContentsMissing
             }
             let tableOfContentsElement = try contentService.tableOfContents(fileName)
-            let tableOfContents = getTableOfContents(from: tableOfContentsElement)
-            delegate?.parser(self, didFinishParsing: tableOfContents)
 
-            delegate?.parser(self, didFinishParsingDocumentAt: path)
-            return EPUBDocument(directory: directory, contentDirectory: contentDirectory,
-                                metadata: metadata, manifest: manifest,
-                                spine: spine, tableOfContents: tableOfContents)
+            tableOfContents = getTableOfContents(from: tableOfContentsElement)
+            delegate?.parser(self, didFinishParsing: tableOfContents)
         } catch let error {
             delegate?.parser(self, didFailParsingDocumentAt: path, with: error)
             throw error
         }
+        delegate?.parser(self, didFinishParsingDocumentAt: path)
+        return EPUBDocument(directory: directory, contentDirectory: contentDirectory,
+                            metadata: metadata, manifest: manifest,
+                            spine: spine, tableOfContents: tableOfContents)
     }
 
 }

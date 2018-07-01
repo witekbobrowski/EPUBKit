@@ -53,10 +53,12 @@ extension EPUBContentServiceImplementation {
 
     static private func getContentPath(from url: URL) throws -> URL {
         let path = url.appendingPathComponent("META-INF/container.xml")
-        let data = try Data(contentsOf: path)
+        guard let data = try? Data(contentsOf: path) else {
+            throw EPUBParserError.containerMissing
+        }
         let container = try AEXMLDocument(xml: data)
         guard let content = container.root["rootfiles"]["rootfile"].attributes["full-path"] else {
-            throw EPUBParserError.containerParseError
+            throw EPUBParserError.contentPathMissing
         }
         return url.appendingPathComponent(content)
     }

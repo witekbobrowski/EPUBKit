@@ -9,6 +9,29 @@
 /* Begin PBXBuildFile section */
 		4117836B20E8216B00926820 /* EPUBKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4134182B20E8066D003D101D /* EPUBKitTests.swift */; };
 		4117836C20E8216B00926820 /* EPUBKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4134182B20E8066D003D101D /* EPUBKitTests.swift */; };
+		411BA49E20E8E5A400D10808 /* Geography_of_Bliss.epub in Resources */ = {isa = PBXBuildFile; fileRef = 411BA49C20E8E5A400D10808 /* Geography_of_Bliss.epub */; };
+		411BA49F20E8E5A400D10808 /* Geography_of_Bliss.epub in Resources */ = {isa = PBXBuildFile; fileRef = 411BA49C20E8E5A400D10808 /* Geography_of_Bliss.epub */; };
+		411BA4A020E8E5A600D10808 /* Alices_Adventures_in_Wonderland.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4134182320E8015E003D101D /* Alices_Adventures_in_Wonderland.epub */; };
+		411BA4A120E8E5A600D10808 /* Alices_Adventures_in_Wonderland.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4134182320E8015E003D101D /* Alices_Adventures_in_Wonderland.epub */; };
+		411BA4A220E8E61800D10808 /* EPUBFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BA49A20E8E4A200D10808 /* EPUBFile.swift */; };
+		411BA4A320E8E61900D10808 /* EPUBFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BA49A20E8E4A200D10808 /* EPUBFile.swift */; };
+		411BA4A420E8E61900D10808 /* EPUBFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BA49A20E8E4A200D10808 /* EPUBFile.swift */; };
+		411BA4A620E8E62300D10808 /* EPUBLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BA49720E8E40700D10808 /* EPUBLibrary.swift */; };
+		411BA4A720E8E62300D10808 /* EPUBLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BA49720E8E40700D10808 /* EPUBLibrary.swift */; };
+		411BA4A820E8E62400D10808 /* EPUBLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BA49720E8E40700D10808 /* EPUBLibrary.swift */; };
+		411BA4A920E8E9F400D10808 /* Geography_of_Bliss.epub in Resources */ = {isa = PBXBuildFile; fileRef = 411BA49C20E8E5A400D10808 /* Geography_of_Bliss.epub */; };
+		411BA4AB20E8EC4100D10808 /* MockedEPUBParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BA4AA20E8EC4100D10808 /* MockedEPUBParserDelegate.swift */; };
+		411BA4AC20E8EC4100D10808 /* MockedEPUBParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BA4AA20E8EC4100D10808 /* MockedEPUBParserDelegate.swift */; };
+		411BA4AD20E8EC4100D10808 /* MockedEPUBParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BA4AA20E8EC4100D10808 /* MockedEPUBParserDelegate.swift */; };
+		411BA4B320E8FB9400D10808 /* broken_archive_alice.epub in Resources */ = {isa = PBXBuildFile; fileRef = 411BA4B220E8FB9400D10808 /* broken_archive_alice.epub */; };
+		411BA4B420E8FB9400D10808 /* broken_archive_alice.epub in Resources */ = {isa = PBXBuildFile; fileRef = 411BA4B220E8FB9400D10808 /* broken_archive_alice.epub */; };
+		411BA4B520E8FB9400D10808 /* broken_archive_alice.epub in Resources */ = {isa = PBXBuildFile; fileRef = 411BA4B220E8FB9400D10808 /* broken_archive_alice.epub */; };
+		411BA4C220E907AF00D10808 /* broken_container_bliss.epub in Resources */ = {isa = PBXBuildFile; fileRef = 411BA4C120E907AE00D10808 /* broken_container_bliss.epub */; };
+		411BA4C320E907AF00D10808 /* broken_container_bliss.epub in Resources */ = {isa = PBXBuildFile; fileRef = 411BA4C120E907AE00D10808 /* broken_container_bliss.epub */; };
+		411BA4C420E907AF00D10808 /* broken_container_bliss.epub in Resources */ = {isa = PBXBuildFile; fileRef = 411BA4C120E907AE00D10808 /* broken_container_bliss.epub */; };
+		411BA4CA20E90B8300D10808 /* The_Metamorphosis.epub in Resources */ = {isa = PBXBuildFile; fileRef = 411BA4C920E90B8300D10808 /* The_Metamorphosis.epub */; };
+		411BA4CB20E90B8300D10808 /* The_Metamorphosis.epub in Resources */ = {isa = PBXBuildFile; fileRef = 411BA4C920E90B8300D10808 /* The_Metamorphosis.epub */; };
+		411BA4CC20E90B8300D10808 /* The_Metamorphosis.epub in Resources */ = {isa = PBXBuildFile; fileRef = 411BA4C920E90B8300D10808 /* The_Metamorphosis.epub */; };
 		4134177F20E7C823003D101D /* EPUBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 41689DD81EE997D1004D6003 /* EPUBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4134178020E7C84D003D101D /* EPUBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 41689DD81EE997D1004D6003 /* EPUBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4134178120E7C855003D101D /* EPUBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 41689DD81EE997D1004D6003 /* EPUBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -102,9 +125,18 @@
 		4134182E20E8066D003D101D /* EPUBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134177720E7C5DB003D101D /* EPUBKit.framework */; };
 		4134183420E80EC4003D101D /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134178320E7C984003D101D /* AEXML.framework */; };
 		4134183520E80EC4003D101D /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134178420E7C984003D101D /* Zip.framework */; };
-		4134183720E819CE003D101D /* alice.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4134182320E8015E003D101D /* alice.epub */; };
+		4134183720E819CE003D101D /* Alices_Adventures_in_Wonderland.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4134182320E8015E003D101D /* Alices_Adventures_in_Wonderland.epub */; };
 		4134184420E82130003D101D /* EPUBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134174F20E7C2B9003D101D /* EPUBKit.framework */; };
 		4134185320E82141003D101D /* EPUBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4134176920E7C428003D101D /* EPUBKit.framework */; };
+		41BD9D1320E913AD0025FB27 /* broken_toc_metamorphosis.epub in Resources */ = {isa = PBXBuildFile; fileRef = 41BD9D1220E913AD0025FB27 /* broken_toc_metamorphosis.epub */; };
+		41BD9D1420E913AD0025FB27 /* broken_toc_metamorphosis.epub in Resources */ = {isa = PBXBuildFile; fileRef = 41BD9D1220E913AD0025FB27 /* broken_toc_metamorphosis.epub */; };
+		41BD9D1520E913AD0025FB27 /* broken_toc_metamorphosis.epub in Resources */ = {isa = PBXBuildFile; fileRef = 41BD9D1220E913AD0025FB27 /* broken_toc_metamorphosis.epub */; };
+		41BD9D1720E915F00025FB27 /* The_Problems_of_Philosophy.epub in Resources */ = {isa = PBXBuildFile; fileRef = 41BD9D1620E915EF0025FB27 /* The_Problems_of_Philosophy.epub */; };
+		41BD9D1820E915F00025FB27 /* The_Problems_of_Philosophy.epub in Resources */ = {isa = PBXBuildFile; fileRef = 41BD9D1620E915EF0025FB27 /* The_Problems_of_Philosophy.epub */; };
+		41BD9D1920E915F00025FB27 /* The_Problems_of_Philosophy.epub in Resources */ = {isa = PBXBuildFile; fileRef = 41BD9D1620E915EF0025FB27 /* The_Problems_of_Philosophy.epub */; };
+		41BD9D1B20E915F90025FB27 /* broken_content_philosophy.epub in Resources */ = {isa = PBXBuildFile; fileRef = 41BD9D1A20E915F90025FB27 /* broken_content_philosophy.epub */; };
+		41BD9D1C20E915F90025FB27 /* broken_content_philosophy.epub in Resources */ = {isa = PBXBuildFile; fileRef = 41BD9D1A20E915F90025FB27 /* broken_content_philosophy.epub */; };
+		41BD9D1D20E915F90025FB27 /* broken_content_philosophy.epub in Resources */ = {isa = PBXBuildFile; fileRef = 41BD9D1A20E915F90025FB27 /* broken_content_philosophy.epub */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +164,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		411BA49720E8E40700D10808 /* EPUBLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBLibrary.swift; sourceTree = "<group>"; };
+		411BA49A20E8E4A200D10808 /* EPUBFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBFile.swift; sourceTree = "<group>"; };
+		411BA49C20E8E5A400D10808 /* Geography_of_Bliss.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = Geography_of_Bliss.epub; sourceTree = "<group>"; };
+		411BA4AA20E8EC4100D10808 /* MockedEPUBParserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedEPUBParserDelegate.swift; sourceTree = "<group>"; };
+		411BA4B220E8FB9400D10808 /* broken_archive_alice.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = broken_archive_alice.epub; sourceTree = "<group>"; };
+		411BA4C120E907AE00D10808 /* broken_container_bliss.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = broken_container_bliss.epub; sourceTree = "<group>"; };
+		411BA4C920E90B8300D10808 /* The_Metamorphosis.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = The_Metamorphosis.epub; sourceTree = "<group>"; };
 		4130F6631EF2012E0073D37F /* EPUBParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBParserError.swift; sourceTree = "<group>"; };
 		4134172020E6EF7E003D101D /* EPUBMetadataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBMetadataParser.swift; sourceTree = "<group>"; };
 		4134172220E7016F003D101D /* EPUBManifestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBManifestParser.swift; sourceTree = "<group>"; };
@@ -149,7 +188,7 @@
 		4134178B20E7C9BC003D101D /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = Carthage/Build/Mac/Zip.framework; sourceTree = "<group>"; };
 		4134178C20E7C9BC003D101D /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = Carthage/Build/Mac/AEXML.framework; sourceTree = "<group>"; };
 		4134180E20E7CB19003D101D /* AEXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AEXML.framework; path = Carthage/Build/watchOS/AEXML.framework; sourceTree = "<group>"; };
-		4134182320E8015E003D101D /* alice.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = alice.epub; sourceTree = "<group>"; };
+		4134182320E8015E003D101D /* Alices_Adventures_in_Wonderland.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alices_Adventures_in_Wonderland.epub; sourceTree = "<group>"; };
 		4134182920E8066D003D101D /* EPUBKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EPUBKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4134182B20E8066D003D101D /* EPUBKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBKitTests.swift; sourceTree = "<group>"; };
 		4134182D20E8066D003D101D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -167,6 +206,9 @@
 		419DC01520B9E7E600D654B2 /* EPUBManifestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBManifestItem.swift; sourceTree = "<group>"; };
 		419DC01720B9E85C00D654B2 /* EPUBMediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBMediaType.swift; sourceTree = "<group>"; };
 		419DC01920B9E90200D654B2 /* Creator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creator.swift; sourceTree = "<group>"; };
+		41BD9D1220E913AD0025FB27 /* broken_toc_metamorphosis.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = broken_toc_metamorphosis.epub; sourceTree = "<group>"; };
+		41BD9D1620E915EF0025FB27 /* The_Problems_of_Philosophy.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = The_Problems_of_Philosophy.epub; sourceTree = "<group>"; };
+		41BD9D1A20E915F90025FB27 /* broken_content_philosophy.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = broken_content_philosophy.epub; sourceTree = "<group>"; };
 		41FD367D1EEAF80A00C34105 /* EPUBDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBDocument.swift; sourceTree = "<group>"; };
 		41FD367E1EEAF80A00C34105 /* EPUBTableOfContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBTableOfContents.swift; sourceTree = "<group>"; };
 		41FD367F1EEAF80A00C34105 /* EPUBParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBParser.swift; sourceTree = "<group>"; };
@@ -236,10 +278,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		411BA49920E8E47000D10808 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				411BA49A20E8E4A200D10808 /* EPUBFile.swift */,
+				411BA49720E8E40700D10808 /* EPUBLibrary.swift */,
+				411BA4AA20E8EC4100D10808 /* MockedEPUBParserDelegate.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		411BA4BC20E9062C00D10808 /* Broken */ = {
+			isa = PBXGroup;
+			children = (
+				411BA4C120E907AE00D10808 /* broken_container_bliss.epub */,
+				41BD9D1220E913AD0025FB27 /* broken_toc_metamorphosis.epub */,
+				41BD9D1A20E915F90025FB27 /* broken_content_philosophy.epub */,
+				411BA4B220E8FB9400D10808 /* broken_archive_alice.epub */,
+			);
+			path = Broken;
+			sourceTree = "<group>";
+		};
 		4134181820E800A0003D101D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				4134182220E8014A003D101D /* Resources */,
+				411BA49920E8E47000D10808 /* Utils */,
 				4134182B20E8066D003D101D /* EPUBKitTests.swift */,
 				4134182D20E8066D003D101D /* Info.plist */,
 			);
@@ -249,7 +313,11 @@
 		4134182220E8014A003D101D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4134182320E8015E003D101D /* alice.epub */,
+				411BA4BC20E9062C00D10808 /* Broken */,
+				4134182320E8015E003D101D /* Alices_Adventures_in_Wonderland.epub */,
+				411BA4C920E90B8300D10808 /* The_Metamorphosis.epub */,
+				41BD9D1620E915EF0025FB27 /* The_Problems_of_Philosophy.epub */,
+				411BA49C20E8E5A400D10808 /* Geography_of_Bliss.epub */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -624,7 +692,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4134183720E819CE003D101D /* alice.epub in Resources */,
+				4134183720E819CE003D101D /* Alices_Adventures_in_Wonderland.epub in Resources */,
+				41BD9D1B20E915F90025FB27 /* broken_content_philosophy.epub in Resources */,
+				41BD9D1720E915F00025FB27 /* The_Problems_of_Philosophy.epub in Resources */,
+				411BA4CA20E90B8300D10808 /* The_Metamorphosis.epub in Resources */,
+				411BA4C220E907AF00D10808 /* broken_container_bliss.epub in Resources */,
+				41BD9D1320E913AD0025FB27 /* broken_toc_metamorphosis.epub in Resources */,
+				411BA4B320E8FB9400D10808 /* broken_archive_alice.epub in Resources */,
+				411BA4A920E8E9F400D10808 /* Geography_of_Bliss.epub in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +707,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411BA4A020E8E5A600D10808 /* Alices_Adventures_in_Wonderland.epub in Resources */,
+				41BD9D1C20E915F90025FB27 /* broken_content_philosophy.epub in Resources */,
+				41BD9D1820E915F00025FB27 /* The_Problems_of_Philosophy.epub in Resources */,
+				411BA4CB20E90B8300D10808 /* The_Metamorphosis.epub in Resources */,
+				411BA4C320E907AF00D10808 /* broken_container_bliss.epub in Resources */,
+				41BD9D1420E913AD0025FB27 /* broken_toc_metamorphosis.epub in Resources */,
+				411BA4B420E8FB9400D10808 /* broken_archive_alice.epub in Resources */,
+				411BA49E20E8E5A400D10808 /* Geography_of_Bliss.epub in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +722,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411BA4A120E8E5A600D10808 /* Alices_Adventures_in_Wonderland.epub in Resources */,
+				41BD9D1D20E915F90025FB27 /* broken_content_philosophy.epub in Resources */,
+				41BD9D1920E915F00025FB27 /* The_Problems_of_Philosophy.epub in Resources */,
+				411BA4CC20E90B8300D10808 /* The_Metamorphosis.epub in Resources */,
+				411BA4C420E907AF00D10808 /* broken_container_bliss.epub in Resources */,
+				41BD9D1520E913AD0025FB27 /* broken_toc_metamorphosis.epub in Resources */,
+				411BA4B520E8FB9400D10808 /* broken_archive_alice.epub in Resources */,
+				411BA49F20E8E5A400D10808 /* Geography_of_Bliss.epub in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,7 +911,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411BA4AB20E8EC4100D10808 /* MockedEPUBParserDelegate.swift in Sources */,
+				411BA4A820E8E62400D10808 /* EPUBLibrary.swift in Sources */,
 				4134182C20E8066D003D101D /* EPUBKitTests.swift in Sources */,
+				411BA4A220E8E61800D10808 /* EPUBFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,7 +922,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411BA4AC20E8EC4100D10808 /* MockedEPUBParserDelegate.swift in Sources */,
+				411BA4A620E8E62300D10808 /* EPUBLibrary.swift in Sources */,
 				4117836B20E8216B00926820 /* EPUBKitTests.swift in Sources */,
+				411BA4A320E8E61900D10808 /* EPUBFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,7 +933,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411BA4AD20E8EC4100D10808 /* MockedEPUBParserDelegate.swift in Sources */,
+				411BA4A720E8E62300D10808 /* EPUBLibrary.swift in Sources */,
 				4117836C20E8216B00926820 /* EPUBKitTests.swift in Sources */,
+				411BA4A420E8E61900D10808 /* EPUBFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@ public protocol EPUBParserDelegate: AnyObject {
     func parser(_ parser: EPUBParser, didFailParsingDocumentAt path: URL, with error: Error)
 }
 
-extension EPUBParserDelegate {
+public extension EPUBParserDelegate {
     func parser(_ parser: EPUBParser, didBeginParsingDocumentAt path: URL) {}
     func parser(_ parser: EPUBParser, didUnzipArchiveTo directory: URL) {}
     func parser(_ parser: EPUBParser, didLocateContentAt directory: URL) {}
