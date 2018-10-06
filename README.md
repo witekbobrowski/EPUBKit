@@ -4,7 +4,7 @@
 </a>
 </p>
 <p align=center>
-    <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-4.1-orange.svg"></a>
+    <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-4.2-orange.svg"></a>
     <a href="https://cocoapods.org/pods/EPUBKit"><img alt="CocoaPods" src="https://img.shields.io/badge/pod-0.3.0-blue.svg"></a>
     <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg"></a>
     <a href=""><img alt="https://github.com/apple/swift-package-manager" src="https://img.shields.io/badge/SPM-compatible-orange.svg"></a>

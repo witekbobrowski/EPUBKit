@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import EPUBKit
+@testable import EPUBKit
 
 class EPUBKitTests: XCTestCase {
 
