@@ -5,7 +5,7 @@
 </p>
 <p align=center>
     <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-4.2-orange.svg"></a>
-    <a href="https://cocoapods.org/pods/EPUBKit"><img alt="CocoaPods" src="https://img.shields.io/badge/pod-0.3.0-blue.svg"></a>
+    <a href="https://cocoapods.org/pods/EPUBKit"><img alt="CocoaPods" src="https://img.shields.io/badge/pod-0.3.1-blue.svg"></a>
     <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg"></a>
     <a href=""><img alt="https://github.com/apple/swift-package-manager" src="https://img.shields.io/badge/SPM-compatible-orange.svg"></a>
     <a><img alt="Platforms" src="https://img.shields.io/badge/platform-iOS | macOS | tvOS-lightgray.svg"></a>
@@ -24,19 +24,19 @@ __Note:__ This library is still in its early stages! I will experiment and chang
 #### CocoaPods
 Add the following to your `Podfile`:
 ```
-pod 'EPUBKit', '~> 0.3.0'
+pod 'EPUBKit', '~> 0.3.1'
 ```
 
 #### Carthage
 Add to `Cartfile`:
 ```
-github "witekbobrowski/EPUBKit" ~> 0.3.0
+github "witekbobrowski/EPUBKit" ~> 0.3.1
 ```
 
 #### Swift Package Manager
 Add to `Package.swift`:
 ```swift
-.Package(url: "https://github.com/witekbobrowski/EPUBKit.git", from: "0.3.0")
+.Package(url: "https://github.com/witekbobrowski/EPUBKit.git", from: "0.3.1")
 ```
 
 ## Usage
