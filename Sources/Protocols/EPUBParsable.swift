@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol EPUBParsable {
+public protocol EPUBParsable {
     associatedtype XMLElement
     func unzip(archiveAt path: URL) throws -> URL
     func getSpine(from xmlElement: XMLElement) -> EPUBSpine
