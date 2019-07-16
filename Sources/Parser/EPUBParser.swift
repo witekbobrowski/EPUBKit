@@ -38,7 +38,10 @@ public final class EPUBParser: EPUBParserProtocol {
         var tableOfContents: EPUBTableOfContents
         delegate?.parser(self, didBeginParsingDocumentAt: path)
         do {
-            directory = try unzip(archiveAt: path)
+            var isDirectory: ObjCBool = false
+            FileManager.default.fileExists(atPath: path.path, isDirectory: &isDirectory)
+            
+            directory = isDirectory.boolValue ? path : try unzip(archiveAt: path)
             delegate?.parser(self, didUnzipArchiveTo: directory)
 
             let contentService = try EPUBContentServiceImplementation(directory)
