@@ -18,7 +18,7 @@ class EPUBTableOfContentsParserImplementation: EPUBTableOfContentsParser {
     func parse(_ xmlElement: AEXMLElement) -> EPUBTableOfContents {
         let item = xmlElement["head"]["meta"].all(
             withAttributes: ["name": "dtb=uid"])?.first?.attributes["content"]
-        var tableOfContents = EPUBTableOfContents(label: xmlElement["docTitle"]["text"].value!,
+        var tableOfContents = EPUBTableOfContents(label: xmlElement["docTitle"]["text"].value ?? "",
                                                   id: "0",
                                                   item: item, subTable: [])
         tableOfContents.subTable = evaluateChildren(from: xmlElement["navMap"])
@@ -32,7 +32,7 @@ extension EPUBTableOfContentsParserImplementation {
     private func evaluateChildren(from xmlElement: AEXMLElement) -> [EPUBTableOfContents] {
         guard let points = xmlElement["navPoint"].all else { return [] }
         let subs: [EPUBTableOfContents] = points.map { point in
-            return EPUBTableOfContents(label: point["navLabel"]["text"].value!,
+            return EPUBTableOfContents(label: point["navLabel"]["text"].value ?? "",
                                        id: point.attributes["id"]!,
                                        item: point["content"].attributes["src"]!,
                                        subTable: evaluateChildren(from: point))
