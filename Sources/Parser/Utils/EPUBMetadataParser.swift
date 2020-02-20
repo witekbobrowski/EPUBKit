@@ -17,13 +17,17 @@ class EPUBMetadataParserImplementation: EPUBMetadataParser {
 
     func parse(_ xmlElement: AEXMLElement) -> EPUBMetadata {
         var metadata = EPUBMetadata()
-        metadata.contributor = Creator(name: xmlElement["dc:contributor"].value,
-                                       role: xmlElement["dc:contributor"].attributes["opf:role"],
-                                       fileAs: xmlElement["dc:contributor"].attributes["opf:file-as"])
+        metadata.contributor = Creator(
+            name: xmlElement["dc:contributor"].value,
+            role: xmlElement["dc:contributor"].attributes["opf:role"],
+            fileAs: xmlElement["dc:contributor"].attributes["opf:file-as"]
+        )
         metadata.coverage = xmlElement["dc:coverage"].value
-        metadata.creator = Creator(name: xmlElement["dc:creator"].value,
-                                   role: xmlElement["dc:creator"].attributes["opf:role"],
-                                   fileAs: xmlElement["dc:creator"].attributes["opf:file-as"])
+        metadata.creator = Creator(
+            name: xmlElement["dc:creator"].value,
+            role: xmlElement["dc:creator"].attributes["opf:role"],
+            fileAs: xmlElement["dc:creator"].attributes["opf:file-as"]
+        )
         metadata.date = xmlElement["dc:date"].value
         metadata.description = xmlElement["dc:description"].value
         metadata.format = xmlElement["dc:format"].value
@@ -36,9 +40,9 @@ class EPUBMetadataParserImplementation: EPUBMetadataParser {
         metadata.subject = xmlElement["dc:subject"].value
         metadata.title = xmlElement["dc:title"].value
         metadata.type = xmlElement["dc:type"].value
-        for metaItem in xmlElement["meta"].all ?? [] where metaItem.attributes["name"] == "cover" {
-            metadata.coverId = metaItem.attributes["content"]
-        }
+        xmlElement["meta"].all?
+            .filter { $0.attributes["name"] == "cover" }
+            .forEach { metadata.coverId = $0.attributes["content"] }
         return metadata
     }
 

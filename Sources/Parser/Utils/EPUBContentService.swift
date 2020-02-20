@@ -24,15 +24,9 @@ class EPUBContentServiceImplementation: EPUBContentService {
 
     let contentDirectory: URL
 
-    var spine: AEXMLElement {
-        return content.root["spine"]
-    }
-    var metadata: AEXMLElement {
-        return content.root["metadata"]
-    }
-    var manifest: AEXMLElement {
-        return content.root["manifest"]
-    }
+    var spine: AEXMLElement { content.root["spine"] }
+    var metadata: AEXMLElement { content.root["metadata"] }
+    var manifest: AEXMLElement { content.root["manifest"] }
 
     required init(_ url: URL) throws {
         let path = try EPUBContentServiceImplementation.getContentPath(from: url)

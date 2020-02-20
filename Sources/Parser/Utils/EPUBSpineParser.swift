@@ -16,19 +16,21 @@ protocol EPUBSpineParser {
 class EPUBSpineParserImplementation: EPUBSpineParser {
 
     func parse(_ xmlElement: AEXMLElement) -> EPUBSpine {
-        var items: [EPUBSpineItem] = []
-        for item in xmlElement["itemref"].all! {
+        let items: [EPUBSpineItem] = xmlElement["itemref"].all?.compactMap { item in
             let id = item.attributes["id"]
-            let idref = item.attributes["idref"]!
-            let linear = (item.attributes["linear"] ?? "yes") == "yes" ? true : false
-            items.append(EPUBSpineItem(id: id, idref: idref, linear: linear))
-        }
+            let idref = item.attributes["idref"]
+            let linear = (item.attributes["linear"] ?? "yes") == "yes"
+            return idref.map { EPUBSpineItem(id: id, idref: $0, linear: linear) }
+        } ?? []
         let pageProgressionDirection = xmlElement["page-progression-direction"].value ?? "ltr"
-        return EPUBSpine(id: xmlElement.attributes["id"],
-                         toc: xmlElement.attributes["toc"],
-                         pageProgressionDirection: EPUBPageProgressionDirection(
-                            rawValue: pageProgressionDirection),
-                         items: items)
+        return EPUBSpine(
+            id: xmlElement.attributes["id"],
+            toc: xmlElement.attributes["toc"],
+            pageProgressionDirection: EPUBPageProgressionDirection(
+                rawValue: pageProgressionDirection
+            ),
+            items: items
+        )
     }
 
 }

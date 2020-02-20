@@ -79,23 +79,23 @@ public final class EPUBParser: EPUBParserProtocol {
 extension EPUBParser: EPUBParsable {
 
     public func unzip(archiveAt path: URL) throws -> URL {
-        return try archiveService.unarchive(archive: path)
+        try archiveService.unarchive(archive: path)
     }
 
     public func getSpine(from xmlElement: XMLElement) -> EPUBSpine {
-        return spineParser.parse(xmlElement)
+        spineParser.parse(xmlElement)
     }
 
     public func getMetadata(from xmlElement: XMLElement) -> EPUBMetadata {
-        return metadataParser.parse(xmlElement)
+        metadataParser.parse(xmlElement)
     }
 
     public func getManifest(from xmlElement: XMLElement) -> EPUBManifest {
-        return manifestParser.parse(xmlElement)
+        manifestParser.parse(xmlElement)
     }
 
     public func getTableOfContents(from xmlElement: XMLElement) -> EPUBTableOfContents {
-        return tableOfContentsParser.parse(xmlElement)
+        tableOfContentsParser.parse(xmlElement)
     }
 
 }
