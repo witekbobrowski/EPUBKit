@@ -1,15 +1,14 @@
 <p align=center>
 <a href="">
-<img height=180 alt="Logo" src="logo.png">
+<img alt="Logo" src="https://user-images.githubusercontent.com/18266391/74937628-b3abf600-53ec-11ea-91c6-71ba95130703.jpeg">
 </a>
 </p>
 <p align=center>
-    <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-4.2-orange.svg"></a>
+    <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-5-orange.svg"></a>
     <a href="https://cocoapods.org/pods/EPUBKit"><img alt="CocoaPods" src="https://img.shields.io/badge/pod-0.3.1-blue.svg"></a>
     <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg"></a>
     <a href=""><img alt="https://github.com/apple/swift-package-manager" src="https://img.shields.io/badge/SPM-compatible-orange.svg"></a>
     <a><img alt="Platforms" src="https://img.shields.io/badge/platform-iOS | macOS | tvOS-lightgray.svg"></a>
-    <a href="https://www.codacy.com/app/witekbobrowski/EPUBKit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=witekbobrowski/EPUBKit&amp;utm_campaign=Badge_Grade"><img alt="CodacyBadge" src="https://api.codacy.com/project/badge/Grade/35b59c32fd77448da5bab9041ebba524"</a>
     <a href="https://travis-ci.org/witekbobrowski/EPUBKit/"><img alt="Travis" src="https://api.travis-ci.org/witekbobrowski/EPUBKit.svg?branch=master"></a>
     <a href="https://twitter.com/witekbobrowski"><img alt="Contact" src="https://img.shields.io/badge/contact-@witekbobrowski-blue.svg"></a>
 </p>
