@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/tadija/AEXML",
         "state": {
           "branch": null,
-          "revision": "8623e73b193386909566a9ca20203e33a09af142",
-          "version": "4.5.0"
+          "revision": "502c4d43a6cc9c395d19111e09dc62ad834977b5",
+          "version": "4.6.0"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/marmelroy/Zip",
         "state": {
           "branch": null,
-          "revision": "80b1c3005ee25b4c7ce46c4029ac3347e8d5e37e",
-          "version": "2.0.0"
+          "revision": "bd19d974e8a38cc8d3a88c90c8a107386c3b8ccf",
+          "version": "2.1.1"
         }
       }
     ]

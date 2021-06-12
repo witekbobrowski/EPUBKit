@@ -18,8 +18,12 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/tadija/AEXML",
-            from: "4.5.0"),
-        .package(url: "https://github.com/marmelroy/Zip", from: "2.0.0")
+            from: "4.6.0"
+        ),
+        .package(
+            url: "https://github.com/marmelroy/Zip",
+            from: "2.1.1"
+        )
     ],
     
     targets: [
