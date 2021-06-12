@@ -29,7 +29,7 @@ class EPUBContentServiceImplementation: EPUBContentService {
     var manifest: AEXMLElement { content.root["manifest"] }
 
     required init(_ url: URL) throws {
-        let path = try EPUBContentServiceImplementation.getContentPath(from: url)
+        let path = try Self.getContentPath(from: url)
         contentDirectory = path.deletingLastPathComponent()
         let data = try Data(contentsOf: path)
         content = try AEXMLDocument(xml: data)

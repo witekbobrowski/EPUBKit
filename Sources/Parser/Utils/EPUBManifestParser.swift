@@ -29,7 +29,8 @@ class EPUBManifestParserImplementation: EPUBManifestParser {
                 return EPUBManifestItem(
                     id: id, path: path, mediaType: mediaType ?? .unknown, property: properties
                 )
-            }.forEach { items[$0.id] = $0 }
+            }
+            .forEach { items[$0.id] = $0 }
         return EPUBManifest(id: xmlElement["id"].value, items: items)
     }
 

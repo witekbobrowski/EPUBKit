@@ -17,13 +17,13 @@ class EPUBMetadataParserImplementation: EPUBMetadataParser {
 
     func parse(_ xmlElement: AEXMLElement) -> EPUBMetadata {
         var metadata = EPUBMetadata()
-        metadata.contributor = Creator(
+        metadata.contributor = EPUBCreator(
             name: xmlElement["dc:contributor"].value,
             role: xmlElement["dc:contributor"].attributes["opf:role"],
             fileAs: xmlElement["dc:contributor"].attributes["opf:file-as"]
         )
         metadata.coverage = xmlElement["dc:coverage"].value
-        metadata.creator = Creator(
+        metadata.creator = EPUBCreator(
             name: xmlElement["dc:creator"].value,
             role: xmlElement["dc:creator"].attributes["opf:role"],
             fileAs: xmlElement["dc:creator"].attributes["opf:file-as"]

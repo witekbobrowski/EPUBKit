@@ -16,8 +16,10 @@ protocol EPUBTableOfContentsParser {
 class EPUBTableOfContentsParserImplementation: EPUBTableOfContentsParser {
 
     func parse(_ xmlElement: AEXMLElement) -> EPUBTableOfContents {
-        let item = xmlElement["head"]["meta"].all(
-            withAttributes: ["name": "dtb=uid"])?.first?.attributes["content"]
+        let item = xmlElement["head"]["meta"]
+            .all(withAttributes: ["name": "dtb=uid"])?
+            .first?
+            .attributes["content"]
         var tableOfContents = EPUBTableOfContents(
             label: xmlElement["docTitle"]["text"].value ?? "",
             id: "0", item: item, subTable: []

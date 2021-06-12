@@ -48,7 +48,7 @@ public final class EPUBParser: EPUBParserProtocol {
             contentDirectory = contentService.contentDirectory
             delegate?.parser(self, didLocateContentAt: contentDirectory)
 
-            spine =  getSpine(from: contentService.spine)
+            spine = getSpine(from: contentService.spine)
             delegate?.parser(self, didFinishParsing: spine)
 
             metadata = getMetadata(from: contentService.metadata)

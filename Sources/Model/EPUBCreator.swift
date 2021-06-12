@@ -1,5 +1,5 @@
 //
-//  Creator.swift
+//  EPUBCreator.swift
 //  EPUBKit
 //
 //  Created by Witek Bobrowski on 26/05/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Creator {
+public struct EPUBCreator {
     public var name: String?
     public var role: String?
     public var fileAs: String?

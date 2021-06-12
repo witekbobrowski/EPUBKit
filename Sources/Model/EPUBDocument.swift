@@ -17,12 +17,14 @@ public struct EPUBDocument {
     public let spine: EPUBSpine
     public let tableOfContents: EPUBTableOfContents
 
-    init (directory: URL,
-          contentDirectory: URL,
-          metadata: EPUBMetadata,
-          manifest: EPUBManifest,
-          spine: EPUBSpine,
-          tableOfContents: EPUBTableOfContents) {
+    init(
+        directory: URL,
+        contentDirectory: URL,
+        metadata: EPUBMetadata,
+        manifest: EPUBManifest,
+        spine: EPUBSpine,
+        tableOfContents: EPUBTableOfContents
+    ) {
         self.directory = directory
         self.contentDirectory = contentDirectory
         self.metadata = metadata
@@ -32,7 +34,9 @@ public struct EPUBDocument {
     }
 
     public init?(url: URL) {
-        guard let document = try? EPUBParser().parse(documentAt: url) else { return nil }
+        guard let document = try? EPUBParser().parse(documentAt: url) else {
+            return nil
+        }
         self = document
     }
 

@@ -9,9 +9,9 @@
 import Foundation
 
 public struct EPUBMetadata {
-    public var contributor: Creator?
+    public var contributor: EPUBCreator?
     public var coverage: String?
-    public var creator: Creator?
+    public var creator: EPUBCreator?
     public var date: String?
     public var description: String?
     public var format: String?
