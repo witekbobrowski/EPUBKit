@@ -22,14 +22,22 @@ enum EPUBFile {
 
     var fileName: String {
         switch self {
-        case .alicesAdventuresinWonderland: return "Alices_Adventures_in_Wonderland"
-        case .theGeographyofBliss: return "Geography_of_Bliss"
-        case .theMetamorphosis: return "The_Metamorphosis"
-        case .theProblemsofPhilosophy: return "The_Problems_of_Philosophy"
-        case .alicesAdventuresinWonderlandBrokenArchive: return "broken_archive_alice"
-        case .theGeographyofBlissBrokenContainer: return "broken_container_bliss"
-        case .theMetamorphosisBrokenToc: return "broken_toc_metamorphosis"
-        case .theProblemsofPhilosophyBrokenContent: return "broken_content_philosophy"
+        case .alicesAdventuresinWonderland:
+            return "Alices_Adventures_in_Wonderland"
+        case .theGeographyofBliss:
+            return "Geography_of_Bliss"
+        case .theMetamorphosis:
+            return "The_Metamorphosis"
+        case .theProblemsofPhilosophy:
+            return "The_Problems_of_Philosophy"
+        case .alicesAdventuresinWonderlandBrokenArchive:
+            return "broken_archive_alice"
+        case .theGeographyofBlissBrokenContainer:
+            return "broken_container_bliss"
+        case .theMetamorphosisBrokenToc:
+            return "broken_toc_metamorphosis"
+        case .theProblemsofPhilosophyBrokenContent:
+            return "broken_content_philosophy"
         }
     }
 
@@ -49,9 +57,7 @@ enum EPUBFile {
     }
 
     var fileExtension: String {
-        switch self {
-        default: return "epub"
-        }
+        "epub"
     }
 
     var fullName: String {

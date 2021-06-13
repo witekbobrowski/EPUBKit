@@ -20,8 +20,7 @@ extension EPUBKitTests {
     /// Testing EPUBDocument.init(url:)
     func testEPUBDocumentSimpleInitialiserWithAliceInWonderland() {
         let url = library.path(for: .alicesAdventuresinWonderland)
-        guard let document = EPUBDocument(url: url)
-        else {
+        guard let document = EPUBDocument(url: url) else {
             XCTFail("Document should be parsed correctly.")
             return
         }
@@ -216,7 +215,7 @@ extension EPUBKitTests {
                 XCTAssertNotNil(error.failureReason)
                 XCTAssertNotNil(error.recoverySuggestion)
             default:
-                XCTFail("Wrong error thrown")
+                XCTFail("Wrong error thrown: \(error)")
             }
         }
     }
@@ -234,7 +233,7 @@ extension EPUBKitTests {
                 XCTAssertNotNil(error.failureReason)
                 XCTAssertNotNil(error.recoverySuggestion)
             default:
-                XCTFail("Wrong error thrown")
+                XCTFail("Wrong error thrown: \(error)")
             }
         }
     }
@@ -252,7 +251,7 @@ extension EPUBKitTests {
                 XCTAssertNotNil(error.failureReason)
                 XCTAssertNotNil(error.recoverySuggestion)
             default:
-                XCTFail("Wrong error thrown")
+                XCTFail("Wrong error thrown: \(error)")
             }
         }
     }

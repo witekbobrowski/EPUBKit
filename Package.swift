@@ -29,8 +29,12 @@ let package = Package(
     targets: [
         .target(
             name: "EPUBKit",
-            dependencies: ["AEXML", "Zip"],
-            path: "Sources"
+            dependencies: ["AEXML", "Zip"]
+        ),
+        .testTarget(
+            name: "EPUBKitTests",
+            dependencies: ["EPUBKit"]//,
+//            resources: [.copy("Resources")]
         )
     ]
 )
