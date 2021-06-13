@@ -1,12 +1,11 @@
 <p align=center>
 <a href="">
-<img alt="Logo" src="https://user-images.githubusercontent.com/18266391/74937628-b3abf600-53ec-11ea-91c6-71ba95130703.jpeg">
+<img alt="Logo" src="EPUBKit.png">
 </a>
 </p>
 <p align=center>
-    <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-5-orange.svg"></a>
+    <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-5.4-orange.svg"></a>
     <a href="https://cocoapods.org/pods/EPUBKit"><img alt="CocoaPods" src="https://img.shields.io/badge/pod-0.3.1-blue.svg"></a>
-    <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg"></a>
     <a href=""><img alt="https://github.com/apple/swift-package-manager" src="https://img.shields.io/badge/SPM-compatible-orange.svg"></a>
     <a><img alt="Platforms" src="https://img.shields.io/badge/platform-iOS | macOS | tvOS-lightgray.svg"></a>
     <a href="https://travis-ci.org/witekbobrowski/EPUBKit/"><img alt="Travis" src="https://api.travis-ci.org/witekbobrowski/EPUBKit.svg?branch=master"></a>
@@ -20,24 +19,17 @@ __Note:__ This library is still in its early stages! I will experiment and chang
 
 ## Installation
 
-#### CocoaPods
-Add the following to your `Podfile`:
-```
-pod 'EPUBKit', '~> 0.3.1'
-```
-
-#### Carthage
-Add to `Cartfile`:
-```
-github "witekbobrowski/EPUBKit" ~> 0.3.1
-```
-
 #### Swift Package Manager
 Add to `Package.swift`:
 ```swift
-.Package(url: "https://github.com/witekbobrowski/EPUBKit.git", from: "0.3.1")
+.Package(url: "https://github.com/witekbobrowski/EPUBKit.git")
 ```
 
+#### CocoaPods
+Add the following to your `Podfile`:
+```
+pod 'EPUBKit'
+```
 ## Usage
 
 #### Basic
