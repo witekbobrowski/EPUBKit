@@ -16,7 +16,7 @@ protocol FileLibrary {
 class EPUBLibrary: FileLibrary {
 
     func path(for file: EPUBFile) -> URL {
-        if let url = Bundle(for: EPUBKitTests.self)
+        if let url = Bundle(for: EPUBLibrary.self)
             .url(forResource: file.fileName, withExtension: file.fileExtension) {
             return url
         } else {
