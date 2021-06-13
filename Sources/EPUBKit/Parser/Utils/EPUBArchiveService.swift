@@ -23,7 +23,7 @@ class EPUBArchiveServiceImplementation: EPUBArchiveService {
         var destination: URL
         do {
             destination = try Zip.quickUnzipFile(url)
-        } catch let error {
+        } catch {
             throw EPUBParserError.unzipFailed(reason: error)
         }
         return destination

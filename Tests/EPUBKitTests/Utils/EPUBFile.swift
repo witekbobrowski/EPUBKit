@@ -61,6 +61,6 @@ enum EPUBFile {
     }
 
     var fullName: String {
-        return fileName + "." + fileExtension
+        fileName + "." + fileExtension
     }
 }

@@ -33,7 +33,8 @@ let package = Package(
         ),
         .testTarget(
             name: "EPUBKitTests",
-            dependencies: ["EPUBKit"]
+            dependencies: ["EPUBKit"],
+            resources: [.copy("Resources")]
         )
     ]
 )

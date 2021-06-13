@@ -16,7 +16,16 @@ protocol FileLibrary {
 class EPUBLibrary: FileLibrary {
 
     func path(for file: EPUBFile) -> URL {
-        Bundle.module.resourceURL!.appendingPathComponent(file.fullName)
+        if let url = Bundle(for: EPUBKitTests.self)
+            .url(forResource: file.fileName, withExtension: file.fileExtension) {
+            return url
+        } else {
+            guard let url = Bundle.module.url(forResource: "Resources/\(file.fileName)", withExtension: file.fileExtension) else {
+                fatalError("can't find resource named: '\(file.fileName)'")
+            }
+            return url
+        }
+//        Bundle.module.resourceURL!.appendingPathComponent(file.fullName)
     }
 
 }
@@ -25,35 +34,20 @@ class EPUBLibrary: FileLibrary {
 #if Xcode
 extension Foundation.Bundle {
 
+    /// Returns the resource bundle associated with the current Swift module.
     /// Returns resource bundle as a `Bundle`.
     /// Requires Xcode copy phase to locate files into `ExecutableName.bundle`;
     /// or `ExecutableNameTests.bundle` for test resources
     static var module: Bundle = {
-        var thisModuleName = "EPUBKit"
         var url = Bundle.main.bundleURL
-
         for bundle in Bundle.allBundles where bundle.bundlePath.hasSuffix(".xctest") {
             url = bundle.bundleURL.deletingLastPathComponent()
-            thisModuleName = thisModuleName.appending("_EPUBKitTests")
         }
-
-        url = url.appendingPathComponent("\(thisModuleName).bundle")
-
+        url = url.appendingPathComponent("EPUBKit_EPUBKitTests.bundle")
         guard let bundle = Bundle(url: url) else {
             fatalError("Foundation.Bundle.module could not load resource bundle: \(url.path)")
         }
-
         return bundle
-    }()
-
-    /// Directory containing resource bundle
-    static var moduleDir: URL = {
-        var url = Bundle.main.bundleURL
-        for bundle in Bundle.allBundles where bundle.bundlePath.hasSuffix(".xctest") {
-            // remove 'ExecutableNameTests.xctest' path component
-            url = bundle.bundleURL.deletingLastPathComponent()
-        }
-        return url
     }()
 
 }
