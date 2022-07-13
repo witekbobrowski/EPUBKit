@@ -4,10 +4,8 @@
 </a>
 </p>
 <p align=center>
-    <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-5.4-orange.svg"></a>
-    <a href="https://cocoapods.org/pods/EPUBKit"><img alt="CocoaPods" src="https://img.shields.io/badge/pod-0.4.0-blue.svg"></a>
-    <a href=""><img alt="https://github.com/apple/swift-package-manager" src="https://img.shields.io/badge/SPM-compatible-orange.svg"></a>
-    <a><img alt="Platforms" src="https://img.shields.io/badge/platform-iOS | macOS | tvOS-lightgray.svg"></a>
+    <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fwitekbobrowski%2FEPUBKit%2Fbadge%3Ftype%3Dswift-versions"></a>
+    <a href="https://swiftpackageindex.com/witekbobrowski/EPUBKit"><img alt="Platforms" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fwitekbobrowski%2FEPUBKit%2Fbadge%3Ftype%3Dplatforms"></a>
     <a href="https://twitter.com/witekbobrowski"><img alt="Contact" src="https://img.shields.io/badge/contact-@witekbobrowski-blue.svg"></a>
 </p>
 <p align=center>
