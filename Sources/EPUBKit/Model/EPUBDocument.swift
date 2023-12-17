@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import OSLog
 
 public struct EPUBDocument {
 
@@ -40,6 +41,26 @@ public struct EPUBDocument {
         self = document
     }
 
+    public init?(data: Data) {
+        
+        guard let cacheDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else {
+            return nil
+        }
+        let tempFile = cacheDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("epub")
+        defer {
+            try? FileManager.default.removeItem(at: tempFile)
+        }
+        
+        do {
+            try data.write(to: tempFile, options: .atomic)
+            
+            let document = try EPUBParser().parse(documentAt: tempFile)
+            self = document
+        } catch {
+            Logger().error("\(error.localizedDescription)")
+            return nil
+        }
+    }
 }
 
 extension EPUBDocument {
