@@ -60,4 +60,31 @@ final class EPUBDocumentTests: XCTestCase {
         XCTAssertNotNil(document.cover)
     }
     
+    // MARK: - Tests with data initializer
+    func testEPUBDocumentSimpleInitialiserWithDataWithAliceInWonderland() throws {
+        let url = library.path(for: .alicesAdventuresinWonderland)
+        let data = try Data(contentsOf: url)
+        guard let document = EPUBDocument(data: data) else {
+            XCTFail("Document should be parsed correctly.")
+            return
+        }
+        XCTAssertNil(document.title)
+        XCTAssertNil(document.author)
+        XCTAssertNil(document.publisher)
+        XCTAssertNil(document.cover)
+    }
+    
+    
+    func testEPUBDocumentSimpleInitialiserWithDataWithPhilosophy() throws {
+        let url = library.path(for: .theProblemsofPhilosophy)
+        let data = try Data(contentsOf: url)
+        guard let document = EPUBDocument(data: data) else {
+            XCTFail("Document should be parsed correctly.")
+            return
+        }
+        XCTAssertEqual(document.title, "The Problems of Philosophy")
+        XCTAssertEqual(document.author, "Bertrand Russell")
+        XCTAssertEqual(document.publisher, "PresssBooks.com")
+        XCTAssertNotNil(document.cover)
+    }
 }
