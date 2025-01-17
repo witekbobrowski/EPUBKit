@@ -75,7 +75,7 @@ public final class EPUBParser: EPUBParserProtocol {
         }
         delegate?.parser(self, didFinishParsingDocumentAt: path)
         // File is unzipped in Documents directory. Make sure to delete it after use
-        try? FileManager.default.removeItem(at: directory)
+//        try? FileManager.default.removeItem(at: directory)
         return EPUBDocument(directory: directory, contentDirectory: contentDirectory,
                             metadata: metadata, manifest: manifest,
                             spine: spine, tableOfContents: tableOfContents)
