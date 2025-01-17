@@ -22,7 +22,8 @@ class EPUBArchiveServiceImplementation: EPUBArchiveService {
     func unarchive(archive url: URL) throws -> URL {
         var destination: URL
         do {
-            destination = try Zip.quickUnzipFile(url)
+            destination = URL.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+            try Zip.unzipFile(url, destination: destination, overwrite: true, password: nil)
         } catch {
             throw EPUBParserError.unzipFailed(reason: error)
         }
