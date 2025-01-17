@@ -45,9 +45,9 @@ public final class EPUBParser: EPUBParserProtocol {
             delegate?.parser(self, didUnzipArchiveTo: directory)
             
             // File is unzipped in Documents directory. Make sure to delete it after use
-            defer {
-                try? FileManager.default.removeItem(at: directory)
-            }
+//            defer {
+//                try? FileManager.default.removeItem(at: directory)
+//            }
 
             let contentService = try EPUBContentServiceImplementation(directory)
             contentDirectory = contentService.contentDirectory
@@ -74,6 +74,8 @@ public final class EPUBParser: EPUBParserProtocol {
             throw error
         }
         delegate?.parser(self, didFinishParsingDocumentAt: path)
+        // File is unzipped in Documents directory. Make sure to delete it after use
+        try? FileManager.default.removeItem(at: directory)
         return EPUBDocument(directory: directory, contentDirectory: contentDirectory,
                             metadata: metadata, manifest: manifest,
                             spine: spine, tableOfContents: tableOfContents)
