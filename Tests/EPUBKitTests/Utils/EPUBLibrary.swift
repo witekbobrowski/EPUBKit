@@ -32,23 +32,23 @@ class EPUBLibrary: FileLibrary {
 
 // https://stackoverflow.com/questions/47177036
 #if Xcode
-extension Foundation.Bundle {
-
-    /// Returns the resource bundle associated with the current Swift module.
-    /// Returns resource bundle as a `Bundle`.
-    /// Requires Xcode copy phase to locate files into `ExecutableName.bundle`;
-    /// or `ExecutableNameTests.bundle` for test resources
-    static var module: Bundle = {
-        var url = Bundle.main.bundleURL
-        for bundle in Bundle.allBundles where bundle.bundlePath.hasSuffix(".xctest") {
-            url = bundle.bundleURL.deletingLastPathComponent()
-        }
-        url = url.appendingPathComponent("EPUBKit_EPUBKitTests.bundle")
-        guard let bundle = Bundle(url: url) else {
-            fatalError("Foundation.Bundle.module could not load resource bundle: \(url.path)")
-        }
-        return bundle
-    }()
-
-}
+//extension Foundation.Bundle {
+//
+//    /// Returns the resource bundle associated with the current Swift module.
+//    /// Returns resource bundle as a `Bundle`.
+//    /// Requires Xcode copy phase to locate files into `ExecutableName.bundle`;
+//    /// or `ExecutableNameTests.bundle` for test resources
+//    static var module: Bundle = {
+//        var url = Bundle.main.bundleURL
+//        for bundle in Bundle.allBundles where bundle.bundlePath.hasSuffix(".xctest") {
+//            url = bundle.bundleURL.deletingLastPathComponent()
+//        }
+//        url = url.appendingPathComponent("EPUBKit_EPUBKitTests.bundle")
+//        guard let bundle = Bundle(url: url) else {
+//            fatalError("Foundation.Bundle.module could not load resource bundle: \(url.path)")
+//        }
+//        return bundle
+//    }()
+//
+//}
 #endif
