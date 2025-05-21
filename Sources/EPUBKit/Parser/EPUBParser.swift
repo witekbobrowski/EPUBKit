@@ -42,7 +42,7 @@ public final class EPUBParser: EPUBParserProtocol {
             FileManager.default.fileExists(atPath: path.path, isDirectory: &isDirectory)
             
             directory = isDirectory.boolValue ? path : try unzip(archiveAt: path)
-            delegate?.parser(self, didUnzipArchiveTo: directory)
+            delegate?.parser(self, didUnzipArchiveTo: directory)        
 
             let contentService = try EPUBContentServiceImplementation(directory)
             contentDirectory = contentService.contentDirectory
