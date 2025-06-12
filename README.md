@@ -1,100 +1,131 @@
-<p align=center>
-<a href="">
-<img alt="Logo" src="EPUBKit.png">
-</a>
-</p>
-<p align=center>
-    <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fwitekbobrowski%2FEPUBKit%2Fbadge%3Ftype%3Dswift-versions"></a>
-    <a href="https://swiftpackageindex.com/witekbobrowski/EPUBKit"><img alt="Platforms" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fwitekbobrowski%2FEPUBKit%2Fbadge%3Ftype%3Dplatforms"></a>
-    <a href="https://twitter.com/witekbobrowski"><img alt="Contact" src="https://img.shields.io/badge/contact-@witekbobrowski-blue.svg"></a>
-</p>
-<p align=center>
-📚 A simple swift library for parsing EPUB documents
+# EPUBKit
+
+<p align="center">
+    <img src="EPUBKit.png" alt="EPUBKit Logo" width="256">
 </p>
 
-__Note:__ This library is still in its early stages! I will experiment and change the API until I am satisfied with the result. I do not reccomend using this library in larger projects, although feedback will be highly appreciated 🙇
+<p align="center">
+    <a href="https://swift.org/package-manager">
+        <img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg" alt="Swift Package Manager">
+    </a>
+    <a href="https://swift.org">
+        <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fwitekbobrowski%2FEPUBKit%2Fbadge%3Ftype%3Dswift-versions" alt="Swift Version">
+    </a>
+    <a href="https://swiftpackageindex.com/witekbobrowski/EPUBKit">
+        <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fwitekbobrowski%2FEPUBKit%2Fbadge%3Ftype%3Dplatforms" alt="Platforms">
+    </a>
+    <a href="https://github.com/witekbobrowski/EPUBKit/blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/witekbobrowski/EPUBKit" alt="License">
+    </a>
+</p>
+
+<p align="center">
+    <strong>A powerful and modern Swift library for parsing EPUB documents</strong>
+</p>
+
+EPUBKit provides a comprehensive solution for parsing and extracting information from EPUB files in Swift. Built with modern Swift practices and designed for reliability, it supports both EPUB 2 and EPUB 3 specifications while maintaining a clean, intuitive API.
+
+## Features
+
+- 📚 **Complete EPUB Support**: Full parsing of EPUB 2 and EPUB 3 documents
+- 🏗️ **Modern Swift**: Built with Swift 5.4+, leveraging modern language features
+- 📋 **Rich Metadata**: Extract comprehensive Dublin Core metadata
+- 🗂️ **Manifest Parsing**: Access all publication resources with media type detection  
+- 📖 **Reading Order**: Parse spine for linear reading progression
+- 🧭 **Navigation**: Extract table of contents and navigation structure
+- ⚡ **Delegate Support**: Progress monitoring and error handling through delegation
+- 🧪 **Thoroughly Tested**: Comprehensive test suite built with Swift Testing
+- 🎯 **Thread Safe**: Designed for concurrent parsing operations
 
 ## Installation
 
-#### Swift Package Manager
-Add to `Package.swift`:
+### Swift Package Manager
+
+Add EPUBKit to your project via Xcode or by adding it to your `Package.swift`:
+
 ```swift
-.package(url: "https://github.com/witekbobrowski/EPUBKit.git", from: "0.4.0")
+dependencies: [
+    .package(url: "https://github.com/witekbobrowski/EPUBKit.git", from: "1.0.0")
+]
 ```
 
-#### CocoaPods
-Add the following to your `Podfile`:
-```
+### CocoaPods
+
+```ruby
 pod 'EPUBKit'
 ```
-## Usage
 
-#### Basic
+## Quick Start
 
-Just import EPUBKit in your swift file.
+### Basic Usage
+
 ```swift
 import EPUBKit
-```
 
-Initialize document instance with `URL` of your EPUB document.
-```swift
-guard
-    let path = Bundle.main.url(forResource: "steve_jobs", withExtension: "epub"),
-    let document = EPUBDocument(url: path)
-else { return }
-```
-
-If the document gets parsed correctly, you have access to full document metadata, contents, etc.
-```swift
-print(document.title)
-> Steve Jobs
-print(document.author)
-> Walter Isaacson
-```
-
-#### Advanced
-
-Lets say we are developing an app for `iOS` and have a view controller that handles epub documents in some way, for example displays a list.
-
-In the first place you could add these two properties to the view controller (dont forget to import the library).
-```swift
-let parser: EPUBParser
-let urls: [URL]
-
-var documents: [EPUBDocument] = []
-```
-
-And feed the VC with the missing properties through the dependency injection in init.
-```swift
-init(parser: EPUBParser, urls: [URL]) {
-    self.parser = parser
-    self.urls = urls
-    super.init(nibName: nil, bundle: nil)
+// Parse an EPUB file
+guard let epubURL = Bundle.main.url(forResource: "book", withExtension: "epub"),
+      let document = EPUBDocument(url: epubURL) else {
+    print("Failed to load EPUB")
+    return
 }
+
+// Access document metadata
+print("Title: \(document.title!)")
+print("Author: \(document.author!)")
+print("Publisher: \(document.publisher!)")
+print("Language: \(document.language!)")
+
+// Access document structure
+print("Chapters: \(document.spine.items.count)")
+print("Resources: \(document.manifest.items.count)")
 ```
 
-Now after the view loads we could set ourselfs as the delegate of the parser (after extending view controller with `EPUBParserDelegate` protocol, otherwise we get an error).
-```swift
-parser.delegate = self
-```
+### Working with Document Components
 
-And iterate over the array of url in hope of parsing every document correctly and append them to previously defined array.
 ```swift
-urls.forEach { url in
-    guard let document = try? parser.parse(documentAt: url) else { return }
-    documents.append(document)
+// Access metadata details
+if let creator = document.metadata.creator {
+    print("Author: \(creator.name ?? "Unknown")")
+    print("Role: \(creator.role ?? "Unknown")")
+    print("File as: \(creator.fileAs ?? "Unknown")")
 }
+
+// Iterate through spine items (reading order)
+for spineItem in document.spine.items {
+    if let manifestItem = document.manifest.items[spineItem.idref] {
+        print("Chapter: \(manifestItem.path)")
+        print("Media Type: \(manifestItem.mediaType)")
+    }
+}
+
+// Access table of contents
+func printTOC(_ toc: EPUBTableOfContents, level: Int = 0) {
+    let indent = String(repeating: "  ", count: level)
+    print("\(indent)- \(toc.label)")
+    
+    for child in toc.children {
+        printTOC(child, level: level + 1)
+    }
+}
+
+printTOC(document.tableOfContents)
 ```
 
-And that is basically it. Now for example, you could pass parsed documents to the table view.
+## EPUB Specification Support
 
-What are the adventages of taking this approach? Firstly its reusing the parser object. 
-Using the previously mentioned `EPUBDocument`'s `init(url:)` initializer we avoid instantiating it every time for each document. 
-Now we have also a lot more insight on the parsing process itself, we could either check on errors in the standard swift way using `do-catch` statement,
-or using delegation and `parser(:,didFailParsingDocumentAt:,with:)` that passes an error if such occurs. 
-And finally we could improve user experience with something like starting to load cover before the process of parsing finishes.
+EPUBKit supports the EPUB specification standards:
 
-As the library evolves and API gets richer and richer the possibilities of advanced usage of this library will come more and more handy.
+- ✅ **EPUB 3.3** - Full support for modern EPUB files
+- ✅ **EPUB 2.0** - Backward compatibility with older EPUB files
+- ✅ **Dublin Core Metadata** - Complete metadata extraction
+- ✅ **OCF (Open Container Format)** - Proper ZIP archive handling
+- ✅ **NCX Navigation** - Table of contents parsing
+- ✅ **Media Type Detection** - Automatic resource type identification
 
-__Note:__ Documentation is not yet ready, but you should find it easy to explore the API by yourself 🙃
+## Contributing
 
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+EPUBKit is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
