@@ -33,10 +33,9 @@ struct EPUBParserTests {
             
             do {
                 let document = try parser.parse(documentAt: url)
-                #expect(document.metadata != nil)
-                #expect(document.manifest != nil)
-                #expect(document.spine != nil)
-                #expect(document.tableOfContents != nil)
+                // Document components are always present (non-optional)
+                #expect(!document.manifest.items.isEmpty)
+                #expect(!document.spine.items.isEmpty)
             } catch {
                 Issue.record("Parsing failed for \(file): \(error)")
             }

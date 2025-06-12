@@ -85,11 +85,11 @@ struct EPUBDocumentTests {
             return
         }
         
-        // Basic structure validation
-        #expect(document.metadata != nil)
-        #expect(document.manifest != nil)
-        #expect(document.spine != nil)
-        #expect(document.tableOfContents != nil)
+        // Basic structure validation - these properties are non-optional
+        // so we check for meaningful content instead
+        #expect(!document.manifest.items.isEmpty)
+        #expect(!document.spine.items.isEmpty)
+        #expect(!document.tableOfContents.label.isEmpty)
     }
     
     // MARK: - Document Structure Tests
@@ -188,9 +188,9 @@ struct EPUBDocumentTests {
         #expect(document.author == nil) 
         #expect(document.publisher == nil)
         
-        // But structure should still be valid
-        #expect(document.metadata != nil)
-        #expect(document.manifest != nil)
-        #expect(document.spine != nil)
+        // But structure should still be valid - these are non-optional
+        // Check that they have content even if title/author are nil
+        #expect(!document.manifest.items.isEmpty)
+        #expect(!document.spine.items.isEmpty)
     }
 }
