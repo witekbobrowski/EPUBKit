@@ -28,7 +28,7 @@ EPUBKit provides a comprehensive solution for parsing and extracting information
 ## Features
 
 - 📚 **Complete EPUB Support**: Full parsing of EPUB 2 and EPUB 3 documents
-- 🏗️ **Modern Swift**: Built with Swift 5.4+, leveraging modern language features
+- 🏗️ **Modern Swift**: Built with Swift 6+, leveraging modern language features
 - 📋 **Rich Metadata**: Extract comprehensive Dublin Core metadata
 - 🗂️ **Manifest Parsing**: Access all publication resources with media type detection  
 - 📖 **Reading Order**: Parse spine for linear reading progression

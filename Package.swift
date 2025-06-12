@@ -1,4 +1,4 @@
-// swift-tools-version:5.4
+// swift-tools-version:6.0
 
 import PackageDescription
 
@@ -6,9 +6,9 @@ let package = Package(
     name: "EPUBKit",
     
     platforms: [
-        .macOS(.v10_10),
-        .iOS(.v9),
-        .tvOS(.v9)
+        .macOS(.v10_13),
+        .iOS(.v12),
+        .tvOS(.v12)
     ],
     
     products: [
