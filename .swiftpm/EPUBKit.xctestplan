@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "BF16B726-1465-4EA6-AC05-15D89EE9AE38",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "EPUBKitTests",
+        "name" : "EPUBKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}
