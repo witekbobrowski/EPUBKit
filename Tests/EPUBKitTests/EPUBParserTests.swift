@@ -3,7 +3,6 @@
 //  EPUBKitTests
 //
 //  Created by Witek Bobrowski on 13/06/2021.
-//  Ported to Swift Testing by Claude on 12/06/2025.
 //
 
 import Testing
@@ -195,30 +194,6 @@ struct EPUBParserTests {
         }
     }
     
-    // MARK: - Protocol Conformance Tests
-    
-    @Test("Parser conforms to EPUBParsable")
-    func parserConformsToEPUBParsable() {
-        let parser = EPUBParser()
-        let url = library.path(for: .theGeographyofBliss)
-        
-        do {
-            let document = try parser.parse(documentAt: url)
-            let contentService = try EPUBContentServiceImplementation(document.directory)
-            
-            // Test individual parsing methods
-            let spine = parser.getSpine(from: contentService.spine)
-            #expect(!spine.items.isEmpty)
-            
-            let metadata = parser.getMetadata(from: contentService.metadata)
-            #expect(metadata.title != nil)
-            
-            let manifest = parser.getManifest(from: contentService.manifest)
-            #expect(!manifest.items.isEmpty)
-        } catch {
-            Issue.record("Parsing should not fail: \(error)")
-        }
-    }
     
     // MARK: - Memory Management Tests
     

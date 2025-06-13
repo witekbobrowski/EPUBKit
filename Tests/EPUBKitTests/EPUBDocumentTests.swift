@@ -3,7 +3,6 @@
 //  EPUBKitTests
 //
 //  Created by Witek Bobrowski on 13/06/2021.
-//  Ported to Swift Testing by Claude on 12/06/2025.
 //
 
 import Testing

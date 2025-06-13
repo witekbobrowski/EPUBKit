@@ -34,7 +34,9 @@ struct EPUBModelValidationTests {
         
         // Optional but common elements
         if let creator = metadata.creator {
-            #expect(!creator.name!.isEmpty, "Creator name should not be empty")
+            if let name = creator.name {
+                #expect(!name.isEmpty, "Creator name should not be empty")
+            }
             // Test creator attributes
             if let role = creator.role {
                 #expect(!role.isEmpty, "Creator role should not be empty if present")

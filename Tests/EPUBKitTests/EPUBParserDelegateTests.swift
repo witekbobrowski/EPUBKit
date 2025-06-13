@@ -3,7 +3,6 @@
 //  EPUBKitTests
 //
 //  Created by Witek Bobrowski on 13/06/2021.
-//  Ported to Swift Testing by Claude on 12/06/2025.
 //
 
 import Testing
@@ -283,8 +282,8 @@ struct EPUBParserDelegateTests {
         withExtendedLifetime(delegate) {}
     }
     
-    @Test("Delegates work correctly with concurrent parsing")
-    func delegatesWorkCorrectlyWithConcurrentParsing() {
+    @Test("Delegates work correctly with sequential parsing")
+    func delegatesWorkCorrectlyWithSequentialParsing() {
         let parser = EPUBParser()
         let delegate = MockedEPUBParserDelegate()
         let url1 = library.path(for: .theGeographyofBliss)
@@ -298,7 +297,7 @@ struct EPUBParserDelegateTests {
         
         parser.delegate = delegate
         
-        // Parse multiple documents
+        // Parse multiple documents sequentially
         do {
             _ = try parser.parse(documentAt: url1)
             _ = try parser.parse(documentAt: url2)
