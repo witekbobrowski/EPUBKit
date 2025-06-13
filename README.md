@@ -33,7 +33,6 @@ EPUBKit provides a comprehensive solution for parsing and extracting information
 - 🗂️ **Manifest Parsing**: Access all publication resources with media type detection  
 - 📖 **Reading Order**: Parse spine for linear reading progression
 - 🧭 **Navigation**: Extract table of contents and navigation structure
-- ⚡ **Delegate Support**: Progress monitoring and error handling through delegation
 - 🧪 **Thoroughly Tested**: Comprehensive test suite built with Swift Testing
 - 🎯 **Thread Safe**: Designed for concurrent parsing operations
 
@@ -70,10 +69,10 @@ guard let epubURL = Bundle.main.url(forResource: "book", withExtension: "epub"),
 }
 
 // Access document metadata
-print("Title: \(document.title!)")
-print("Author: \(document.author!)")
-print("Publisher: \(document.publisher!)")
-print("Language: \(document.language!)")
+print("Title: \(document.title)")
+print("Author: \(document.author)")
+print("Publisher: \(document.publisher)")
+print("Language: \(document.language)")
 
 // Access document structure
 print("Chapters: \(document.spine.items.count)")
@@ -85,9 +84,9 @@ print("Resources: \(document.manifest.items.count)")
 ```swift
 // Access metadata details
 if let creator = document.metadata.creator {
-    print("Author: \(creator.name ?? "Unknown")")
-    print("Role: \(creator.role ?? "Unknown")")
-    print("File as: \(creator.fileAs ?? "Unknown")")
+    print("Author: \(creator.name)")
+    print("Role: \(creator.role)")
+    print("File as: \(creator.fileAs)")
 }
 
 // Iterate through spine items (reading order)
@@ -124,7 +123,7 @@ EPUBKit supports the EPUB specification standards:
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
