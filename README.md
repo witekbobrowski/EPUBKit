@@ -1,8 +1,8 @@
-# EPUBKit
-
-<p align="center">
-    <img src="EPUBKit.png" alt="EPUBKit Logo" width="256">
-</p>
+<picture align="center">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/df17dd82-b896-4058-be87-4d9a5b2184f8">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/ef2c06a5-6a4f-4a1b-9ef1-2355a12e7512">
+  <img alt="Fallback image description" src="https://github.com/user-attachments/assets/ef2c06a5-6a4f-4a1b-9ef1-2355a12e7512">
+</picture>
 
 <p align="center">
     <a href="https://swift.org/package-manager">
