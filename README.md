@@ -1,7 +1,7 @@
 <picture align="center">
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/df17dd82-b896-4058-be87-4d9a5b2184f8">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/ef2c06a5-6a4f-4a1b-9ef1-2355a12e7512">
-  <img alt="Fallback image description" src="https://github.com/user-attachments/assets/ef2c06a5-6a4f-4a1b-9ef1-2355a12e7512">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/9087903e-a267-4f74-b870-75b6ab72c175">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/82afe8de-1617-4745-ba80-ce7d4b10959c">
+  <img alt="Fallback image description" src="https://github.com/user-attachments/assets/82afe8de-1617-4745-ba80-ce7d4b10959c">
 </picture>
 
 <p align="center">
