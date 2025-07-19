@@ -8,6 +8,7 @@
 
 import Foundation
 import AEXML
+import Kanna
 
 /// The main parser class responsible for parsing EPUB documents.
 ///
@@ -79,11 +80,11 @@ public final class EPUBParser: EPUBParserProtocol {
         var metadata: EPUBMetadata
         var manifest: EPUBManifest
         var spine: EPUBSpine
-        var tableOfContents: EPUBTableOfContents
+        var tableOfContents: EPUBTableOfContents?
         
         // Notify delegate that parsing has begun
         delegate?.parser(self, didBeginParsingDocumentAt: path)
-        
+
         do {
             // STEP 1: Handle both .epub files and pre-extracted directories
             // This flexibility allows the parser to work with both compressed archives
@@ -121,13 +122,16 @@ public final class EPUBParser: EPUBParserProtocol {
             // The spine's 'toc' attribute references a manifest item ID
             // We use this to find the actual NCX file path in the manifest
             // This two-step lookup is required by the EPUB specification
-            guard let toc = spine.toc, let fileName = manifest.items[toc]?.path else {
-                throw EPUBParserError.tableOfContentsMissing
-            }
-            let tableOfContentsElement = try contentService.tableOfContents(fileName)
 
-            tableOfContents = getTableOfContents(from: tableOfContentsElement)
-            delegate?.parser(self, didFinishParsing: tableOfContents)
+			if let toc = spine.toc, let path = manifest.items[toc]?.path {
+				let tableOfContentsElement = try contentService.tableOfContents(path)
+				
+				tableOfContents = getTableOfContents(from: tableOfContentsElement)
+			} else if let path = manifest.items["nav"]?.path ?? manifest.items["toc"]?.path {
+				let tocURL = contentDirectory.appendingPathComponent(path, isDirectory: false)
+				
+				tableOfContents = try? tableOfContentsParser.parse(navtocUrl: tocURL)
+			}
         } catch let error {
             // CRITICAL: Always notify delegate of failures for proper error handling
             // This ensures that any cleanup or error reporting can be performed
@@ -138,6 +142,11 @@ public final class EPUBParser: EPUBParserProtocol {
         // Notify delegate of successful completion
         delegate?.parser(self, didFinishParsingDocumentAt: path)
         
+		guard let tableOfContents else {
+			throw EPUBParserError.tableOfContentsMissing
+		}
+		
+		delegate?.parser(self, didFinishParsing: tableOfContents)
         // Create and return the complete document with all parsed components
         return EPUBDocument(directory: directory, contentDirectory: contentDirectory,
                             metadata: metadata, manifest: manifest,

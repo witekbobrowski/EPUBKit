@@ -158,7 +158,9 @@ class EPUBContentServiceImplementation: EPUBContentService {
         // NCX files can be quite large for books with detailed navigation,
         // but we load the entire document to enable efficient XPath-like queries
         let data = try Data(contentsOf: path)
-        return try AEXMLDocument(xml: data).root
+		var options = AEXMLOptions()
+		options.parserSettings.shouldProcessNamespaces = true
+        return try AEXMLDocument(xml: data, options: options).root
     }
 
 }

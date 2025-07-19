@@ -19,6 +19,7 @@ protocol EPUBTableOfContentsParser {
     /// - Parameter xmlElement: The root XML element of the NCX document.
     /// - Returns: An `EPUBTableOfContents` object containing the parsed navigation hierarchy.
     func parse(_ xmlElement: AEXMLElement) -> EPUBTableOfContents
+	func parse(navtocUrl: URL) throws -> EPUBTableOfContents
 }
 
 /// Concrete implementation of `EPUBTableOfContentsParser` that parses NCX navigation files.
@@ -100,6 +101,88 @@ class EPUBTableOfContentsParserImplementation: EPUBTableOfContentsParser {
         return tableOfContents
     }
 
+	func parse(navtocUrl: URL) throws -> EPUBTableOfContents {
+		var options = AEXMLOptions()
+		options.parserSettings.shouldProcessNamespaces = true
+		
+		guard let data = try? Data(contentsOf: navtocUrl) else {
+			throw EPUBParserError.tableOfContentsMissing
+		}
+		
+		var toc: EPUBTableOfContents?
+		
+		do {
+			let xmlDoc = try AEXMLDocument(xml: data, options: options)
+			
+			func findAllNavElements(in element: AEXMLElement) -> [AEXMLElement] {
+				var result: [AEXMLElement] = []
+
+				for child in element.children {
+					if child.name == "nav" {
+						result.append(child)
+					} else {
+						result.append(contentsOf: findAllNavElements(in: child))
+					}
+				}
+
+				return result
+			}
+
+			let navElements = findAllNavElements(in: xmlDoc)
+			
+			func parseLIs(_ elements: [AEXMLElement], toc: EPUBTableOfContents) -> EPUBTableOfContents {
+				var innerTocs: [EPUBTableOfContents] = []
+				for li in elements {
+					if let title = li["a"].value {
+						let href = li["a"].attributes["href"] ?? ""
+						let id = li["a"].attributes["id"] ?? ""
+						
+						var innerToc = EPUBTableOfContents(
+							label: title,
+							id: id,
+							item: href
+						)
+						
+						if let nestedLIs = li["ol"]["li"].all {
+							innerToc = parseLIs(nestedLIs, toc: innerToc)
+						}
+						innerTocs.append(innerToc)
+					} else {
+						continue
+					}
+				}
+				
+				if !innerTocs.isEmpty {
+					var toc = toc
+					toc.subTable = innerTocs
+					return toc
+				}
+				
+				return toc
+			}
+
+			for nav in navElements {
+				if nav.attributes["epub:type"] == "toc" {
+					let topLevelLIs = nav["ol"]["li"].all ?? []
+					let innerToc = EPUBTableOfContents(
+						label: "",
+						id: "",
+						item: nil
+					)
+					toc = parseLIs(topLevelLIs, toc: innerToc)
+				}
+			}
+			
+		} catch {
+			throw EPUBParserError.tableOfContentsMissing
+		}
+		
+		guard let toc else {
+			throw EPUBParserError.tableOfContentsMissing
+		}
+		
+		return toc
+	}
 }
 
 extension EPUBTableOfContentsParserImplementation {
