@@ -121,6 +121,10 @@ EPUBKit supports the EPUB specification standards:
 - ✅ **NCX Navigation** - Table of contents parsing
 - ✅ **Media Type Detection** - Automatic resource type identification
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=witekbobrowski/EPUBKit&type=date&legend=top-left)](https://www.star-history.com/#witekbobrowski/EPUBKit&type=date&legend=top-left)
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
